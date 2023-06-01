@@ -88,9 +88,153 @@ public class PRINCIPAL extends javax.swing.JFrame {
         DiaPagina2 = new javax.swing.JLabel();
         SemanaPagina1 = new javax.swing.JLabel();
         DiaPagina1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         MesPagina1 = new javax.swing.JLabel();
+        L1000 = new javax.swing.JLabel();
+        N1000 = new javax.swing.JTextField();
+        S1000 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        T1000 = new javax.swing.JLabel();
         AnoPagina1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        L930 = new javax.swing.JLabel();
+        N930 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        S930 = new javax.swing.JTextField();
+        T930 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        L1030 = new javax.swing.JLabel();
+        N1030 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        S1030 = new javax.swing.JTextField();
+        T1030 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        L1100 = new javax.swing.JLabel();
+        N1100 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        S1100 = new javax.swing.JTextField();
+        T1100 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        L1130 = new javax.swing.JLabel();
+        N1130 = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        S1130 = new javax.swing.JTextField();
+        T1130 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        L1200 = new javax.swing.JLabel();
+        N1200 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        S1200 = new javax.swing.JTextField();
+        T1200 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
+        L1230 = new javax.swing.JLabel();
+        N1230 = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        S1230 = new javax.swing.JTextField();
+        T1230 = new javax.swing.JLabel();
+        jSeparator7 = new javax.swing.JSeparator();
+        L1300 = new javax.swing.JLabel();
+        N1300 = new javax.swing.JTextField();
+        jLabel23 = new javax.swing.JLabel();
+        S1300 = new javax.swing.JTextField();
+        T1300 = new javax.swing.JLabel();
+        jSeparator8 = new javax.swing.JSeparator();
+        L1330 = new javax.swing.JLabel();
+        N1330 = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        S1330 = new javax.swing.JTextField();
+        T1330 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
+        L1400 = new javax.swing.JLabel();
+        N1400 = new javax.swing.JTextField();
+        jLabel29 = new javax.swing.JLabel();
+        S1400 = new javax.swing.JTextField();
+        T1400 = new javax.swing.JLabel();
+        jSeparator10 = new javax.swing.JSeparator();
+        L1430 = new javax.swing.JLabel();
+        L1500 = new javax.swing.JLabel();
+        N1430 = new javax.swing.JTextField();
+        N1500 = new javax.swing.JTextField();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        S1500 = new javax.swing.JTextField();
+        S1430 = new javax.swing.JTextField();
+        T1430 = new javax.swing.JLabel();
+        jSeparator11 = new javax.swing.JSeparator();
+        T1500 = new javax.swing.JLabel();
+        jSeparator12 = new javax.swing.JSeparator();
+        L1530 = new javax.swing.JLabel();
+        L1600 = new javax.swing.JLabel();
+        L1630 = new javax.swing.JLabel();
+        L1700 = new javax.swing.JLabel();
+        L1730 = new javax.swing.JLabel();
+        L1800 = new javax.swing.JLabel();
+        L1830 = new javax.swing.JLabel();
+        L1900 = new javax.swing.JLabel();
+        L1930 = new javax.swing.JLabel();
+        L2000 = new javax.swing.JLabel();
+        L2030 = new javax.swing.JLabel();
+        L2100 = new javax.swing.JLabel();
+        N2100 = new javax.swing.JTextField();
+        N2030 = new javax.swing.JTextField();
+        N2000 = new javax.swing.JTextField();
+        N1930 = new javax.swing.JTextField();
+        N1900 = new javax.swing.JTextField();
+        N1830 = new javax.swing.JTextField();
+        N1730 = new javax.swing.JTextField();
+        N1700 = new javax.swing.JTextField();
+        N1630 = new javax.swing.JTextField();
+        N1600 = new javax.swing.JTextField();
+        N1530 = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        N1800 = new javax.swing.JTextField();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        S1530 = new javax.swing.JTextField();
+        S1600 = new javax.swing.JTextField();
+        S1630 = new javax.swing.JTextField();
+        jSeparator13 = new javax.swing.JSeparator();
+        S1700 = new javax.swing.JTextField();
+        S1730 = new javax.swing.JTextField();
+        S1800 = new javax.swing.JTextField();
+        S1830 = new javax.swing.JTextField();
+        S1900 = new javax.swing.JTextField();
+        S1930 = new javax.swing.JTextField();
+        S2000 = new javax.swing.JTextField();
+        S2030 = new javax.swing.JTextField();
+        S2100 = new javax.swing.JTextField();
+        T2100 = new javax.swing.JLabel();
+        T2030 = new javax.swing.JLabel();
+        jSeparator14 = new javax.swing.JSeparator();
+        T1930 = new javax.swing.JLabel();
+        T1900 = new javax.swing.JLabel();
+        T1830 = new javax.swing.JLabel();
+        jSeparator15 = new javax.swing.JSeparator();
+        T1730 = new javax.swing.JLabel();
+        T1800 = new javax.swing.JLabel();
+        T1700 = new javax.swing.JLabel();
+        T1630 = new javax.swing.JLabel();
+        T1600 = new javax.swing.JLabel();
+        T1530 = new javax.swing.JLabel();
+        jSeparator16 = new javax.swing.JSeparator();
+        jSeparator17 = new javax.swing.JSeparator();
+        jSeparator18 = new javax.swing.JSeparator();
+        jSeparator19 = new javax.swing.JSeparator();
+        jSeparator20 = new javax.swing.JSeparator();
+        jSeparator21 = new javax.swing.JSeparator();
+        jSeparator22 = new javax.swing.JSeparator();
+        T2000 = new javax.swing.JLabel();
+        jSeparator23 = new javax.swing.JSeparator();
+        jSeparator24 = new javax.swing.JSeparator();
+        Animacao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,25 +264,35 @@ public class PRINCIPAL extends javax.swing.JFrame {
         ls1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls1.setOpaque(true);
 
+        ls2.setBackground(new java.awt.Color(0, 204, 204));
         ls2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls2.setText("Seg");
         ls2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
+        ls2.setOpaque(true);
 
+        ls3.setBackground(new java.awt.Color(0, 204, 204));
         ls3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls3.setText("Ter");
         ls3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
+        ls3.setOpaque(true);
 
+        ls4.setBackground(new java.awt.Color(0, 204, 204));
         ls4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls4.setText("Qua");
         ls4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
+        ls4.setOpaque(true);
 
+        ls5.setBackground(new java.awt.Color(0, 204, 204));
         ls5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls5.setText("Qui");
         ls5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
+        ls5.setOpaque(true);
 
+        ls6.setBackground(new java.awt.Color(0, 204, 204));
         ls6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls6.setText("Sex");
         ls6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
+        ls6.setOpaque(true);
 
         t7.setBackground(new java.awt.Color(204, 204, 204));
         t7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -160,9 +314,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
         t35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t35.setText("0");
 
+        ls7.setBackground(new java.awt.Color(0, 204, 204));
         ls7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls7.setText("Sab");
         ls7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
+        ls7.setOpaque(true);
 
         t42.setBackground(new java.awt.Color(204, 204, 204));
         t42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -582,7 +738,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jLayeredPane2.setBounds(21, 17, 225, 170);
 
         VoltarDataInicial.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        VoltarDataInicial.setText("Voltar");
+        VoltarDataInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/go-bac.png"))); // NOI18N
         VoltarDataInicial.setDebugGraphicsOptions(javax.swing.DebugGraphics.LOG_OPTION);
         VoltarDataInicial.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -598,7 +754,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(VoltarDataInicial);
-        VoltarDataInicial.setBounds(80, 190, 75, 25);
+        VoltarDataInicial.setBounds(250, 20, 30, 30);
 
         AnoPagina2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         AnoPagina2.setText("2023");
@@ -631,32 +787,1041 @@ public class PRINCIPAL extends javax.swing.JFrame {
         DiaPagina1.setText("10");
         jLayeredPane1.add(DiaPagina1);
         DiaPagina1.setBounds(500, 40, 50, 40);
+        jLayeredPane1.add(jSeparator1);
+        jSeparator1.setBounds(30, 260, 530, 10);
 
         MesPagina1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         MesPagina1.setText("Maio");
         jLayeredPane1.add(MesPagina1);
         MesPagina1.setBounds(500, 80, 80, 17);
 
+        L1000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1000.setText("10:00");
+        jLayeredPane1.add(L1000);
+        L1000.setBounds(30, 240, 32, 15);
+
+        N1000.setEditable(false);
+        N1000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1000.setBorder(null);
+        N1000.setOpaque(false);
+        N1000.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1000MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1000MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1000);
+        N1000.setBounds(80, 240, 210, 15);
+
+        S1000.setEditable(false);
+        S1000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1000.setBorder(null);
+        S1000.setOpaque(false);
+        S1000.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1000MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1000);
+        S1000.setBounds(310, 240, 210, 15);
+
+        jLabel2.setText("|");
+        jLayeredPane1.add(jLabel2);
+        jLabel2.setBounds(300, 240, 10, 14);
+
+        T1000.setText("0");
+        jLayeredPane1.add(T1000);
+        T1000.setBounds(530, 240, 20, 20);
+
         AnoPagina1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         AnoPagina1.setText("2023");
         jLayeredPane1.add(AnoPagina1);
         AnoPagina1.setBounds(340, 20, 52, 29);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/agenda_app2.jpg"))); // NOI18N
-        jLayeredPane1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 1260, 660);
+        L930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L930.setText("09:30");
+        jLayeredPane1.add(L930);
+        L930.setBounds(30, 210, 32, 15);
+
+        N930.setEditable(false);
+        N930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N930.setBorder(null);
+        N930.setOpaque(false);
+        N930.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N930MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N930MouseExited(evt);
+            }
+        });
+        N930.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                N930ActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(N930);
+        N930.setBounds(80, 210, 210, 15);
+
+        jLabel5.setText("|");
+        jLayeredPane1.add(jLabel5);
+        jLabel5.setBounds(300, 210, 10, 14);
+
+        S930.setEditable(false);
+        S930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S930.setBorder(null);
+        S930.setOpaque(false);
+        S930.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S930MouseEntered(evt);
+            }
+        });
+        S930.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                S930ActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(S930);
+        S930.setBounds(310, 210, 210, 15);
+
+        T930.setText("0");
+        jLayeredPane1.add(T930);
+        T930.setBounds(530, 210, 20, 20);
+        jLayeredPane1.add(jSeparator2);
+        jSeparator2.setBounds(30, 230, 530, 10);
+
+        L1030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1030.setText("10:30");
+        jLayeredPane1.add(L1030);
+        L1030.setBounds(30, 270, 32, 15);
+
+        N1030.setEditable(false);
+        N1030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1030.setBorder(null);
+        N1030.setOpaque(false);
+        N1030.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1030MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1030MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1030);
+        N1030.setBounds(80, 270, 210, 15);
+
+        jLabel8.setText("|");
+        jLayeredPane1.add(jLabel8);
+        jLabel8.setBounds(300, 270, 10, 14);
+
+        S1030.setEditable(false);
+        S1030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1030.setBorder(null);
+        S1030.setOpaque(false);
+        S1030.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1030MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1030);
+        S1030.setBounds(310, 270, 210, 15);
+
+        T1030.setText("0");
+        jLayeredPane1.add(T1030);
+        T1030.setBounds(530, 270, 20, 20);
+        jLayeredPane1.add(jSeparator3);
+        jSeparator3.setBounds(30, 290, 530, 10);
+
+        L1100.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1100.setText("11:00");
+        jLayeredPane1.add(L1100);
+        L1100.setBounds(30, 300, 32, 15);
+
+        N1100.setEditable(false);
+        N1100.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1100.setBorder(null);
+        N1100.setOpaque(false);
+        N1100.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1100MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1100MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1100);
+        N1100.setBounds(80, 300, 210, 15);
+
+        jLabel11.setText("|");
+        jLayeredPane1.add(jLabel11);
+        jLabel11.setBounds(300, 300, 10, 14);
+
+        S1100.setEditable(false);
+        S1100.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1100.setBorder(null);
+        S1100.setOpaque(false);
+        S1100.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1100MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1100);
+        S1100.setBounds(310, 300, 210, 15);
+
+        T1100.setText("0");
+        jLayeredPane1.add(T1100);
+        T1100.setBounds(530, 300, 20, 20);
+        jLayeredPane1.add(jSeparator4);
+        jSeparator4.setBounds(30, 320, 530, 10);
+
+        L1130.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1130.setText("11:30");
+        jLayeredPane1.add(L1130);
+        L1130.setBounds(30, 330, 32, 15);
+
+        N1130.setEditable(false);
+        N1130.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1130.setBorder(null);
+        N1130.setOpaque(false);
+        N1130.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1130MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1130MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1130);
+        N1130.setBounds(80, 330, 210, 15);
+
+        jLabel14.setText("|");
+        jLayeredPane1.add(jLabel14);
+        jLabel14.setBounds(300, 330, 10, 14);
+
+        S1130.setEditable(false);
+        S1130.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1130.setBorder(null);
+        S1130.setOpaque(false);
+        S1130.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1130MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1130);
+        S1130.setBounds(310, 330, 210, 15);
+
+        T1130.setText("0");
+        jLayeredPane1.add(T1130);
+        T1130.setBounds(530, 330, 20, 20);
+        jLayeredPane1.add(jSeparator5);
+        jSeparator5.setBounds(30, 350, 530, 10);
+
+        L1200.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1200.setText("12:00");
+        jLayeredPane1.add(L1200);
+        L1200.setBounds(30, 360, 32, 15);
+
+        N1200.setEditable(false);
+        N1200.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1200.setBorder(null);
+        N1200.setOpaque(false);
+        N1200.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1200MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1200MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1200);
+        N1200.setBounds(80, 360, 210, 15);
+
+        jLabel17.setText("|");
+        jLayeredPane1.add(jLabel17);
+        jLabel17.setBounds(300, 360, 10, 14);
+
+        S1200.setEditable(false);
+        S1200.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1200.setBorder(null);
+        S1200.setOpaque(false);
+        S1200.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1200MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1200);
+        S1200.setBounds(310, 360, 210, 15);
+
+        T1200.setText("0");
+        jLayeredPane1.add(T1200);
+        T1200.setBounds(530, 360, 20, 20);
+        jLayeredPane1.add(jSeparator6);
+        jSeparator6.setBounds(30, 380, 530, 10);
+
+        L1230.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1230.setText("12:30");
+        jLayeredPane1.add(L1230);
+        L1230.setBounds(30, 390, 32, 15);
+
+        N1230.setEditable(false);
+        N1230.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1230.setBorder(null);
+        N1230.setOpaque(false);
+        N1230.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1230MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1230MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1230);
+        N1230.setBounds(80, 390, 210, 15);
+
+        jLabel20.setText("|");
+        jLayeredPane1.add(jLabel20);
+        jLabel20.setBounds(300, 390, 10, 14);
+
+        S1230.setEditable(false);
+        S1230.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1230.setBorder(null);
+        S1230.setOpaque(false);
+        S1230.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1230MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1230);
+        S1230.setBounds(310, 390, 210, 15);
+
+        T1230.setText("0");
+        jLayeredPane1.add(T1230);
+        T1230.setBounds(530, 390, 20, 20);
+        jLayeredPane1.add(jSeparator7);
+        jSeparator7.setBounds(30, 410, 530, 10);
+
+        L1300.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1300.setText("13:00");
+        jLayeredPane1.add(L1300);
+        L1300.setBounds(30, 420, 32, 15);
+
+        N1300.setEditable(false);
+        N1300.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1300.setBorder(null);
+        N1300.setOpaque(false);
+        N1300.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1300MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1300MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1300);
+        N1300.setBounds(80, 420, 210, 15);
+
+        jLabel23.setText("|");
+        jLayeredPane1.add(jLabel23);
+        jLabel23.setBounds(300, 420, 10, 14);
+
+        S1300.setEditable(false);
+        S1300.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1300.setBorder(null);
+        S1300.setOpaque(false);
+        S1300.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1300MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1300);
+        S1300.setBounds(310, 420, 210, 15);
+
+        T1300.setText("0");
+        jLayeredPane1.add(T1300);
+        T1300.setBounds(530, 420, 20, 20);
+        jLayeredPane1.add(jSeparator8);
+        jSeparator8.setBounds(30, 440, 530, 10);
+
+        L1330.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1330.setText("13:30");
+        jLayeredPane1.add(L1330);
+        L1330.setBounds(30, 450, 32, 15);
+
+        N1330.setEditable(false);
+        N1330.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1330.setBorder(null);
+        N1330.setOpaque(false);
+        N1330.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1330MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1330MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1330);
+        N1330.setBounds(80, 450, 210, 15);
+
+        jLabel26.setText("|");
+        jLayeredPane1.add(jLabel26);
+        jLabel26.setBounds(300, 450, 10, 14);
+
+        S1330.setEditable(false);
+        S1330.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1330.setBorder(null);
+        S1330.setOpaque(false);
+        S1330.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1330MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1330);
+        S1330.setBounds(310, 450, 210, 15);
+
+        T1330.setText("0");
+        jLayeredPane1.add(T1330);
+        T1330.setBounds(530, 450, 20, 20);
+        jLayeredPane1.add(jSeparator9);
+        jSeparator9.setBounds(30, 470, 530, 10);
+
+        L1400.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1400.setText("14:00");
+        jLayeredPane1.add(L1400);
+        L1400.setBounds(30, 480, 32, 15);
+
+        N1400.setEditable(false);
+        N1400.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1400.setBorder(null);
+        N1400.setOpaque(false);
+        N1400.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1400MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1400MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1400);
+        N1400.setBounds(80, 480, 210, 15);
+
+        jLabel29.setText("|");
+        jLayeredPane1.add(jLabel29);
+        jLabel29.setBounds(300, 480, 10, 14);
+
+        S1400.setEditable(false);
+        S1400.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1400.setBorder(null);
+        S1400.setOpaque(false);
+        S1400.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1400MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1400);
+        S1400.setBounds(310, 480, 210, 15);
+
+        T1400.setText("0");
+        jLayeredPane1.add(T1400);
+        T1400.setBounds(530, 480, 20, 20);
+        jLayeredPane1.add(jSeparator10);
+        jSeparator10.setBounds(30, 500, 530, 10);
+
+        L1430.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1430.setText("14:30");
+        jLayeredPane1.add(L1430);
+        L1430.setBounds(30, 510, 32, 15);
+
+        L1500.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1500.setText("15:00");
+        jLayeredPane1.add(L1500);
+        L1500.setBounds(30, 540, 32, 15);
+
+        N1430.setEditable(false);
+        N1430.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1430.setBorder(null);
+        N1430.setOpaque(false);
+        N1430.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1430MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1430MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1430);
+        N1430.setBounds(80, 510, 210, 15);
+
+        N1500.setEditable(false);
+        N1500.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1500.setBorder(null);
+        N1500.setOpaque(false);
+        N1500.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1500MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1500MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1500);
+        N1500.setBounds(80, 540, 210, 15);
+
+        jLabel33.setText("|");
+        jLayeredPane1.add(jLabel33);
+        jLabel33.setBounds(300, 510, 10, 14);
+
+        jLabel34.setText("|");
+        jLayeredPane1.add(jLabel34);
+        jLabel34.setBounds(300, 540, 10, 14);
+
+        S1500.setEditable(false);
+        S1500.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1500.setBorder(null);
+        S1500.setOpaque(false);
+        S1500.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1500MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1500);
+        S1500.setBounds(310, 540, 210, 15);
+
+        S1430.setEditable(false);
+        S1430.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1430.setBorder(null);
+        S1430.setOpaque(false);
+        S1430.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1430MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1430);
+        S1430.setBounds(310, 510, 210, 15);
+
+        T1430.setText("0");
+        jLayeredPane1.add(T1430);
+        T1430.setBounds(530, 510, 20, 20);
+        jLayeredPane1.add(jSeparator11);
+        jSeparator11.setBounds(30, 530, 530, 10);
+
+        T1500.setText("0");
+        jLayeredPane1.add(T1500);
+        T1500.setBounds(530, 540, 20, 20);
+        jLayeredPane1.add(jSeparator12);
+        jSeparator12.setBounds(30, 560, 530, 10);
+
+        L1530.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1530.setText("15:30");
+        jLayeredPane1.add(L1530);
+        L1530.setBounds(690, 210, 32, 15);
+
+        L1600.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1600.setText("16:00");
+        jLayeredPane1.add(L1600);
+        L1600.setBounds(690, 240, 32, 15);
+
+        L1630.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1630.setText("16:30");
+        jLayeredPane1.add(L1630);
+        L1630.setBounds(690, 270, 32, 15);
+
+        L1700.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1700.setText("17:00");
+        jLayeredPane1.add(L1700);
+        L1700.setBounds(690, 300, 32, 15);
+
+        L1730.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1730.setText("17:30");
+        jLayeredPane1.add(L1730);
+        L1730.setBounds(690, 330, 32, 15);
+
+        L1800.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1800.setText("18:00");
+        jLayeredPane1.add(L1800);
+        L1800.setBounds(690, 360, 32, 15);
+
+        L1830.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1830.setText("18:30");
+        jLayeredPane1.add(L1830);
+        L1830.setBounds(690, 390, 32, 15);
+
+        L1900.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1900.setText("19:00");
+        jLayeredPane1.add(L1900);
+        L1900.setBounds(690, 420, 32, 15);
+
+        L1930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L1930.setText("19:30");
+        jLayeredPane1.add(L1930);
+        L1930.setBounds(690, 450, 32, 15);
+
+        L2000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L2000.setText("20:00");
+        jLayeredPane1.add(L2000);
+        L2000.setBounds(690, 480, 32, 15);
+
+        L2030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L2030.setText("20:30");
+        jLayeredPane1.add(L2030);
+        L2030.setBounds(690, 510, 32, 15);
+
+        L2100.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        L2100.setText("21:00");
+        jLayeredPane1.add(L2100);
+        L2100.setBounds(690, 540, 32, 15);
+
+        N2100.setEditable(false);
+        N2100.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N2100.setBorder(null);
+        N2100.setOpaque(false);
+        N2100.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N2100MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N2100MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N2100);
+        N2100.setBounds(740, 540, 210, 15);
+
+        N2030.setEditable(false);
+        N2030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N2030.setBorder(null);
+        N2030.setOpaque(false);
+        N2030.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N2030MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N2030MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N2030);
+        N2030.setBounds(740, 510, 210, 15);
+
+        N2000.setEditable(false);
+        N2000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N2000.setBorder(null);
+        N2000.setOpaque(false);
+        N2000.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N2000MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N2000MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N2000);
+        N2000.setBounds(740, 480, 210, 15);
+
+        N1930.setEditable(false);
+        N1930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1930.setBorder(null);
+        N1930.setOpaque(false);
+        N1930.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1930MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1930MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1930);
+        N1930.setBounds(740, 450, 210, 15);
+
+        N1900.setEditable(false);
+        N1900.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1900.setBorder(null);
+        N1900.setOpaque(false);
+        N1900.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1900MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1900MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1900);
+        N1900.setBounds(740, 420, 210, 15);
+
+        N1830.setEditable(false);
+        N1830.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1830.setBorder(null);
+        N1830.setOpaque(false);
+        N1830.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1830MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1830MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1830);
+        N1830.setBounds(740, 390, 210, 15);
+
+        N1730.setEditable(false);
+        N1730.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1730.setBorder(null);
+        N1730.setOpaque(false);
+        N1730.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1730MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1730MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1730);
+        N1730.setBounds(740, 330, 210, 15);
+
+        N1700.setEditable(false);
+        N1700.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1700.setBorder(null);
+        N1700.setOpaque(false);
+        N1700.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1700MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1700MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1700);
+        N1700.setBounds(740, 300, 210, 15);
+
+        N1630.setEditable(false);
+        N1630.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1630.setBorder(null);
+        N1630.setOpaque(false);
+        N1630.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1630MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1630MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1630);
+        N1630.setBounds(740, 270, 210, 15);
+
+        N1600.setEditable(false);
+        N1600.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1600.setBorder(null);
+        N1600.setOpaque(false);
+        N1600.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1600MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1600MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1600);
+        N1600.setBounds(740, 240, 210, 15);
+
+        N1530.setEditable(false);
+        N1530.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1530.setBorder(null);
+        N1530.setOpaque(false);
+        N1530.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1530MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1530MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1530);
+        N1530.setBounds(740, 210, 210, 15);
+
+        jLabel49.setText("|");
+        jLayeredPane1.add(jLabel49);
+        jLabel49.setBounds(960, 540, 10, 14);
+
+        jLabel50.setText("|");
+        jLayeredPane1.add(jLabel50);
+        jLabel50.setBounds(960, 510, 10, 14);
+
+        jLabel51.setText("|");
+        jLayeredPane1.add(jLabel51);
+        jLabel51.setBounds(960, 480, 10, 14);
+
+        jLabel52.setText("|");
+        jLayeredPane1.add(jLabel52);
+        jLabel52.setBounds(960, 450, 10, 14);
+
+        jLabel53.setText("|");
+        jLayeredPane1.add(jLabel53);
+        jLabel53.setBounds(960, 420, 10, 14);
+
+        jLabel54.setText("|");
+        jLayeredPane1.add(jLabel54);
+        jLabel54.setBounds(960, 390, 10, 14);
+
+        jLabel55.setText("|");
+        jLayeredPane1.add(jLabel55);
+        jLabel55.setBounds(960, 360, 10, 14);
+
+        N1800.setEditable(false);
+        N1800.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        N1800.setBorder(null);
+        N1800.setOpaque(false);
+        N1800.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                N1800MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                N1800MouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(N1800);
+        N1800.setBounds(740, 360, 210, 15);
+
+        jLabel56.setText("|");
+        jLayeredPane1.add(jLabel56);
+        jLabel56.setBounds(960, 330, 10, 14);
+
+        jLabel57.setText("|");
+        jLayeredPane1.add(jLabel57);
+        jLabel57.setBounds(960, 270, 10, 14);
+
+        jLabel58.setText("|");
+        jLayeredPane1.add(jLabel58);
+        jLabel58.setBounds(960, 300, 10, 14);
+
+        jLabel59.setText("|");
+        jLayeredPane1.add(jLabel59);
+        jLabel59.setBounds(960, 240, 10, 14);
+
+        jLabel60.setText("|");
+        jLayeredPane1.add(jLabel60);
+        jLabel60.setBounds(960, 210, 10, 14);
+
+        S1530.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1530.setBorder(null);
+        S1530.setOpaque(false);
+        S1530.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1530MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1530);
+        S1530.setBounds(970, 210, 210, 15);
+
+        S1600.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1600.setBorder(null);
+        S1600.setOpaque(false);
+        S1600.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1600MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1600);
+        S1600.setBounds(970, 240, 210, 15);
+
+        S1630.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1630.setBorder(null);
+        S1630.setOpaque(false);
+        S1630.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1630MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1630);
+        S1630.setBounds(970, 270, 210, 15);
+        jLayeredPane1.add(jSeparator13);
+        jSeparator13.setBounds(690, 290, 530, 10);
+
+        S1700.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1700.setBorder(null);
+        S1700.setOpaque(false);
+        S1700.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1700MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1700);
+        S1700.setBounds(970, 300, 210, 15);
+
+        S1730.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1730.setBorder(null);
+        S1730.setOpaque(false);
+        S1730.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1730MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1730);
+        S1730.setBounds(970, 330, 210, 15);
+
+        S1800.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1800.setBorder(null);
+        S1800.setOpaque(false);
+        S1800.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1800MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1800);
+        S1800.setBounds(970, 360, 210, 15);
+
+        S1830.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1830.setBorder(null);
+        S1830.setOpaque(false);
+        S1830.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1830MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1830);
+        S1830.setBounds(970, 390, 210, 15);
+
+        S1900.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1900.setBorder(null);
+        S1900.setOpaque(false);
+        S1900.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1900MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1900);
+        S1900.setBounds(970, 420, 210, 15);
+
+        S1930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S1930.setBorder(null);
+        S1930.setOpaque(false);
+        S1930.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S1930MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S1930);
+        S1930.setBounds(970, 450, 210, 15);
+
+        S2000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S2000.setBorder(null);
+        S2000.setOpaque(false);
+        S2000.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S2000MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S2000);
+        S2000.setBounds(970, 480, 210, 15);
+
+        S2030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S2030.setBorder(null);
+        S2030.setOpaque(false);
+        S2030.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S2030MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S2030);
+        S2030.setBounds(970, 510, 210, 15);
+
+        S2100.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        S2100.setBorder(null);
+        S2100.setOpaque(false);
+        S2100.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                S2100MouseEntered(evt);
+            }
+        });
+        jLayeredPane1.add(S2100);
+        S2100.setBounds(970, 540, 210, 15);
+
+        T2100.setText("0");
+        jLayeredPane1.add(T2100);
+        T2100.setBounds(1190, 540, 20, 20);
+
+        T2030.setText("0");
+        jLayeredPane1.add(T2030);
+        T2030.setBounds(1190, 510, 20, 20);
+        jLayeredPane1.add(jSeparator14);
+        jSeparator14.setBounds(690, 470, 530, 10);
+
+        T1930.setText("0");
+        jLayeredPane1.add(T1930);
+        T1930.setBounds(1190, 450, 20, 20);
+
+        T1900.setText("0");
+        jLayeredPane1.add(T1900);
+        T1900.setBounds(1190, 420, 20, 20);
+
+        T1830.setText("0");
+        jLayeredPane1.add(T1830);
+        T1830.setBounds(1190, 390, 20, 20);
+        jLayeredPane1.add(jSeparator15);
+        jSeparator15.setBounds(690, 350, 530, 10);
+
+        T1730.setText("0");
+        jLayeredPane1.add(T1730);
+        T1730.setBounds(1190, 330, 20, 20);
+
+        T1800.setText("0");
+        jLayeredPane1.add(T1800);
+        T1800.setBounds(1190, 360, 20, 20);
+
+        T1700.setText("0");
+        jLayeredPane1.add(T1700);
+        T1700.setBounds(1190, 300, 20, 20);
+
+        T1630.setText("0");
+        jLayeredPane1.add(T1630);
+        T1630.setBounds(1190, 270, 20, 20);
+
+        T1600.setText("0");
+        jLayeredPane1.add(T1600);
+        T1600.setBounds(1190, 240, 20, 20);
+
+        T1530.setText("0");
+        jLayeredPane1.add(T1530);
+        T1530.setBounds(1190, 210, 20, 20);
+        jLayeredPane1.add(jSeparator16);
+        jSeparator16.setBounds(690, 230, 530, 10);
+        jLayeredPane1.add(jSeparator17);
+        jSeparator17.setBounds(690, 260, 530, 10);
+        jLayeredPane1.add(jSeparator18);
+        jSeparator18.setBounds(690, 320, 530, 10);
+        jLayeredPane1.add(jSeparator19);
+        jSeparator19.setBounds(690, 380, 530, 10);
+        jLayeredPane1.add(jSeparator20);
+        jSeparator20.setBounds(690, 410, 530, 10);
+        jLayeredPane1.add(jSeparator21);
+        jSeparator21.setBounds(690, 440, 530, 10);
+        jLayeredPane1.add(jSeparator22);
+        jSeparator22.setBounds(690, 500, 530, 10);
+
+        T2000.setText("0");
+        jLayeredPane1.add(T2000);
+        T2000.setBounds(1190, 480, 20, 20);
+        jLayeredPane1.add(jSeparator23);
+        jSeparator23.setBounds(690, 530, 530, 10);
+        jLayeredPane1.add(jSeparator24);
+        jSeparator24.setBounds(690, 560, 530, 10);
+
+        Animacao.setBackground(new java.awt.Color(0, 0, 0));
+        Animacao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/agenda_app2.jpg"))); // NOI18N
+        Animacao.setOpaque(true);
+        jLayeredPane1.add(Animacao);
+        Animacao.setBounds(0, 0, 1260, 660);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1282, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1282, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         setBounds(0, 0, 1286, 706);
@@ -692,9 +1857,302 @@ public class PRINCIPAL extends javax.swing.JFrame {
         CALENDARIO();
     }//GEN-LAST:event_SelecaoMesActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void N930ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N930ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_N930ActionPerformed
+
+    private void S930ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S930ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_S930ActionPerformed
+
+    private void N930MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N930MouseEntered
+        N930.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N930MouseEntered
+
+    private void N1000MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1000MouseEntered
+        N1000.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1000MouseEntered
+
+    private void N930MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N930MouseExited
+        N930.setBorder(null);
+    }//GEN-LAST:event_N930MouseExited
+
+    private void N1030MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1030MouseEntered
+        N1030.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1030MouseEntered
+
+    private void N1030MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1030MouseExited
+        N1030.setBorder(null);
+    }//GEN-LAST:event_N1030MouseExited
+
+    private void N1100MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1100MouseEntered
+       N1100.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1100MouseEntered
+
+    private void N1100MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1100MouseExited
+        N1100.setBorder(null);
+    }//GEN-LAST:event_N1100MouseExited
+
+    private void N1130MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1130MouseEntered
+        N1130.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1130MouseEntered
+
+    private void N1130MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1130MouseExited
+        N1130.setBorder(null);
+    }//GEN-LAST:event_N1130MouseExited
+
+    private void N1200MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1200MouseEntered
+        N1200.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1200MouseEntered
+
+    private void N1200MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1200MouseExited
+        N1200.setBorder(null);
+    }//GEN-LAST:event_N1200MouseExited
+
+    private void N1000MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1000MouseExited
+        N1000.setBorder(null);
+    }//GEN-LAST:event_N1000MouseExited
+
+    private void N1230MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1230MouseEntered
+        N1230.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1230MouseEntered
+
+    private void N1230MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1230MouseExited
+        N1230.setBorder(null);
+    }//GEN-LAST:event_N1230MouseExited
+
+    private void N1300MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1300MouseEntered
+        N1300.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1300MouseEntered
+
+    private void N1300MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1300MouseExited
+        N1300.setBorder(null);
+    }//GEN-LAST:event_N1300MouseExited
+
+    private void N1330MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1330MouseEntered
+        N1330.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1330MouseEntered
+
+    private void N1330MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1330MouseExited
+        N1330.setBorder(null);
+    }//GEN-LAST:event_N1330MouseExited
+
+    private void N1400MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1400MouseEntered
+        N1400.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1400MouseEntered
+
+    private void N1400MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1400MouseExited
+        N1400.setBorder(null);
+    }//GEN-LAST:event_N1400MouseExited
+
+    private void N1430MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1430MouseEntered
+        N1430.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1430MouseEntered
+
+    private void N1430MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1430MouseExited
+        N1430.setBorder(null);
+    }//GEN-LAST:event_N1430MouseExited
+
+    private void N1500MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1500MouseEntered
+        N1500.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1500MouseEntered
+
+    private void N1500MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1500MouseExited
+        N1500.setBorder(null);
+    }//GEN-LAST:event_N1500MouseExited
+
+    private void N1530MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1530MouseEntered
+        N1530.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1530MouseEntered
+
+    private void N1530MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1530MouseExited
+        N1530.setBorder(null);
+    }//GEN-LAST:event_N1530MouseExited
+
+    private void N1600MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1600MouseEntered
+        N1600.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1600MouseEntered
+
+    private void N1600MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1600MouseExited
+        N1600.setBorder(null);
+    }//GEN-LAST:event_N1600MouseExited
+
+    private void N1630MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1630MouseEntered
+        N1630.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1630MouseEntered
+
+    private void N1630MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1630MouseExited
+        N1630.setBorder(null);
+    }//GEN-LAST:event_N1630MouseExited
+
+    private void N1700MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1700MouseEntered
+        N1700.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1700MouseEntered
+
+    private void N1700MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1700MouseExited
+        N1700.setBorder(null);
+    }//GEN-LAST:event_N1700MouseExited
+
+    private void N1730MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1730MouseEntered
+        N1730.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1730MouseEntered
+
+    private void N1730MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1730MouseExited
+        N1730.setBorder(null);
+    }//GEN-LAST:event_N1730MouseExited
+
+    private void N1800MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1800MouseEntered
+        N1800.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1800MouseEntered
+
+    private void N1800MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1800MouseExited
+        N1800.setBorder(null);
+    }//GEN-LAST:event_N1800MouseExited
+
+    private void N1830MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1830MouseEntered
+        N1830.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1830MouseEntered
+
+    private void N1830MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1830MouseExited
+        N1830.setBorder(null);
+    }//GEN-LAST:event_N1830MouseExited
+
+    private void N1900MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1900MouseEntered
+        N1900.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1900MouseEntered
+
+    private void N1900MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1900MouseExited
+        N1900.setBorder(null);
+    }//GEN-LAST:event_N1900MouseExited
+
+    private void N1930MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1930MouseEntered
+        N1930.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N1930MouseEntered
+
+    private void N1930MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1930MouseExited
+        N1930.setBorder(null);
+    }//GEN-LAST:event_N1930MouseExited
+
+    private void N2000MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N2000MouseEntered
+        N2000.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N2000MouseEntered
+
+    private void N2000MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N2000MouseExited
+        N2000.setBorder(null);
+    }//GEN-LAST:event_N2000MouseExited
+
+    private void N2030MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N2030MouseEntered
+        N2030.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N2030MouseEntered
+
+    private void N2030MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N2030MouseExited
+        N2030.setBorder(null);
+    }//GEN-LAST:event_N2030MouseExited
+
+    private void N2100MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N2100MouseEntered
+        N2100.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+    }//GEN-LAST:event_N2100MouseEntered
+
+    private void N2100MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N2100MouseExited
+        N2100.setBorder(null);
+    }//GEN-LAST:event_N2100MouseExited
+
+    private void S930MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S930MouseEntered
+        S930.setToolTipText(S930.getText());
+    }//GEN-LAST:event_S930MouseEntered
+
+    private void S1000MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1000MouseEntered
+        S1000.setToolTipText(S1000.getText());
+    }//GEN-LAST:event_S1000MouseEntered
+
+    private void S1030MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1030MouseEntered
+        S1030.setToolTipText(S1030.getText());
+    }//GEN-LAST:event_S1030MouseEntered
+
+    private void S1100MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1100MouseEntered
+        S1100.setToolTipText(S1100.getText());
+    }//GEN-LAST:event_S1100MouseEntered
+
+    private void S1130MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1130MouseEntered
+        S1130.setToolTipText(S1130.getText());
+    }//GEN-LAST:event_S1130MouseEntered
+
+    private void S1200MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1200MouseEntered
+        S1200.setToolTipText(S1200.getText());
+    }//GEN-LAST:event_S1200MouseEntered
+
+    private void S1230MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1230MouseEntered
+        S1230.setToolTipText(S1230.getText());
+    }//GEN-LAST:event_S1230MouseEntered
+
+    private void S1300MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1300MouseEntered
+        S1300.setToolTipText(S930.getText());
+    }//GEN-LAST:event_S1300MouseEntered
+
+    private void S1330MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1330MouseEntered
+        S1330.setToolTipText(S1330.getText());
+    }//GEN-LAST:event_S1330MouseEntered
+
+    private void S1400MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1400MouseEntered
+        S1400.setToolTipText(S1400.getText());
+    }//GEN-LAST:event_S1400MouseEntered
+
+    private void S1430MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1430MouseEntered
+        S1430.setToolTipText(S1430.getText());
+    }//GEN-LAST:event_S1430MouseEntered
+
+    private void S1500MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1500MouseEntered
+        S1500.setToolTipText(S1500.getText());
+    }//GEN-LAST:event_S1500MouseEntered
+
+    private void S1530MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1530MouseEntered
+        S1530.setToolTipText(S1530.getText());
+    }//GEN-LAST:event_S1530MouseEntered
+
+    private void S1600MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1600MouseEntered
+        S1600.setToolTipText(S1600.getText());
+    }//GEN-LAST:event_S1600MouseEntered
+
+    private void S1630MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1630MouseEntered
+        S1630.setToolTipText(S1630.getText());
+    }//GEN-LAST:event_S1630MouseEntered
+
+    private void S1700MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1700MouseEntered
+        S1700.setToolTipText(S1700.getText());
+    }//GEN-LAST:event_S1700MouseEntered
+
+    private void S1730MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1730MouseEntered
+        S1730.setToolTipText(S1730.getText());
+    }//GEN-LAST:event_S1730MouseEntered
+
+    private void S1800MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1800MouseEntered
+        S1800.setToolTipText(S1800.getText());
+    }//GEN-LAST:event_S1800MouseEntered
+
+    private void S1830MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1830MouseEntered
+        S1830.setToolTipText(S1830.getText());
+    }//GEN-LAST:event_S1830MouseEntered
+
+    private void S1900MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1900MouseEntered
+        S1900.setToolTipText(S1900.getText());
+    }//GEN-LAST:event_S1900MouseEntered
+
+    private void S1930MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S1930MouseEntered
+        S1930.setToolTipText(S1930.getText());
+    }//GEN-LAST:event_S1930MouseEntered
+
+    private void S2000MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S2000MouseEntered
+        S2000.setToolTipText(S2000.getText());
+    }//GEN-LAST:event_S2000MouseEntered
+
+    private void S2030MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S2030MouseEntered
+        S2030.setToolTipText(S2030.getText());
+    }//GEN-LAST:event_S2030MouseEntered
+
+    private void S2100MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S2100MouseEntered
+        S2100.setToolTipText(S2100.getText());
+    }//GEN-LAST:event_S2100MouseEntered
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -728,20 +2186,164 @@ public class PRINCIPAL extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Animacao;
     private javax.swing.JLabel AnoPagina1;
     private javax.swing.JLabel AnoPagina2;
     private javax.swing.JLabel DiaPagina1;
     private javax.swing.JLabel DiaPagina2;
+    private javax.swing.JLabel L1000;
+    private javax.swing.JLabel L1030;
+    private javax.swing.JLabel L1100;
+    private javax.swing.JLabel L1130;
+    private javax.swing.JLabel L1200;
+    private javax.swing.JLabel L1230;
+    private javax.swing.JLabel L1300;
+    private javax.swing.JLabel L1330;
+    private javax.swing.JLabel L1400;
+    private javax.swing.JLabel L1430;
+    private javax.swing.JLabel L1500;
+    private javax.swing.JLabel L1530;
+    private javax.swing.JLabel L1600;
+    private javax.swing.JLabel L1630;
+    private javax.swing.JLabel L1700;
+    private javax.swing.JLabel L1730;
+    private javax.swing.JLabel L1800;
+    private javax.swing.JLabel L1830;
+    private javax.swing.JLabel L1900;
+    private javax.swing.JLabel L1930;
+    private javax.swing.JLabel L2000;
+    private javax.swing.JLabel L2030;
+    private javax.swing.JLabel L2100;
+    private javax.swing.JLabel L930;
     private javax.swing.JLabel MesPagina1;
     private javax.swing.JLabel MesPagina2;
+    private javax.swing.JTextField N1000;
+    private javax.swing.JTextField N1030;
+    private javax.swing.JTextField N1100;
+    private javax.swing.JTextField N1130;
+    private javax.swing.JTextField N1200;
+    private javax.swing.JTextField N1230;
+    private javax.swing.JTextField N1300;
+    private javax.swing.JTextField N1330;
+    private javax.swing.JTextField N1400;
+    private javax.swing.JTextField N1430;
+    private javax.swing.JTextField N1500;
+    private javax.swing.JTextField N1530;
+    private javax.swing.JTextField N1600;
+    private javax.swing.JTextField N1630;
+    private javax.swing.JTextField N1700;
+    private javax.swing.JTextField N1730;
+    private javax.swing.JTextField N1800;
+    private javax.swing.JTextField N1830;
+    private javax.swing.JTextField N1900;
+    private javax.swing.JTextField N1930;
+    private javax.swing.JTextField N2000;
+    private javax.swing.JTextField N2030;
+    private javax.swing.JTextField N2100;
+    private javax.swing.JTextField N930;
+    private javax.swing.JTextField S1000;
+    private javax.swing.JTextField S1030;
+    private javax.swing.JTextField S1100;
+    private javax.swing.JTextField S1130;
+    private javax.swing.JTextField S1200;
+    private javax.swing.JTextField S1230;
+    private javax.swing.JTextField S1300;
+    private javax.swing.JTextField S1330;
+    private javax.swing.JTextField S1400;
+    private javax.swing.JTextField S1430;
+    private javax.swing.JTextField S1500;
+    private javax.swing.JTextField S1530;
+    private javax.swing.JTextField S1600;
+    private javax.swing.JTextField S1630;
+    private javax.swing.JTextField S1700;
+    private javax.swing.JTextField S1730;
+    private javax.swing.JTextField S1800;
+    private javax.swing.JTextField S1830;
+    private javax.swing.JTextField S1900;
+    private javax.swing.JTextField S1930;
+    private javax.swing.JTextField S2000;
+    private javax.swing.JTextField S2030;
+    private javax.swing.JTextField S2100;
+    private javax.swing.JTextField S930;
     private javax.swing.JComboBox SelecaoAno;
     private javax.swing.JComboBox<String> SelecaoMes;
     private javax.swing.JLabel SemanaPagina1;
     private javax.swing.JLabel SemanaPagina2;
+    private javax.swing.JLabel T1000;
+    private javax.swing.JLabel T1030;
+    private javax.swing.JLabel T1100;
+    private javax.swing.JLabel T1130;
+    private javax.swing.JLabel T1200;
+    private javax.swing.JLabel T1230;
+    private javax.swing.JLabel T1300;
+    private javax.swing.JLabel T1330;
+    private javax.swing.JLabel T1400;
+    private javax.swing.JLabel T1430;
+    private javax.swing.JLabel T1500;
+    private javax.swing.JLabel T1530;
+    private javax.swing.JLabel T1600;
+    private javax.swing.JLabel T1630;
+    private javax.swing.JLabel T1700;
+    private javax.swing.JLabel T1730;
+    private javax.swing.JLabel T1800;
+    private javax.swing.JLabel T1830;
+    private javax.swing.JLabel T1900;
+    private javax.swing.JLabel T1930;
+    private javax.swing.JLabel T2000;
+    private javax.swing.JLabel T2030;
+    private javax.swing.JLabel T2100;
+    private javax.swing.JLabel T930;
     private javax.swing.JButton VoltarDataInicial;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel49;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JSeparator jSeparator18;
+    private javax.swing.JSeparator jSeparator19;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator20;
+    private javax.swing.JSeparator jSeparator21;
+    private javax.swing.JSeparator jSeparator22;
+    private javax.swing.JSeparator jSeparator23;
+    private javax.swing.JSeparator jSeparator24;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JLabel ls1;
     private javax.swing.JLabel ls2;
     private javax.swing.JLabel ls3;
@@ -1472,7 +3074,7 @@ public void CALENDARIO() {
     VERIFICASEMANA();
     }
 
-public void VERIFICASEMANA() { //faz a veificação do dias da semana na pagina
+public void VERIFICASEMANA() { //faz a verificação do dias da semana na pagina
    
     try {
         
