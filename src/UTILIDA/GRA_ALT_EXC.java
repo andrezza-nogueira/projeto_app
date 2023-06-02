@@ -1,4 +1,6 @@
 package UTILIDA;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -11,7 +13,7 @@ import javax.swing.JOptionPane;
 public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de dados
     CONEXAO CONEXAO_BANCO = new CONEXAO();
     
-    public void GRAVA(String[] coluna, String[] valor, String tabela, String Mensagem) {
+    public void GRAVA(String[] coluna, String[] valor, String tabela, String Mensagem) throws IOException {
         CONEXAO_BANCO.conecta();
         String COLUNA = "", VALUE = "", VIRGULA = "";
         for (String Col : coluna) {
@@ -30,10 +32,12 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
     }
     
     try {
-        CONEXAO_BANCO.executaSQL("select * from" + tabela + " ");
-        String SQL = "insert into " + tabela + " " + "(" + COLUNA + ") values" + "(" + VALUE + ")";
+        CONEXAO_BANCO.executaSQL("select * from " + tabela + " ");
+        String SQL = "insert into " + tabela + "  " 
+                + "(" + COLUNA + ") values" 
+                + "(" + VALUE + ")";
         CONEXAO_BANCO.statement.executeUpdate(SQL);
-        Icon figura = (new ImageIcon(getClass().getResource("")));
+        Icon figura = (new ImageIcon(getClass().getResource("/IMAGEM/verifica.png")));
         JOptionPane.showMessageDialog(null, Mensagem, "Concluded", JOptionPane.PLAIN_MESSAGE, figura);
         
     } catch (SQLException erro) {
@@ -49,7 +53,7 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
     
     
     
- public void ALTERA (String[] coluna, String[] valor, String tabela, String condicao) {
+ public void ALTERA (String[] coluna, String[] valor, String tabela, String condicao) throws IOException {
      CONEXAO_BANCO.conecta();
      
      String VALORES = "", VIRGULA = "";
@@ -60,14 +64,14 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
          }
      }
      try {
-         CONEXAO_BANCO.executaSQL("select + from " + tabela + " ");
-         String SQL = "UPDATE " + tabela + " SET " + VALORES + " " + condicao;
+         CONEXAO_BANCO.executaSQL("select * from " + tabela + " ");
+         String SQL = "update " + tabela + " SET " + VALORES + " " + condicao;
          CONEXAO_BANCO.statement.executeUpdate(SQL);
          Icon figura = (new ImageIcon(getClass().getResource("")));
          JOptionPane.showMessageDialog(null, "Changed", "Concluded", JOptionPane.PLAIN_MESSAGE, figura);
          
      } catch (SQLException erro) {
-         JOptionPane.showMessageDialog(null, "Change error" + erro);
+         JOptionPane.showMessageDialog(null, "Change error" + erro.toString());
      } catch (Exception e) {
 
      }
@@ -77,16 +81,16 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
 
  // ***************************************EXCLUIR***********************************************************************
      
-    public void EXCLUIR(String tabela, String condicao) {
+    public void EXCLUIR(String tabela, String condicao) throws IOException {
         CONEXAO_BANCO.conecta();
         try {
-            CONEXAO_BANCO.executaSQL("SELECT * FROM " + tabela + " ");
-            String SQLDELETA = "DELETE FROM " + tabela + " " + condicao + "";
+            CONEXAO_BANCO.executaSQL("select * from " + tabela + " ");
+            String SQLDELETA = "delete from " + tabela + " " + condicao + "";
             CONEXAO_BANCO.statement.executeUpdate(SQLDELETA);
             Icon figura = (new ImageIcon(getClass().getResource("")));
             JOptionPane.showMessageDialog(null, "Excluded", "Concluded", JOptionPane.PLAIN_MESSAGE, figura);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error deleting" + ex);
+            JOptionPane.showMessageDialog(null, "Error deleting" + ex.toString());
         }
         CONEXAO_BANCO.desconecta();
 }

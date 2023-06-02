@@ -1,9 +1,12 @@
 package PRINCIPAL;
 
+import UTILIDA.CONEXAO;
 import java.awt.Color;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -11,16 +14,36 @@ import java.util.Date;
  */
 public class PRINCIPAL extends javax.swing.JFrame {
     
+    CONEXAO CONEXAO = new CONEXAO();
     int AnoFIXO = 0, MesFIXO = 0, DiaFIXO = 0; //informaçóes sobre as variaveis
     int AnoAltera = 0, MesAltera = 0, DiaAltera = 0;
     int valorselecao = 0;
     int DiaClick = 0;
+    int LIMITE = 1;
+    
+    String Obs930, Obs1000, Obs1030, Obs1100, Obs1130, Obs1200, Obs1230, Obs1300,
+            Obs1330, Obs1400, Obs1430, Obs1500, Obs1530, Obs1600, Obs1630, Obs1700,
+            Obs1730, Obs1800, Obs1830, Obs1900, Obs1930, Obs2000, Obs2030, Obs2100;
+    
+    String Cod930, Cod1000, Cod1030, Cod1100, Cod1130, Cod1200, Cod1230, Cod1300,
+            Cod1330, Cod1400, Cod1430, Cod1500, Cod1530, Cod1600, Cod1630, Cod1700,
+            Cod1730, Cod1800, Cod1830, Cod1900, Cod1930, Cod2000, Cod2030, Cod2100;
+    
+    int TAD1 = 0, TAD2 = 0, TAD3 = 0, TAD4 = 0, TAD5 = 0, TAD6 = 0, TAD7 = 0, TAD8 = 0, 
+            TAD9 = 0, TAD10 = 0, TAD11 = 0, TAD12 = 0, TAD13 = 0, TAD14 = 0, TAD15 = 0, TAD16 = 0,
+            TAD17 = 0, TAD18 = 0, TAD19 = 0, TAD20 = 0, TAD21 = 0, TAD22 = 0, TAD23 = 0, TAD24 = 0,
+            TAD25 = 0, TAD26 = 0, TAD27 = 0, TAD28 = 0, TAD29 = 0, TAD30 = 0, TAD31 = 0;
+    
 
     public PRINCIPAL() {
         initComponents();
+        CONEXAO.conecta();
+        MOSTRA_DADOS_LIMITE();
         INICIACALENDARIO();
         CALENDARIO();
         CALENDARIO_EVT();
+        LEGENDA();
+        
     }
     
 
@@ -28,6 +51,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu11 = new javax.swing.JMenu();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         SelecaoMes = new javax.swing.JComboBox<>();
@@ -235,6 +261,23 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jSeparator23 = new javax.swing.JSeparator();
         jSeparator24 = new javax.swing.JSeparator();
         Animacao = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jMenu10 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu12 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
+
+        jMenu2.setText("jMenu2");
+
+        jMenu11.setText("jMenu11");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -249,6 +292,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
                 SelecaoMesActionPerformed(evt);
             }
         });
+        jLayeredPane2.add(SelecaoMes);
+        SelecaoMes.setBounds(1, 1, 98, 20);
 
         SelecaoAno.setEditable(true);
         SelecaoAno.addActionListener(new java.awt.event.ActionListener() {
@@ -256,6 +301,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
                 SelecaoAnoActionPerformed(evt);
             }
         });
+        jLayeredPane2.add(SelecaoAno);
+        SelecaoAno.setBounds(117, 1, 97, 20);
 
         ls1.setBackground(new java.awt.Color(0, 204, 204));
         ls1.setForeground(new java.awt.Color(255, 0, 51));
@@ -263,479 +310,318 @@ public class PRINCIPAL extends javax.swing.JFrame {
         ls1.setText("Dom");
         ls1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls1.setOpaque(true);
+        jLayeredPane2.add(ls1);
+        ls1.setBounds(3, 27, 25, 16);
 
         ls2.setBackground(new java.awt.Color(0, 204, 204));
         ls2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls2.setText("Seg");
         ls2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls2.setOpaque(true);
+        jLayeredPane2.add(ls2);
+        ls2.setBounds(34, 27, 25, 16);
 
         ls3.setBackground(new java.awt.Color(0, 204, 204));
         ls3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls3.setText("Ter");
         ls3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls3.setOpaque(true);
+        jLayeredPane2.add(ls3);
+        ls3.setBounds(65, 27, 25, 16);
 
         ls4.setBackground(new java.awt.Color(0, 204, 204));
         ls4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls4.setText("Qua");
         ls4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls4.setOpaque(true);
+        jLayeredPane2.add(ls4);
+        ls4.setBounds(96, 27, 25, 16);
 
         ls5.setBackground(new java.awt.Color(0, 204, 204));
         ls5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls5.setText("Qui");
         ls5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls5.setOpaque(true);
+        jLayeredPane2.add(ls5);
+        ls5.setBounds(127, 27, 25, 16);
 
         ls6.setBackground(new java.awt.Color(0, 204, 204));
         ls6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls6.setText("Sex");
         ls6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls6.setOpaque(true);
+        jLayeredPane2.add(ls6);
+        ls6.setBounds(158, 27, 25, 16);
 
         t7.setBackground(new java.awt.Color(204, 204, 204));
         t7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t7.setText("0");
+        jLayeredPane2.add(t7);
+        t7.setBounds(189, 49, 25, 14);
 
         t14.setBackground(new java.awt.Color(204, 204, 204));
         t14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t14.setText("0");
+        jLayeredPane2.add(t14);
+        t14.setBounds(189, 69, 25, 14);
 
         t21.setBackground(new java.awt.Color(204, 204, 204));
         t21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t21.setText("0");
+        jLayeredPane2.add(t21);
+        t21.setBounds(189, 89, 25, 14);
 
         t28.setBackground(new java.awt.Color(204, 204, 204));
         t28.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t28.setText("0");
+        jLayeredPane2.add(t28);
+        t28.setBounds(189, 109, 25, 14);
 
         t35.setBackground(new java.awt.Color(204, 204, 204));
         t35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t35.setText("0");
+        jLayeredPane2.add(t35);
+        t35.setBounds(189, 129, 25, 14);
 
         ls7.setBackground(new java.awt.Color(0, 204, 204));
         ls7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ls7.setText("Sab");
         ls7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         ls7.setOpaque(true);
+        jLayeredPane2.add(ls7);
+        ls7.setBounds(189, 27, 25, 16);
 
         t42.setBackground(new java.awt.Color(204, 204, 204));
         t42.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t42.setText("0");
+        jLayeredPane2.add(t42);
+        t42.setBounds(189, 149, 25, 14);
 
         t6.setBackground(new java.awt.Color(204, 204, 204));
         t6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t6.setText("0");
+        jLayeredPane2.add(t6);
+        t6.setBounds(158, 49, 25, 14);
 
         t13.setBackground(new java.awt.Color(204, 204, 204));
         t13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t13.setText("0");
+        jLayeredPane2.add(t13);
+        t13.setBounds(158, 69, 25, 14);
 
         t20.setBackground(new java.awt.Color(204, 204, 204));
         t20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t20.setText("0");
+        jLayeredPane2.add(t20);
+        t20.setBounds(158, 89, 25, 14);
 
         t27.setBackground(new java.awt.Color(204, 204, 204));
         t27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t27.setText("0");
+        jLayeredPane2.add(t27);
+        t27.setBounds(158, 109, 25, 14);
 
         t34.setBackground(new java.awt.Color(204, 204, 204));
         t34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t34.setText("0");
+        jLayeredPane2.add(t34);
+        t34.setBounds(158, 129, 25, 14);
 
         t41.setBackground(new java.awt.Color(204, 204, 204));
         t41.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t41.setText("0");
+        jLayeredPane2.add(t41);
+        t41.setBounds(158, 149, 25, 14);
 
         t5.setBackground(new java.awt.Color(204, 204, 204));
         t5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t5.setText("0");
+        jLayeredPane2.add(t5);
+        t5.setBounds(127, 49, 25, 14);
 
         t12.setBackground(new java.awt.Color(204, 204, 204));
         t12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t12.setText("0");
+        jLayeredPane2.add(t12);
+        t12.setBounds(127, 69, 25, 14);
 
         t19.setBackground(new java.awt.Color(204, 204, 204));
         t19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t19.setText("0");
+        jLayeredPane2.add(t19);
+        t19.setBounds(127, 89, 25, 14);
 
         t26.setBackground(new java.awt.Color(204, 204, 204));
         t26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t26.setText("0");
+        jLayeredPane2.add(t26);
+        t26.setBounds(127, 109, 25, 14);
 
         t33.setBackground(new java.awt.Color(204, 204, 204));
         t33.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t33.setText("0");
+        jLayeredPane2.add(t33);
+        t33.setBounds(127, 129, 25, 14);
 
         t40.setBackground(new java.awt.Color(204, 204, 204));
         t40.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t40.setText("0");
+        jLayeredPane2.add(t40);
+        t40.setBounds(127, 149, 25, 14);
 
         t4.setBackground(new java.awt.Color(204, 204, 204));
         t4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t4.setText("0");
+        jLayeredPane2.add(t4);
+        t4.setBounds(96, 49, 25, 14);
 
         t11.setBackground(new java.awt.Color(204, 204, 204));
         t11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t11.setText("0");
+        jLayeredPane2.add(t11);
+        t11.setBounds(96, 69, 25, 14);
 
         t18.setBackground(new java.awt.Color(204, 204, 204));
         t18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t18.setText("0");
+        jLayeredPane2.add(t18);
+        t18.setBounds(96, 89, 25, 14);
 
         t25.setBackground(new java.awt.Color(204, 204, 204));
         t25.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t25.setText("0");
+        jLayeredPane2.add(t25);
+        t25.setBounds(96, 109, 25, 14);
 
         t32.setBackground(new java.awt.Color(204, 204, 204));
         t32.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t32.setText("0");
+        jLayeredPane2.add(t32);
+        t32.setBounds(96, 129, 25, 14);
 
         t39.setBackground(new java.awt.Color(204, 204, 204));
         t39.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t39.setText("0");
+        jLayeredPane2.add(t39);
+        t39.setBounds(96, 149, 25, 14);
 
         t3.setBackground(new java.awt.Color(204, 204, 204));
         t3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t3.setText("0");
+        jLayeredPane2.add(t3);
+        t3.setBounds(65, 49, 25, 14);
 
         t10.setBackground(new java.awt.Color(204, 204, 204));
         t10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t10.setText("0");
+        jLayeredPane2.add(t10);
+        t10.setBounds(65, 69, 25, 14);
 
         t17.setBackground(new java.awt.Color(204, 204, 204));
         t17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t17.setText("0");
+        jLayeredPane2.add(t17);
+        t17.setBounds(65, 89, 25, 14);
 
         t24.setBackground(new java.awt.Color(204, 204, 204));
         t24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t24.setText("0");
+        jLayeredPane2.add(t24);
+        t24.setBounds(65, 109, 25, 14);
 
         t31.setBackground(new java.awt.Color(204, 204, 204));
         t31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t31.setText("0");
+        jLayeredPane2.add(t31);
+        t31.setBounds(65, 129, 25, 14);
 
         t38.setBackground(new java.awt.Color(204, 204, 204));
         t38.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t38.setText("0");
+        jLayeredPane2.add(t38);
+        t38.setBounds(65, 149, 25, 14);
 
         t2.setBackground(new java.awt.Color(204, 204, 204));
         t2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t2.setText("0");
+        jLayeredPane2.add(t2);
+        t2.setBounds(34, 49, 25, 14);
 
         t9.setBackground(new java.awt.Color(204, 204, 204));
         t9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t9.setText("0");
+        jLayeredPane2.add(t9);
+        t9.setBounds(34, 69, 25, 14);
 
         t16.setBackground(new java.awt.Color(204, 204, 204));
         t16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t16.setText("0");
+        jLayeredPane2.add(t16);
+        t16.setBounds(34, 89, 25, 14);
 
         t23.setBackground(new java.awt.Color(204, 204, 204));
         t23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t23.setText("0");
+        jLayeredPane2.add(t23);
+        t23.setBounds(34, 109, 25, 14);
 
         t30.setBackground(new java.awt.Color(204, 204, 204));
         t30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t30.setText("0");
+        jLayeredPane2.add(t30);
+        t30.setBounds(34, 129, 25, 14);
 
         t37.setBackground(new java.awt.Color(204, 204, 204));
         t37.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t37.setText("0");
+        jLayeredPane2.add(t37);
+        t37.setBounds(34, 149, 25, 14);
 
         t1.setBackground(new java.awt.Color(204, 204, 204));
         t1.setForeground(new java.awt.Color(255, 0, 51));
         t1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t1.setText("0");
         t1.setOpaque(true);
+        jLayeredPane2.add(t1);
+        t1.setBounds(3, 49, 25, 14);
 
         t8.setBackground(new java.awt.Color(204, 204, 204));
         t8.setForeground(new java.awt.Color(255, 0, 51));
         t8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t8.setText("0");
+        jLayeredPane2.add(t8);
+        t8.setBounds(3, 69, 25, 14);
 
         t15.setBackground(new java.awt.Color(204, 204, 204));
         t15.setForeground(new java.awt.Color(255, 0, 51));
         t15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t15.setText("0");
+        jLayeredPane2.add(t15);
+        t15.setBounds(3, 89, 25, 14);
 
         t22.setBackground(new java.awt.Color(204, 204, 204));
         t22.setForeground(new java.awt.Color(255, 0, 51));
         t22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t22.setText("0");
+        jLayeredPane2.add(t22);
+        t22.setBounds(3, 109, 25, 14);
 
         t29.setBackground(new java.awt.Color(204, 204, 204));
         t29.setForeground(new java.awt.Color(255, 0, 51));
         t29.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t29.setText("0");
+        jLayeredPane2.add(t29);
+        t29.setBounds(3, 129, 25, 14);
 
         t36.setBackground(new java.awt.Color(204, 204, 204));
         t36.setForeground(new java.awt.Color(255, 0, 51));
         t36.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t36.setText("0");
-
-        jLayeredPane2.setLayer(SelecaoMes, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(SelecaoAno, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(ls1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(ls2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(ls3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(ls4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(ls5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(ls6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t14, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t21, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t28, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t35, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(ls7, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t42, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t6, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t13, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t20, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t27, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t34, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t41, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t5, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t12, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t19, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t26, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t33, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t40, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t11, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t18, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t25, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t32, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t39, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t3, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t10, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t17, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t24, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t31, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t38, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t2, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t9, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t16, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t23, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t30, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t37, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t8, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t15, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t22, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t29, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(t36, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
-        jLayeredPane2.setLayout(jLayeredPane2Layout);
-        jLayeredPane2Layout.setHorizontalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(t8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t15, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t22, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t29, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(t1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t36, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(t9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t16, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t23, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t30, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(t2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(t10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t17, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t24, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t31, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(t3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t38, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(t11, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t18, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t25, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t32, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(t4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t39, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addComponent(ls1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ls2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ls3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ls4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ls5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(t12, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(t19, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(t26, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(t33, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(t40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addComponent(ls6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ls7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(t13, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t20, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t27, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(t34, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(t6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t41, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(t14, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(t21, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(t28, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(t35, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(t7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(t42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addComponent(SelecaoMes, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(SelecaoAno, 0, 1, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jLayeredPane2Layout.setVerticalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SelecaoMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SelecaoAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ls1)
-                    .addComponent(ls2)
-                    .addComponent(ls3)
-                    .addComponent(ls4)
-                    .addComponent(ls6)
-                    .addComponent(ls5)
-                    .addComponent(ls7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                    .addComponent(t7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t14)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t21)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t28)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t35)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t42, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                    .addComponent(t6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t13)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t20)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t27)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t34)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(t41, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addComponent(t5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t26)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t40, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                .addComponent(t4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t25)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t32)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(t39, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                            .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(t10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(t17)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(t24)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(t31)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(t38, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t23)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t37, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                        .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t29)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(t36, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLayeredPane2.add(t36);
+        t36.setBounds(3, 149, 25, 14);
 
         jLayeredPane1.add(jLayeredPane2);
-        jLayeredPane2.setBounds(21, 17, 225, 170);
+        jLayeredPane2.setBounds(21, 17, 220, 170);
 
         VoltarDataInicial.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         VoltarDataInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/go-bac.png"))); // NOI18N
@@ -813,7 +699,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1000);
-        N1000.setBounds(80, 240, 210, 15);
+        N1000.setBounds(80, 240, 210, 20);
 
         S1000.setEditable(false);
         S1000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -825,7 +711,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1000);
-        S1000.setBounds(310, 240, 210, 15);
+        S1000.setBounds(310, 240, 210, 20);
 
         jLabel2.setText("|");
         jLayeredPane1.add(jLabel2);
@@ -863,7 +749,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N930);
-        N930.setBounds(80, 210, 210, 15);
+        N930.setBounds(80, 210, 210, 20);
 
         jLabel5.setText("|");
         jLayeredPane1.add(jLabel5);
@@ -884,7 +770,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S930);
-        S930.setBounds(310, 210, 210, 15);
+        S930.setBounds(310, 210, 210, 20);
 
         T930.setText("0");
         jLayeredPane1.add(T930);
@@ -910,7 +796,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1030);
-        N1030.setBounds(80, 270, 210, 15);
+        N1030.setBounds(80, 270, 210, 20);
 
         jLabel8.setText("|");
         jLayeredPane1.add(jLabel8);
@@ -926,7 +812,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1030);
-        S1030.setBounds(310, 270, 210, 15);
+        S1030.setBounds(310, 270, 210, 20);
 
         T1030.setText("0");
         jLayeredPane1.add(T1030);
@@ -952,7 +838,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1100);
-        N1100.setBounds(80, 300, 210, 15);
+        N1100.setBounds(80, 300, 210, 20);
 
         jLabel11.setText("|");
         jLayeredPane1.add(jLabel11);
@@ -968,7 +854,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1100);
-        S1100.setBounds(310, 300, 210, 15);
+        S1100.setBounds(310, 300, 210, 20);
 
         T1100.setText("0");
         jLayeredPane1.add(T1100);
@@ -994,7 +880,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1130);
-        N1130.setBounds(80, 330, 210, 15);
+        N1130.setBounds(80, 330, 210, 20);
 
         jLabel14.setText("|");
         jLayeredPane1.add(jLabel14);
@@ -1010,7 +896,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1130);
-        S1130.setBounds(310, 330, 210, 15);
+        S1130.setBounds(310, 330, 210, 20);
 
         T1130.setText("0");
         jLayeredPane1.add(T1130);
@@ -1036,7 +922,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1200);
-        N1200.setBounds(80, 360, 210, 15);
+        N1200.setBounds(80, 360, 210, 20);
 
         jLabel17.setText("|");
         jLayeredPane1.add(jLabel17);
@@ -1052,7 +938,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1200);
-        S1200.setBounds(310, 360, 210, 15);
+        S1200.setBounds(310, 360, 210, 20);
 
         T1200.setText("0");
         jLayeredPane1.add(T1200);
@@ -1078,7 +964,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1230);
-        N1230.setBounds(80, 390, 210, 15);
+        N1230.setBounds(80, 390, 210, 20);
 
         jLabel20.setText("|");
         jLayeredPane1.add(jLabel20);
@@ -1094,7 +980,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1230);
-        S1230.setBounds(310, 390, 210, 15);
+        S1230.setBounds(310, 390, 210, 20);
 
         T1230.setText("0");
         jLayeredPane1.add(T1230);
@@ -1120,7 +1006,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1300);
-        N1300.setBounds(80, 420, 210, 15);
+        N1300.setBounds(80, 420, 210, 20);
 
         jLabel23.setText("|");
         jLayeredPane1.add(jLabel23);
@@ -1136,7 +1022,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1300);
-        S1300.setBounds(310, 420, 210, 15);
+        S1300.setBounds(310, 420, 210, 20);
 
         T1300.setText("0");
         jLayeredPane1.add(T1300);
@@ -1162,7 +1048,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1330);
-        N1330.setBounds(80, 450, 210, 15);
+        N1330.setBounds(80, 450, 210, 20);
 
         jLabel26.setText("|");
         jLayeredPane1.add(jLabel26);
@@ -1178,7 +1064,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1330);
-        S1330.setBounds(310, 450, 210, 15);
+        S1330.setBounds(310, 450, 210, 20);
 
         T1330.setText("0");
         jLayeredPane1.add(T1330);
@@ -1204,7 +1090,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1400);
-        N1400.setBounds(80, 480, 210, 15);
+        N1400.setBounds(80, 480, 210, 20);
 
         jLabel29.setText("|");
         jLayeredPane1.add(jLabel29);
@@ -1220,7 +1106,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1400);
-        S1400.setBounds(310, 480, 210, 15);
+        S1400.setBounds(310, 480, 210, 20);
 
         T1400.setText("0");
         jLayeredPane1.add(T1400);
@@ -1251,7 +1137,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1430);
-        N1430.setBounds(80, 510, 210, 15);
+        N1430.setBounds(80, 510, 210, 20);
 
         N1500.setEditable(false);
         N1500.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1266,7 +1152,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1500);
-        N1500.setBounds(80, 540, 210, 15);
+        N1500.setBounds(80, 540, 210, 20);
 
         jLabel33.setText("|");
         jLayeredPane1.add(jLabel33);
@@ -1286,7 +1172,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1500);
-        S1500.setBounds(310, 540, 210, 15);
+        S1500.setBounds(310, 540, 210, 20);
 
         S1430.setEditable(false);
         S1430.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1298,7 +1184,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1430);
-        S1430.setBounds(310, 510, 210, 15);
+        S1430.setBounds(310, 510, 210, 20);
 
         T1430.setText("0");
         jLayeredPane1.add(T1430);
@@ -1385,7 +1271,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N2100);
-        N2100.setBounds(740, 540, 210, 15);
+        N2100.setBounds(740, 540, 210, 20);
 
         N2030.setEditable(false);
         N2030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1400,7 +1286,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N2030);
-        N2030.setBounds(740, 510, 210, 15);
+        N2030.setBounds(740, 510, 210, 20);
 
         N2000.setEditable(false);
         N2000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1415,7 +1301,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N2000);
-        N2000.setBounds(740, 480, 210, 15);
+        N2000.setBounds(740, 480, 210, 20);
 
         N1930.setEditable(false);
         N1930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1430,7 +1316,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1930);
-        N1930.setBounds(740, 450, 210, 15);
+        N1930.setBounds(740, 450, 210, 20);
 
         N1900.setEditable(false);
         N1900.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1445,7 +1331,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1900);
-        N1900.setBounds(740, 420, 210, 15);
+        N1900.setBounds(740, 420, 210, 20);
 
         N1830.setEditable(false);
         N1830.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1460,7 +1346,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1830);
-        N1830.setBounds(740, 390, 210, 15);
+        N1830.setBounds(740, 390, 210, 20);
 
         N1730.setEditable(false);
         N1730.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1475,7 +1361,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1730);
-        N1730.setBounds(740, 330, 210, 15);
+        N1730.setBounds(740, 330, 210, 20);
 
         N1700.setEditable(false);
         N1700.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1490,7 +1376,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1700);
-        N1700.setBounds(740, 300, 210, 15);
+        N1700.setBounds(740, 300, 210, 20);
 
         N1630.setEditable(false);
         N1630.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1505,7 +1391,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1630);
-        N1630.setBounds(740, 270, 210, 15);
+        N1630.setBounds(740, 270, 210, 20);
 
         N1600.setEditable(false);
         N1600.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1520,7 +1406,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1600);
-        N1600.setBounds(740, 240, 210, 15);
+        N1600.setBounds(740, 240, 210, 20);
 
         N1530.setEditable(false);
         N1530.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -1535,7 +1421,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1530);
-        N1530.setBounds(740, 210, 210, 15);
+        N1530.setBounds(740, 210, 210, 20);
 
         jLabel49.setText("|");
         jLayeredPane1.add(jLabel49);
@@ -1578,7 +1464,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(N1800);
-        N1800.setBounds(740, 360, 210, 15);
+        N1800.setBounds(740, 360, 210, 20);
 
         jLabel56.setText("|");
         jLayeredPane1.add(jLabel56);
@@ -1609,7 +1495,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1530);
-        S1530.setBounds(970, 210, 210, 15);
+        S1530.setBounds(970, 210, 210, 20);
 
         S1600.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S1600.setBorder(null);
@@ -1620,7 +1506,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1600);
-        S1600.setBounds(970, 240, 210, 15);
+        S1600.setBounds(970, 240, 210, 20);
 
         S1630.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S1630.setBorder(null);
@@ -1631,7 +1517,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1630);
-        S1630.setBounds(970, 270, 210, 15);
+        S1630.setBounds(970, 270, 210, 20);
         jLayeredPane1.add(jSeparator13);
         jSeparator13.setBounds(690, 290, 530, 10);
 
@@ -1644,7 +1530,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1700);
-        S1700.setBounds(970, 300, 210, 15);
+        S1700.setBounds(970, 300, 210, 20);
 
         S1730.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S1730.setBorder(null);
@@ -1655,7 +1541,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1730);
-        S1730.setBounds(970, 330, 210, 15);
+        S1730.setBounds(970, 330, 210, 20);
 
         S1800.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S1800.setBorder(null);
@@ -1666,7 +1552,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1800);
-        S1800.setBounds(970, 360, 210, 15);
+        S1800.setBounds(970, 360, 210, 20);
 
         S1830.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S1830.setBorder(null);
@@ -1677,7 +1563,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1830);
-        S1830.setBounds(970, 390, 210, 15);
+        S1830.setBounds(970, 390, 210, 20);
 
         S1900.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S1900.setBorder(null);
@@ -1688,7 +1574,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1900);
-        S1900.setBounds(970, 420, 210, 15);
+        S1900.setBounds(970, 420, 210, 20);
 
         S1930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S1930.setBorder(null);
@@ -1699,7 +1585,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S1930);
-        S1930.setBounds(970, 450, 210, 15);
+        S1930.setBounds(970, 450, 210, 20);
 
         S2000.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S2000.setBorder(null);
@@ -1710,7 +1596,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S2000);
-        S2000.setBounds(970, 480, 210, 15);
+        S2000.setBounds(970, 480, 210, 20);
 
         S2030.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S2030.setBorder(null);
@@ -1721,7 +1607,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
             }
         });
         jLayeredPane1.add(S2030);
-        S2030.setBounds(970, 510, 210, 15);
+        S2030.setBounds(970, 510, 210, 20);
 
         S2100.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         S2100.setBorder(null);
@@ -1810,6 +1696,42 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jLayeredPane1.add(Animacao);
         Animacao.setBounds(0, 0, 1260, 660);
 
+        jMenu3.setText("Arquivo");
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
+        jMenu3.add(jRadioButtonMenuItem1);
+
+        jMenu10.setText("jMenu10");
+        jMenu3.add(jMenu10);
+
+        jMenuBar1.add(jMenu3);
+
+        jMenu4.setText("Editar");
+        jMenuBar1.add(jMenu4);
+
+        jMenu5.setText("Password");
+
+        jMenu6.setText("Editar");
+        jMenu5.add(jMenu6);
+
+        jMenuBar1.add(jMenu5);
+
+        jMenu7.setText("Exibir");
+
+        jMenu8.setText("Editar");
+        jMenu7.add(jMenu8);
+
+        jMenu12.setText("jMenu12");
+        jMenu7.add(jMenu12);
+
+        jMenuBar1.add(jMenu7);
+
+        jMenu9.setText("Resultados");
+        jMenuBar1.add(jMenu9);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1824,12 +1746,14 @@ public class PRINCIPAL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setBounds(0, 0, 1286, 706);
+        setBounds(0, 0, 1282, 719);
     }// </editor-fold>//GEN-END:initComponents
 
     private void VoltarDataInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarDataInicialActionPerformed
         INICIACALENDARIO();
         CALENDARIO();
+        LEGENDA();
+        INSERE_COR_CALENDARIO();
     }//GEN-LAST:event_VoltarDataInicialActionPerformed
 
     private void VoltarDataInicialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VoltarDataInicialMouseExited
@@ -1845,16 +1769,22 @@ public class PRINCIPAL extends javax.swing.JFrame {
             int x = Integer.parseInt(SelecaoAno.getSelectedItem().toString());
             DiaAltera = DiaFIXO;
             CALENDARIO();
+            LEGENDA();
+            INSERE_COR_CALENDARIO();
             AnoPagina2.setText(SelecaoAno.getSelectedItem().toString()); //altera o ano que esta na pagina quando a pessoa escolhe o ano
             AnoPagina2.setText(SelecaoAno.getSelectedItem().toString());
         } catch (Exception e) {
             SelecaoAno.setSelectedItem(AnoFIXO); //se caso digitar errado, cai no exception e volta ao ano vigente
+            LEGENDA();
+            INSERE_COR_CALENDARIO();
         }
     }//GEN-LAST:event_SelecaoAnoActionPerformed
 
     private void SelecaoMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecaoMesActionPerformed
         DiaAltera = DiaFIXO; //seleciona o mes pelo jcomboBox
         CALENDARIO();
+        LEGENDA();
+        INSERE_COR_CALENDARIO();
     }//GEN-LAST:event_SelecaoMesActionPerformed
 
     private void N930ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_N930ActionPerformed
@@ -2320,6 +2250,20 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2405,7 +2349,6 @@ public void INICIACALENDARIO() { //alteração do formato para data
         MesFIXO = Integer.parseInt(Mes.format(new Date()));
         DiaFIXO = Integer.parseInt(Dia.format(new Date()));
         
-        //JOptionPane.showMessageDialog(null, DiaFIXO + "/" + MesFIXO + "/" + AnoFIXO);
 
         int AnoMaximo = AnoFIXO + 6; //a soma do valor de 2020 + ano atual + 5anos
         for (int i=2020; i < AnoMaximo; i++) {
@@ -3155,7 +3098,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t1.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3178,7 +3121,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t2.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-//                    LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3201,7 +3144,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t3.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-//                    LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3224,7 +3167,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t4.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3247,7 +3190,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t5.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3270,7 +3213,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t6.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3293,7 +3236,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t7.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3316,7 +3259,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t8.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3339,7 +3282,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t9.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3362,7 +3305,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t10.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3385,7 +3328,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t11.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3408,7 +3351,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t12.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3431,7 +3374,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t13.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3454,7 +3397,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t14.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3477,7 +3420,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t15.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3500,7 +3443,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t16.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3523,7 +3466,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t17.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3546,7 +3489,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t18.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3569,7 +3512,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t19.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3592,7 +3535,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t20.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3615,7 +3558,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t21.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3639,7 +3582,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t22.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3662,7 +3605,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t23.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3685,7 +3628,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t24.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3708,7 +3651,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t25.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3731,7 +3674,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t26.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3754,7 +3697,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t27.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3777,7 +3720,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t28.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3800,7 +3743,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t29.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3823,7 +3766,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t30.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3846,7 +3789,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t31.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3869,7 +3812,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t32.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3892,7 +3835,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t33.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3915,7 +3858,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t34.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3938,7 +3881,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t35.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3961,7 +3904,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t36.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -3984,7 +3927,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t37.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -4007,7 +3950,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t38.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -4030,7 +3973,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t39.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -4053,7 +3996,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t40.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -4076,7 +4019,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t41.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
@@ -4099,10 +4042,1979 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
                     DiaAltera = Integer.parseInt(t42.getText());
                     DiaClick = 0;
                     VERIFICASEMANA();
-                    //LEGENDA();
+                    LEGENDA();
                 }
             }
         });
-}
+        
+  }
 
+ public void LEGENDA() {
+        N930.setText("");
+        S930.setText("");
+        N1000.setText("");
+        S1000.setText("");
+        N1030.setText("");
+        S1030.setText("");
+        N1100.setText("");
+        S1100.setText("");
+        N1130.setText("");
+        S1130.setText("");
+        N1200.setText("");
+        S1200.setText("");
+        N1230.setText("");
+        S1230.setText("");
+        N1300.setText("");
+        S1300.setText("");
+        N1330.setText("");
+        S1330.setText("");
+        N1400.setText("");
+        S1400.setText("");
+        N1430.setText("");
+        S1430.setText("");
+        N1500.setText("");
+        S1500.setText("");
+        N1530.setText("");
+        S1530.setText("");
+        N1600.setText("");
+        S1600.setText("");
+        N1630.setText("");
+        S1630.setText("");
+        N1700.setText("");
+        S1700.setText("");
+        N1730.setText("");
+        S1730.setText("");
+        S1800.setText("");
+        N1800.setText("");
+        S1830.setText("");
+        N1830.setText("");
+        S1900.setText("");
+        N1900.setText("");
+        S1930.setText("");
+        N1930.setText("");
+        S2000.setText("");
+        N2000.setText("");
+        S2030.setText("");
+        N2030.setText("");
+        S2100.setText("");
+        N2100.setText("");
+       
+        
+        //vai limpar se caso tiver mais de um agendamento
+        T930.setText("");
+        T1000.setText("");
+        T1030.setText("");
+        T1100.setText("");
+        T1130.setText("");
+        T1200.setText("");
+        T1230.setText("");
+        T1300.setText("");
+        T1330.setText("");
+        T1400.setText("");
+        T1430.setText("");
+        T1500.setText("");
+        T1530.setText("");
+        T1600.setText("");
+        T1630.setText("");
+        T1700.setText("");
+        T1730.setText("");
+        T1800.setText("");
+        T1830.setText("");
+        T1900.setText("");
+        T1930.setText("");
+        T2000.setText("");
+        T2030.setText("");
+        T2100.setText("");
+        
+    try {
+        MesAltera = MesAltera + 1;
+        String Dat = " dia = '" + DiaAltera + "' and mes = '" + MesAltera + "' and ano = '" + AnoAltera + "' ";
+        MesAltera = MesAltera - 1;
+        
+        int TOT930 = 0, TOT1000 = 0, TOT1030 = 0, TOT1100 = 0, TOT1130 = 0, TOT1200 = 0, TOT1230 = 0, TOT1300 = 0, TOT1330 = 0,
+                TOT1400 = 0, TOT1430 = 0, TOT1500 = 0, TOT1530 = 0, TOT1600 = 0, TOT1630 = 0, TOT1700 = 0, TOT1730 = 0, TOT1800 = 0,
+                TOT1830 = 0, TOT1900 = 0, TOT1930 = 0, TOT2000 = 0, TOT2030 = 0, TOT2100 = 0;
+        
+        
+        String SQL = "select * from agenda where " + Dat;
+        CONEXAO.executaSQL(SQL);
+        while (CONEXAO.resultset.next()) { //vai imprimir os dados que tem na agenda principal
+            if(L930.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N930.setText(CONEXAO.resultset.getString("nome"));
+                S930.setText(CONEXAO.resultset.getString("servico"));
+                Obs930 = CONEXAO.resultset.getString("observacao");
+                Cod930 = CONEXAO.resultset.getString("cod");
+                
+                TOT930++;
+                T930.setText("" + TOT930);
+            }
+            if(L1000.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1000.setText(CONEXAO.resultset.getString("nome"));
+                S1000.setText(CONEXAO.resultset.getString("servico"));
+                Obs1000 = CONEXAO.resultset.getString("observacao");
+                Cod1000 = CONEXAO.resultset.getString("cod");
+                
+                TOT1000++;
+                T1000.setText("" + TOT1000);
+            }
+            if(L1030.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1030.setText(CONEXAO.resultset.getString("nome"));
+                S1030.setText(CONEXAO.resultset.getString("servico"));
+                Obs1030 = CONEXAO.resultset.getString("observacao");
+                Cod1030 = CONEXAO.resultset.getString("cod");
+                
+                TOT1030++;
+                T1030.setText("" + TOT1030);
+            }
+            if(L1100.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1100.setText(CONEXAO.resultset.getString("nome"));
+                S1100.setText(CONEXAO.resultset.getString("servico"));
+                Obs1100 = CONEXAO.resultset.getString("observacao");
+                Cod1100 = CONEXAO.resultset.getString("cod");
+                
+                TOT1100++;
+                T1100.setText("" + TOT1100);
+            }
+            if(L1130.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1130.setText(CONEXAO.resultset.getString("nome"));
+                S1130.setText(CONEXAO.resultset.getString("servico"));
+                Obs1130 = CONEXAO.resultset.getString("observacao");
+                Cod1130 = CONEXAO.resultset.getString("cod");
+                
+                TOT1130++;
+                T1130.setText("" + TOT1130);
+            }
+            if(L1200.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1200.setText(CONEXAO.resultset.getString("nome"));
+                S1200.setText(CONEXAO.resultset.getString("servico"));
+                Obs1200 = CONEXAO.resultset.getString("observacao");
+                Cod1200 = CONEXAO.resultset.getString("cod");
+                
+                TOT1200++;
+                T1200.setText("" + TOT1200);
+            }
+            if(L1230.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1230.setText(CONEXAO.resultset.getString("nome"));
+                S1230.setText(CONEXAO.resultset.getString("servico"));
+                Obs1230 = CONEXAO.resultset.getString("observacao");
+                Cod1230 = CONEXAO.resultset.getString("cod");
+                
+                TOT1230++;
+                T1230.setText("" + TOT1230);
+            }
+            if(L1300.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1300.setText(CONEXAO.resultset.getString("nome"));
+                S1300.setText(CONEXAO.resultset.getString("servico"));
+                Obs1300 = CONEXAO.resultset.getString("observacao");
+                Cod1300 = CONEXAO.resultset.getString("cod");
+                
+                TOT1300++;
+                T1300.setText("" + TOT1300);
+            }
+            if(L1330.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1330.setText(CONEXAO.resultset.getString("nome"));
+                S1330.setText(CONEXAO.resultset.getString("servico"));
+                Obs1330 = CONEXAO.resultset.getString("observacao");
+                Cod1330 = CONEXAO.resultset.getString("cod");
+                
+                TOT1330++;
+                T1330.setText("" + TOT1330);
+            }
+            if(L1400.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1400.setText(CONEXAO.resultset.getString("nome"));
+                S1400.setText(CONEXAO.resultset.getString("servico"));
+                Obs1400 = CONEXAO.resultset.getString("observacao");
+                Cod1400 = CONEXAO.resultset.getString("cod");
+                
+                TOT1400++;
+                T1400.setText("" + TOT1400);
+            }
+            if(L1430.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1430.setText(CONEXAO.resultset.getString("nome"));
+                S1430.setText(CONEXAO.resultset.getString("servico"));
+                Obs1430 = CONEXAO.resultset.getString("observacao");
+                Cod1430 = CONEXAO.resultset.getString("cod");
+                
+                TOT1430++;
+                T1430.setText("" + TOT1430);
+            }
+            if(L1500.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1500.setText(CONEXAO.resultset.getString("nome"));
+                S1500.setText(CONEXAO.resultset.getString("servico"));
+                Obs1500 = CONEXAO.resultset.getString("observacao");
+                Cod1500 = CONEXAO.resultset.getString("cod");
+                
+                TOT1500++;
+                T1500.setText("" + TOT1500);
+            }
+            if(L1530.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1530.setText(CONEXAO.resultset.getString("nome"));
+                S1530.setText(CONEXAO.resultset.getString("servico"));
+                Obs1530 = CONEXAO.resultset.getString("observacao");
+                Cod1530 = CONEXAO.resultset.getString("cod");
+                
+                TOT1530++;
+                T1530.setText("" + TOT1530);
+            }
+            if(L1600.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1600.setText(CONEXAO.resultset.getString("nome"));
+                S1600.setText(CONEXAO.resultset.getString("servico"));
+                Obs1600 = CONEXAO.resultset.getString("observacao");
+                Cod1600 = CONEXAO.resultset.getString("cod");
+                
+                TOT1600++;
+                T1600.setText("" + TOT1600);
+            }
+            if(L1630.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1630.setText(CONEXAO.resultset.getString("nome"));
+                S1630.setText(CONEXAO.resultset.getString("servico"));
+                Obs1630 = CONEXAO.resultset.getString("observacao");
+                Cod1630 = CONEXAO.resultset.getString("cod");
+                
+                TOT1630++;
+                T1630.setText("" + TOT1630);
+            }
+            if(L1700.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1700.setText(CONEXAO.resultset.getString("nome"));
+                S1700.setText(CONEXAO.resultset.getString("servico"));
+                Obs1700 = CONEXAO.resultset.getString("observacao");
+                Cod1700 = CONEXAO.resultset.getString("cod");
+                
+                TOT1700++;
+                T1700.setText("" + TOT1700);
+            }
+            if(L1730.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1730.setText(CONEXAO.resultset.getString("nome"));
+                S1730.setText(CONEXAO.resultset.getString("servico"));
+                Obs1730 = CONEXAO.resultset.getString("observacao");
+                Cod1730 = CONEXAO.resultset.getString("cod");
+                
+                TOT1730++;
+                T1730.setText("" + TOT1730);
+            }
+            if(L1800.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1800.setText(CONEXAO.resultset.getString("nome"));
+                S1800.setText(CONEXAO.resultset.getString("servico"));
+                Obs1800 = CONEXAO.resultset.getString("observacao");
+                Cod1800 = CONEXAO.resultset.getString("cod");
+                
+                TOT1800++;
+                T1800.setText("" + TOT1800);
+            }
+            if(L1830.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1830.setText(CONEXAO.resultset.getString("nome"));
+                S1830.setText(CONEXAO.resultset.getString("servico"));
+                Obs1830 = CONEXAO.resultset.getString("observacao");
+                Cod1830 = CONEXAO.resultset.getString("cod");
+                
+                TOT1830++;
+                T1830.setText("" + TOT1830);
+            }
+            if(L1900.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1900.setText(CONEXAO.resultset.getString("nome"));
+                S1900.setText(CONEXAO.resultset.getString("servico"));
+                Obs1900 = CONEXAO.resultset.getString("observacao");
+                Cod1900 = CONEXAO.resultset.getString("cod");
+                
+                TOT1900++;
+                T1900.setText("" + TOT1900);
+            }
+            if(L1930.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N1930.setText(CONEXAO.resultset.getString("nome"));
+                S1930.setText(CONEXAO.resultset.getString("servico"));
+                Obs1930 = CONEXAO.resultset.getString("observacao");
+                Cod1930 = CONEXAO.resultset.getString("cod");
+                
+                TOT1930++;
+                T1930.setText("" + TOT1930);
+            }
+            if(L2000.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N2000.setText(CONEXAO.resultset.getString("nome"));
+                S2000.setText(CONEXAO.resultset.getString("servico"));
+                Obs2000 = CONEXAO.resultset.getString("observacao");
+                Cod2000 = CONEXAO.resultset.getString("cod");
+                
+                TOT2000++;
+                T2000.setText("" + TOT2000);
+            }
+            if(L2030.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N2030.setText(CONEXAO.resultset.getString("nome"));
+                S2030.setText(CONEXAO.resultset.getString("servico"));
+                Obs2030 = CONEXAO.resultset.getString("observacao");
+                Cod2030 = CONEXAO.resultset.getString("cod");
+                
+                TOT2030++;
+                T2030.setText("" + TOT2030);
+            }
+            if(L2100.getText().equals(CONEXAO.resultset.getString("hora"))) {
+                N2100.setText(CONEXAO.resultset.getString("nome"));
+                S2100.setText(CONEXAO.resultset.getString("servico"));
+                Obs2100 = CONEXAO.resultset.getString("observacao");
+                Cod2100 = CONEXAO.resultset.getString("cod");
+                
+                TOT2100++;
+                T2100.setText("" + TOT2100);
+            }
+            
+        }
+        
+    } catch (SQLException erro) {
+        JOptionPane.showMessageDialog(null, "Error listing table data" + erro.toString());
+    } catch (Exception err) {
+        System.out.println(err);
+    }  
+ 
+}    
+    public void MOSTRA_DADOS_LIMITE() {
+        try {
+            CONEXAO.executaSQL("select * from configuracao");
+            CONEXAO.resultset.first();
+            LIMITE = Integer.parseInt(CONEXAO.resultset.getString("limiteagendamento")) - 1;
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro" + erro);
+    }
+    
+    }
+    
+    public void INSERE_COR_CALENDARIO() {
+            TAD1 = 0; 
+            TAD2 = 0; 
+            TAD3 = 0; 
+            TAD4 = 0; 
+            TAD5 = 0; 
+            TAD6 = 0; 
+            TAD7 = 0; 
+            TAD8 = 0; 
+            TAD9 = 0; 
+            TAD10 = 0; 
+            TAD11 = 0; 
+            TAD12 = 0; 
+            TAD13 = 0; 
+            TAD14 = 0; 
+            TAD15 = 0; 
+            TAD16 = 0;
+            TAD17 = 0; 
+            TAD18 = 0; 
+            TAD19 = 0; 
+            TAD20 = 0; 
+            TAD21 = 0; 
+            TAD22 = 0; 
+            TAD23 = 0; 
+            TAD24 = 0;
+            TAD25 = 0; 
+            TAD26 = 0; 
+            TAD27 = 0; 
+            TAD28 = 0; 
+            TAD29 = 0; 
+            TAD30 = 0; 
+            TAD31 = 0;
+            
+            int AnoPesq = Integer.parseInt(SelecaoAno.getSelectedItem().toString());
+            int MesPesq = SelecaoMes.getSelectedIndex() + 1;
+            
+            try{
+              CONEXAO.executaSQL("select * from agenda where mes = '" + MesPesq
+                        + "' and ano = '" + AnoPesq
+                        + "' order by cod");
+              
+              while (CONEXAO.resultset.next()) {
+              if("1".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD1++;
+                  }
+                  if("2".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD2++;
+                  }
+                  if("3".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD3++;
+                  }
+                  if("4".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD4++;
+                  }
+                  if("5".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD5++;
+                  }
+                  if("6".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD6++;
+                  }
+                  if("7".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD7++;
+                  }
+                  if("8".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD8++;
+                  }
+                  if("9".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD9++;
+                  }
+                  if("10".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD10++;
+                  }
+                  if("11".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD11++;
+                  }
+                  if("12".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD12++;
+                      
+                  }
+                  if("13".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD13++;
+                  }
+                  if("14".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD14++;
+                  }
+                  if("15".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD15++;
+                  }
+                  if("16".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD16++;
+                  }
+                  if("17".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD17++;
+                  }
+                  if("18".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD18++;
+                  }
+                  if("19".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD19++;
+                  }
+                  if("20".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD20++;
+                  }
+                  if("21".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD21++;
+                  }
+                  if("22".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD22++;
+                  }
+                  if("23".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD23++;
+                  }
+                  if("24".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD24++;
+                      
+                  }if("25".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD25++;
+                      
+                  }if("26".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD26++;  
+                  }
+                  if("27".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD27++;
+                      
+                  }if("28".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD28++;
+                      
+                  }if("29".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD29++;
+                      
+                  }if("30".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD30++;
+                  }
+                  if("31".equals(CONEXAO.resultset.getString("dia"))) {
+                      TAD31++;
+                  }
+              }
+              
+            } catch (SQLException ex) {
+                System.out.println(ex);
+            }
+            
+        int ano = Integer.parseInt(SelecaoAno.getSelectedItem().toString());
+        int mes = SelecaoMes.getSelectedIndex();
+        
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(ano, mes, 1);
+            int SetaDia = 0;
+            int Semana = calendar.get(Calendar.DAY_OF_WEEK);
+            
+                SEMANA_0();
+            if (Semana == Calendar.SUNDAY) {
+                SEMANA_1(); //Dom
+            } else if (Semana == Calendar.MONDAY) {
+                SEMANA_2(); //Seg
+            } else if (Semana == Calendar.TUESDAY) {
+                SEMANA_3(); //Ter
+            } else if (Semana == Calendar.WEDNESDAY) {
+                SEMANA_4(); //Qua
+            } else if (Semana == Calendar.THURSDAY) {
+                SEMANA_5(); //Qui
+            } else if (Semana == Calendar.FRIDAY) {
+                SEMANA_6(); //Sex
+            } else if (Semana == Calendar.SATURDAY) {
+                SEMANA_7(); //Sab
+            }
+    }
+    
+    public void SEMANA_0() {
+        t1.setBackground(new java.awt.Color(204, 204, 204));
+        t2.setBackground(new java.awt.Color(204, 204, 204));
+        t3.setBackground(new java.awt.Color(204, 204, 204));
+        t4.setBackground(new java.awt.Color(204, 204, 204));
+        t5.setBackground(new java.awt.Color(204, 204, 204));
+        t6.setBackground(new java.awt.Color(204, 204, 204));
+        t7.setBackground(new java.awt.Color(204, 204, 204));
+        t8.setBackground(new java.awt.Color(204, 204, 204));
+        t9.setBackground(new java.awt.Color(204, 204, 204));
+        
+        t10.setBackground(new java.awt.Color(204, 204, 204));
+        t11.setBackground(new java.awt.Color(204, 204, 204));
+        t12.setBackground(new java.awt.Color(204, 204, 204));
+        t13.setBackground(new java.awt.Color(204, 204, 204));
+        t14.setBackground(new java.awt.Color(204, 204, 204));
+        t15.setBackground(new java.awt.Color(204, 204, 204));
+        t16.setBackground(new java.awt.Color(204, 204, 204));
+        t17.setBackground(new java.awt.Color(204, 204, 204));
+        t18.setBackground(new java.awt.Color(204, 204, 204));
+        t19.setBackground(new java.awt.Color(204, 204, 204));
+        
+        t20.setBackground(new java.awt.Color(204, 204, 204));
+        t21.setBackground(new java.awt.Color(204, 204, 204));
+        t22.setBackground(new java.awt.Color(204, 204, 204));
+        t23.setBackground(new java.awt.Color(204, 204, 204));
+        t24.setBackground(new java.awt.Color(204, 204, 204));
+        t25.setBackground(new java.awt.Color(204, 204, 204));
+        t26.setBackground(new java.awt.Color(204, 204, 204));
+        t27.setBackground(new java.awt.Color(204, 204, 204));
+        t28.setBackground(new java.awt.Color(204, 204, 204));
+        t29.setBackground(new java.awt.Color(204, 204, 204));
+        
+        t30.setBackground(new java.awt.Color(204, 204, 204));
+        t31.setBackground(new java.awt.Color(204, 204, 204));
+        t32.setBackground(new java.awt.Color(204, 204, 204));
+        t33.setBackground(new java.awt.Color(204, 204, 204));
+        t34.setBackground(new java.awt.Color(204, 204, 204));
+        t35.setBackground(new java.awt.Color(204, 204, 204));
+        t36.setBackground(new java.awt.Color(204, 204, 204));
+        t37.setBackground(new java.awt.Color(204, 204, 204));
+        t38.setBackground(new java.awt.Color(204, 204, 204));
+        t39.setBackground(new java.awt.Color(204, 204, 204));
+        
+        t40.setBackground(new java.awt.Color(204, 204, 204));
+        t41.setBackground(new java.awt.Color(204, 204, 204));
+        t42.setBackground(new java.awt.Color(204, 204, 204));
+
+ 
+    }
+    
+    public void SEMANA_1() {
+        int x = 0;
+        
+        String[] DIA = {t1.getText(), t2.getText(), t3.getText(), t4.getText(), t5.getText(),
+            t6.getText(), t7.getText(), t8.getText(), t9.getText(), t10.getText(),
+            t11.getText(), t12.getText(), t13.getText(), t14.getText(), t15.getText(),
+            t16.getText(), t17.getText(), t18.getText(), t19.getText(), t20.getText(),
+            t21.getText(), t22.getText(), t23.getText(), t24.getText(), t25.getText(), 
+            t26.getText(), t27.getText(), t28.getText(), t29.getText(), t30.getText(),
+            t31.getText()};
+            
+        for (String D : DIA) {
+            x++;
+            if(D.equals("" + x) & TAD1 > 0) {
+              t1.setBackground(Color.CYAN);
+                if(TAD1 > LIMITE) {
+                    t1.setBackground(Color.MAGENTA);
+                  }
+              }
+              if(D.equals("" + x) & TAD2 > 0) {
+                t2.setBackground(Color.CYAN);
+                  if(TAD2 > LIMITE) {
+                      t2.setBackground(Color.MAGENTA);
+                    }
+                }
+              if(D.equals("" + x) & TAD3 > 0) {
+                t3.setBackground(Color.CYAN);
+                  if(TAD3 > LIMITE) {
+                      t3.setBackground(Color.MAGENTA);
+                    }
+                }
+              if(D.equals("" + x) & TAD4 > 0) {
+                t4.setBackground(Color.CYAN);
+                if(TAD4 > LIMITE) {
+                    t4.setBackground(Color.MAGENTA);
+                  }
+              }
+              if(D.equals("" + x) & TAD5 > 0) {
+              t5.setBackground(Color.CYAN);
+              if(TAD5 > LIMITE) {
+                  t5.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD6 > 0) {
+              t6.setBackground(Color.CYAN);
+              if(TAD6 > LIMITE) {
+                  t6.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD7 > 0) {
+              t7.setBackground(Color.CYAN);
+              if(TAD7 > LIMITE) {
+                  t7.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD8 > 0) {
+              t8.setBackground(Color.CYAN);
+              if(TAD8 > LIMITE) {
+                  t8.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD9 > 0) {
+              t9.setBackground(Color.CYAN);
+              if(TAD9 > LIMITE) {
+                  t9.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD10 > 0) {
+              t10.setBackground(Color.CYAN);
+              if(TAD10 > LIMITE) {
+                  t10.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD11 > 0) {
+              t11.setBackground(Color.CYAN);
+              if(TAD11 > LIMITE) {
+                  t11.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD12 > 0) {
+              t12.setBackground(Color.CYAN);
+              if(TAD12 > LIMITE) {
+                  t12.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD13 > 0) {
+              t13.setBackground(Color.CYAN);
+              if(TAD13 > LIMITE) {
+                  t13.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD14 > 0) {
+              t14.setBackground(Color.CYAN);
+              if(TAD14 > LIMITE) {
+                  t14.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD15 > 0) {
+              t15.setBackground(Color.CYAN);
+              if(TAD15 > LIMITE) {
+                  t15.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD16 > 0) {
+              t16.setBackground(Color.CYAN);
+              if(TAD16 > LIMITE) {
+                  t16.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD17 > 0) {
+              t17.setBackground(Color.CYAN);
+              if(TAD17 > LIMITE) {
+                  t17.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD18 > 0) {
+              t18.setBackground(Color.CYAN);
+              if(TAD18 > LIMITE) {
+                  t18.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD19 > 0) {
+              t19.setBackground(Color.CYAN);
+              if(TAD19 > LIMITE) {
+                  t19.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD20 > 0) {
+              t20.setBackground(Color.CYAN);
+              if(TAD20 > LIMITE) {
+                  t20.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD21 > 0) {
+              t21.setBackground(Color.CYAN);
+              if(TAD21 > LIMITE) {
+                  t21.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD22 > 0) {
+              t22.setBackground(Color.CYAN);
+              if(TAD22 > LIMITE) {
+                  t22.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD23 > 0) {
+              t23.setBackground(Color.CYAN);
+              if(TAD23 > LIMITE) {
+                  t23.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD24 > 0) {
+              t24.setBackground(Color.CYAN);
+              if(TAD24 > LIMITE) {
+                  t24.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD25 > 0) {
+              t25.setBackground(Color.CYAN);
+              if(TAD25 > LIMITE) {
+                  t25.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD26 > 0) {
+              t26.setBackground(Color.CYAN);
+              if(TAD26 > LIMITE) {
+                  t26.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD27 > 0) {
+              t27.setBackground(Color.CYAN);
+              if(TAD27 > LIMITE) {
+                  t27.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD28 > 0) {
+              t28.setBackground(Color.CYAN);
+              if(TAD28 > LIMITE) {
+                  t28.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD29 > 0) {
+              t29.setBackground(Color.CYAN);
+              if(TAD29 > LIMITE) {
+                  t29.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD30 > 0) {
+              t30.setBackground(Color.CYAN);
+              if(TAD30 > LIMITE) {
+                  t30.setBackground(Color.MAGENTA);
+              
+                }
+            }
+              if (D.equals("" + x) & TAD31 > 0) {
+                t31.setBackground(Color.CYAN);
+                if(TAD31 > LIMITE) {
+                    t31.setBackground(Color.MAGENTA);
+               }
+            }
+        }
+    }
+    
+   public void SEMANA_2() {
+        int x = 0;
+        
+        String[] DIA = {t2.getText(), t3.getText(), t4.getText(), t5.getText(),
+            t6.getText(), t7.getText(), t8.getText(), t9.getText(), t10.getText(),
+            t11.getText(), t12.getText(), t13.getText(), t14.getText(), t15.getText(),
+            t16.getText(), t17.getText(), t18.getText(), t19.getText(), t20.getText(),
+            t21.getText(), t22.getText(), t23.getText(), t24.getText(), t25.getText(), 
+            t26.getText(), t27.getText(), t28.getText(), t29.getText(), t30.getText(),
+            t31.getText(), t32.getText(),};
+            
+        for (String D : DIA) {
+            x++;
+            if(D.equals("" + x) & TAD1 > 0) {
+              t2.setBackground(Color.CYAN);
+              if(TAD1 > LIMITE) {
+                  t2.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD2 > 0) {
+              t3.setBackground(Color.CYAN);
+              if(TAD2 > LIMITE) {
+                  t3.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD3 > 0) {
+              t4.setBackground(Color.CYAN);
+              if(TAD3 > LIMITE) {
+                  t4.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD4 > 0) {
+              t5.setBackground(Color.CYAN);
+              if(TAD4 > LIMITE) {
+                  t5.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD5 > 0) {
+              t6.setBackground(Color.CYAN);
+              if(TAD5 > LIMITE) {
+                  t6.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD6 > 0) {
+              t7.setBackground(Color.CYAN);
+              if(TAD6 > LIMITE) {
+                  t7.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD7 > 0) {
+              t8.setBackground(Color.CYAN);
+              if(TAD7 > LIMITE) {
+                  t8.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD8 > 0) {
+              t9.setBackground(Color.CYAN);
+              if(TAD8 > LIMITE) {
+                  t9.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD9 > 0) {
+              t10.setBackground(Color.CYAN);
+              if(TAD9 > LIMITE) {
+                  t10.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD10 > 0) {
+              t11.setBackground(Color.CYAN);
+              if(TAD10 > LIMITE) {
+                  t11.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD11 > 0) {
+              t12.setBackground(Color.CYAN);
+              if(TAD11 > LIMITE) {
+                  t12.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD12 > 0) {
+              t13.setBackground(Color.CYAN);
+              if(TAD12 > LIMITE) {
+                  t13.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD13 > 0) {
+              t14.setBackground(Color.CYAN);
+              if(TAD13 > LIMITE) {
+                  t14.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD14 > 0) {
+              t15.setBackground(Color.CYAN);
+              if(TAD14 > LIMITE) {
+                  t15.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD15 > 0) {
+              t16.setBackground(Color.CYAN);
+              if(TAD15 > LIMITE) {
+                  t16.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD16 > 0) {
+              t17.setBackground(Color.CYAN);
+              if(TAD16 > LIMITE) {
+                  t17.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD17 > 0) {
+              t18.setBackground(Color.CYAN);
+              if(TAD17 > LIMITE) {
+                  t18.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD18 > 0) {
+              t19.setBackground(Color.CYAN);
+              if(TAD18 > LIMITE) {
+                  t19.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD19 > 0) {
+              t20.setBackground(Color.CYAN);
+              if(TAD19 > LIMITE) {
+                  t20.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD20 > 0) {
+              t21.setBackground(Color.CYAN);
+              if(TAD20 > LIMITE) {
+                  t21.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD21 > 0) {
+              t22.setBackground(Color.CYAN);
+              if(TAD21 > LIMITE) {
+                  t22.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD22 > 0) {
+              t23.setBackground(Color.CYAN);
+              if(TAD22 > LIMITE) {
+                  t23.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD23 > 0) {
+              t24.setBackground(Color.CYAN);
+              if(TAD23 > LIMITE) {
+                  t24.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD24 > 0) {
+              t25.setBackground(Color.CYAN);
+              if(TAD24 > LIMITE) {
+                  t25.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD25 > 0) {
+              t26.setBackground(Color.CYAN);
+              if(TAD25 > LIMITE) {
+                  t26.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD26 > 0) {
+              t27.setBackground(Color.CYAN);
+              if(TAD26 > LIMITE) {
+                  t27.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD27 > 0) {
+              t28.setBackground(Color.CYAN);
+              if(TAD27 > LIMITE) {
+                  t28.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD28 > 0) {
+              t29.setBackground(Color.CYAN);
+              if(TAD28 > LIMITE) {
+                  t29.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD29 > 0) {
+              t30.setBackground(Color.CYAN);
+              if(TAD29 > LIMITE) {
+                  t30.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD30 > 0) {
+              t31.setBackground(Color.CYAN);
+              if(TAD30 > LIMITE) {
+                  t31.setBackground(Color.MAGENTA);
+              
+                }
+            }
+              if (D.equals("" + x) & TAD31 > 0) {
+                t32.setBackground(Color.CYAN);
+                if(TAD31 > LIMITE) {
+                    t32.setBackground(Color.MAGENTA);
+               }
+            }
+        }
+    }
+   
+    public void SEMANA_3() {
+        int x = 0;
+        
+        String[] DIA = {t3.getText(), t4.getText(), t5.getText(),
+            t6.getText(), t7.getText(), t8.getText(), t9.getText(), t10.getText(),
+            t11.getText(), t12.getText(), t13.getText(), t14.getText(), t15.getText(),
+            t16.getText(), t17.getText(), t18.getText(), t19.getText(), t20.getText(),
+            t21.getText(), t22.getText(), t23.getText(), t24.getText(), t25.getText(), 
+            t26.getText(), t27.getText(), t28.getText(), t29.getText(), t30.getText(),
+            t31.getText(), t32.getText(),t33.getText(),};
+            
+        for (String D : DIA) {
+            x++;
+            if(D.equals("" + x) & TAD1 > 0) {
+              t3.setBackground(Color.CYAN);
+              if(TAD1 > LIMITE) {
+                  t3.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD2 > 0) {
+              t4.setBackground(Color.CYAN);
+              if(TAD2 > LIMITE) {
+                  t4.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD3 > 0) {
+              t5.setBackground(Color.CYAN);
+              if(TAD3 > LIMITE) {
+                  t5.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD4 > 0) {
+              t6.setBackground(Color.CYAN);
+              if(TAD4 > LIMITE) {
+                  t6.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD5 > 0) {
+              t7.setBackground(Color.CYAN);
+              if(TAD5 > LIMITE) {
+                  t7.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD6 > 0) {
+              t8.setBackground(Color.CYAN);
+              if(TAD6 > LIMITE) {
+                  t8.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD7 > 0) {
+              t9.setBackground(Color.CYAN);
+              if(TAD7 > LIMITE) {
+                  t9.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD8 > 0) {
+              t10.setBackground(Color.CYAN);
+              if(TAD8 > LIMITE) {
+                  t10.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD9 > 0) {
+              t11.setBackground(Color.CYAN);
+              if(TAD9 > LIMITE) {
+                  t11.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD10 > 0) {
+              t12.setBackground(Color.CYAN);
+              if(TAD10 > LIMITE) {
+                  t12.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD11 > 0) {
+              t13.setBackground(Color.CYAN);
+              if(TAD11 > LIMITE) {
+                  t13.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD12 > 0) {
+              t14.setBackground(Color.CYAN);
+              if(TAD12 > LIMITE) {
+                  t14.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD13 > 0) {
+              t15.setBackground(Color.CYAN);
+              if(TAD13 > LIMITE) {
+                  t15.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD14 > 0) {
+              t16.setBackground(Color.CYAN);
+              if(TAD14 > LIMITE) {
+                  t16.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD15 > 0) {
+              t17.setBackground(Color.CYAN);
+              if(TAD15 > LIMITE) {
+                  t17.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD16 > 0) {
+              t18.setBackground(Color.CYAN);
+              if(TAD16 > LIMITE) {
+                  t18.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD17 > 0) {
+              t19.setBackground(Color.CYAN);
+              if(TAD17 > LIMITE) {
+                  t19.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD18 > 0) {
+              t20.setBackground(Color.CYAN);
+              if(TAD18 > LIMITE) {
+                  t20.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD19 > 0) {
+              t21.setBackground(Color.CYAN);
+              if(TAD19 > LIMITE) {
+                  t21.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD20 > 0) {
+              t22.setBackground(Color.CYAN);
+              if(TAD20 > LIMITE) {
+                  t22.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD21 > 0) {
+              t23.setBackground(Color.CYAN);
+              if(TAD21 > LIMITE) {
+                  t23.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD22 > 0) {
+              t24.setBackground(Color.CYAN);
+              if(TAD22 > LIMITE) {
+                  t24.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD23 > 0) {
+              t25.setBackground(Color.CYAN);
+              if(TAD23 > LIMITE) {
+                  t25.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD24 > 0) {
+              t26.setBackground(Color.CYAN);
+              if(TAD24 > LIMITE) {
+                  t26.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD25 > 0) {
+              t27.setBackground(Color.CYAN);
+              if(TAD25 > LIMITE) {
+                  t27.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD26 > 0) {
+              t28.setBackground(Color.CYAN);
+              if(TAD26 > LIMITE) {
+                  t28.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD27 > 0) {
+              t29.setBackground(Color.CYAN);
+              if(TAD27 > LIMITE) {
+                  t29.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD28 > 0) {
+              t30.setBackground(Color.CYAN);
+              if(TAD28 > LIMITE) {
+                  t30.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD29 > 0) {
+              t31.setBackground(Color.CYAN);
+              if(TAD29 > LIMITE) {
+                  t31.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD30 > 0) {
+              t32.setBackground(Color.CYAN);
+              if(TAD30 > LIMITE) {
+                  t32.setBackground(Color.MAGENTA);
+              
+                }
+            }
+              if (D.equals("" + x) & TAD31 > 0) {
+                t33.setBackground(Color.CYAN);
+                if(TAD31 > LIMITE) {
+                    t33.setBackground(Color.MAGENTA);
+               }
+            }
+        }
+    }
+    
+   public void SEMANA_4() {
+        int x = 0;
+        
+        String[] DIA = {t4.getText(), t5.getText(),
+            t6.getText(), t7.getText(), t8.getText(), t9.getText(), t10.getText(),
+            t11.getText(), t12.getText(), t13.getText(), t14.getText(), t15.getText(),
+            t16.getText(), t17.getText(), t18.getText(), t19.getText(), t20.getText(),
+            t21.getText(), t22.getText(), t23.getText(), t24.getText(), t25.getText(), 
+            t26.getText(), t27.getText(), t28.getText(), t29.getText(), t30.getText(),
+            t31.getText(), t32.getText(), t33.getText(), t34.getText()};
+            
+        for (String D : DIA) {
+            x++;
+            if (D.equals("" + x) & TAD1 > 0) {
+                t4.setBackground(Color.CYAN);
+                if(TAD31 > LIMITE) {
+                    t4.setBackground(Color.MAGENTA);
+               }
+            }
+            if(D.equals("" + x) & TAD2 > 0) {
+              t5.setBackground(Color.CYAN);
+              if(TAD1 > LIMITE) {
+                  t5.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD3 > 0) {
+              t6.setBackground(Color.CYAN);
+              if(TAD2 > LIMITE) {
+                  t6.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD4 > 0) {
+              t7.setBackground(Color.CYAN);
+              if(TAD3 > LIMITE) {
+                  t7.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD5 > 0) {
+              t8.setBackground(Color.CYAN);
+              if(TAD4 > LIMITE) {
+                  t8.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD6 > 0) {
+              t9.setBackground(Color.CYAN);
+              if(TAD5 > LIMITE) {
+                  t9.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD7 > 0) {
+              t10.setBackground(Color.CYAN);
+              if(TAD6 > LIMITE) {
+                  t10.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD8 > 0) {
+              t11.setBackground(Color.CYAN);
+              if(TAD7 > LIMITE) {
+                  t11.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD9 > 0) {
+              t12.setBackground(Color.CYAN);
+              if(TAD8 > LIMITE) {
+                  t12.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD10 > 0) {
+              t13.setBackground(Color.CYAN);
+              if(TAD9 > LIMITE) {
+                  t13.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD11 > 0) {
+              t14.setBackground(Color.CYAN);
+              if(TAD10 > LIMITE) {
+                  t14.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD12 > 0) {
+              t15.setBackground(Color.CYAN);
+              if(TAD11 > LIMITE) {
+                  t15.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD13 > 0) {
+              t16.setBackground(Color.CYAN);
+              if(TAD12 > LIMITE) {
+                  t16.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD14 > 0) {
+              t17.setBackground(Color.CYAN);
+              if(TAD13 > LIMITE) {
+                  t17.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD15 > 0) {
+              t18.setBackground(Color.CYAN);
+              if(TAD14 > LIMITE) {
+                  t18.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD16 > 0) {
+              t19.setBackground(Color.CYAN);
+              if(TAD15 > LIMITE) {
+                  t19.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD17 > 0) {
+              t20.setBackground(Color.CYAN);
+              if(TAD16 > LIMITE) {
+                  t20.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD18 > 0) {
+              t21.setBackground(Color.CYAN);
+              if(TAD17 > LIMITE) {
+                  t21.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD19 > 0) {
+              t22.setBackground(Color.CYAN);
+              if(TAD18 > LIMITE) {
+                  t22.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD20 > 0) {
+              t23.setBackground(Color.CYAN);
+              if(TAD19 > LIMITE) {
+                  t23.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD21 > 0) {
+              t24.setBackground(Color.CYAN);
+              if(TAD20 > LIMITE) {
+                  t24.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD22 > 0) {
+              t25.setBackground(Color.CYAN);
+              if(TAD21 > LIMITE) {
+                  t25.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD23 > 0) {
+              t26.setBackground(Color.CYAN);
+              if(TAD22 > LIMITE) {
+                  t26.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD24 > 0) {
+              t27.setBackground(Color.CYAN);
+              if(TAD23 > LIMITE) {
+                  t27.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD25 > 0) {
+              t28.setBackground(Color.CYAN);
+              if(TAD24 > LIMITE) {
+                  t28.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD26 > 0) {
+              t29.setBackground(Color.CYAN);
+              if(TAD25 > LIMITE) {
+                  t29.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD27 > 0) {
+              t30.setBackground(Color.CYAN);
+              if(TAD26 > LIMITE) {
+                  t30.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD28 > 0) {
+              t31.setBackground(Color.CYAN);
+              if(TAD27 > LIMITE) {
+                  t31.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD29 > 0) {
+              t32.setBackground(Color.CYAN);
+              if(TAD28 > LIMITE) {
+                  t32.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD30 > 0) {
+              t33.setBackground(Color.CYAN);
+              if(TAD29 > LIMITE) {
+                  t33.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD31 > 0) {
+              t34.setBackground(Color.CYAN);
+              if(TAD30 > LIMITE) {
+                  t34.setBackground(Color.MAGENTA);
+              
+                }
+            }      
+        }
+    }
+   
+    public void SEMANA_5() {
+        int x = 0;
+        
+        String[] DIA = {t5.getText(),
+            t6.getText(), t7.getText(), t8.getText(), t9.getText(), t10.getText(),
+            t11.getText(), t12.getText(), t13.getText(), t14.getText(), t15.getText(),
+            t16.getText(), t17.getText(), t18.getText(), t19.getText(), t20.getText(),
+            t21.getText(), t22.getText(), t23.getText(), t24.getText(), t25.getText(), 
+            t26.getText(), t27.getText(), t28.getText(), t29.getText(), t30.getText(),
+            t31.getText(), t32.getText(), t33.getText(), t34.getText(), t4.getText(), };
+            
+        for (String D : DIA) {
+            x++;
+            if (D.equals("" + x) & TAD1 > 0) {
+                t5.setBackground(Color.CYAN);
+                if(TAD31 > LIMITE) {
+                    t5.setBackground(Color.MAGENTA);
+               }
+            }
+            if(D.equals("" + x) & TAD2 > 0) {
+              t6.setBackground(Color.CYAN);
+              if(TAD1 > LIMITE) {
+                  t6.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD3 > 0) {
+              t7.setBackground(Color.CYAN);
+              if(TAD2 > LIMITE) {
+                  t7.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD4 > 0) {
+              t8.setBackground(Color.CYAN);
+              if(TAD3 > LIMITE) {
+                  t8.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD5 > 0) {
+              t9.setBackground(Color.CYAN);
+              if(TAD4 > LIMITE) {
+                  t9.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD6 > 0) {
+              t10.setBackground(Color.CYAN);
+              if(TAD5 > LIMITE) {
+                  t10.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD7 > 0) {
+              t11.setBackground(Color.CYAN);
+              if(TAD6 > LIMITE) {
+                  t11.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD8 > 0) {
+              t12.setBackground(Color.CYAN);
+              if(TAD7 > LIMITE) {
+                  t12.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD9 > 0) {
+              t13.setBackground(Color.CYAN);
+              if(TAD8 > LIMITE) {
+                  t13.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD10 > 0) {
+              t14.setBackground(Color.CYAN);
+              if(TAD9 > LIMITE) {
+                  t14.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD11 > 0) {
+              t15.setBackground(Color.CYAN);
+              if(TAD10 > LIMITE) {
+                  t15.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD12 > 0) {
+              t16.setBackground(Color.CYAN);
+              if(TAD11 > LIMITE) {
+                  t16.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD13 > 0) {
+              t17.setBackground(Color.CYAN);
+              if(TAD12 > LIMITE) {
+                  t17.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD14 > 0) {
+              t18.setBackground(Color.CYAN);
+              if(TAD13 > LIMITE) {
+                  t18.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD15 > 0) {
+              t19.setBackground(Color.CYAN);
+              if(TAD14 > LIMITE) {
+                  t19.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD16 > 0) {
+              t20.setBackground(Color.CYAN);
+              if(TAD15 > LIMITE) {
+                  t20.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD17 > 0) {
+              t21.setBackground(Color.CYAN);
+              if(TAD16 > LIMITE) {
+                  t21.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD18 > 0) {
+              t22.setBackground(Color.CYAN);
+              if(TAD17 > LIMITE) {
+                  t22.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD19 > 0) {
+              t23.setBackground(Color.CYAN);
+              if(TAD18 > LIMITE) {
+                  t23.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD20 > 0) {
+              t24.setBackground(Color.CYAN);
+              if(TAD19 > LIMITE) {
+                  t24.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD21 > 0) {
+              t25.setBackground(Color.CYAN);
+              if(TAD20 > LIMITE) {
+                  t25.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD22 > 0) {
+              t26.setBackground(Color.CYAN);
+              if(TAD21 > LIMITE) {
+                  t26.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD23 > 0) {
+              t27.setBackground(Color.CYAN);
+              if(TAD22 > LIMITE) {
+                  t27.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD24 > 0) {
+              t28.setBackground(Color.CYAN);
+              if(TAD23 > LIMITE) {
+                  t28.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD25 > 0) {
+              t29.setBackground(Color.CYAN);
+              if(TAD24 > LIMITE) {
+                  t29.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD26 > 0) {
+              t30.setBackground(Color.CYAN);
+              if(TAD25 > LIMITE) {
+                  t30.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD27 > 0) {
+              t31.setBackground(Color.CYAN);
+              if(TAD26 > LIMITE) {
+                  t31.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD28 > 0) {
+              t32.setBackground(Color.CYAN);
+              if(TAD27 > LIMITE) {
+                  t32.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD29 > 0) {
+              t33.setBackground(Color.CYAN);
+              if(TAD28 > LIMITE) {
+                  t33.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD30 > 0) {
+              t34.setBackground(Color.CYAN);
+              if(TAD29 > LIMITE) {
+                  t34.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD31 > 0) {
+              t35.setBackground(Color.CYAN);
+              if(TAD30 > LIMITE) {
+                  t35.setBackground(Color.MAGENTA);
+              
+                }
+            }      
+        }
+    }
+    
+    public void SEMANA_6() {
+        int x = 0;
+        
+        String[] DIA = {
+            t6.getText(), t7.getText(), t8.getText(), t9.getText(), t10.getText(),
+            t11.getText(), t12.getText(), t13.getText(), t14.getText(), t15.getText(),
+            t16.getText(), t17.getText(), t18.getText(), t19.getText(), t20.getText(),
+            t21.getText(), t22.getText(), t23.getText(), t24.getText(), t25.getText(), 
+            t26.getText(), t27.getText(), t28.getText(), t29.getText(), t30.getText(),
+            t31.getText(), t32.getText(), t33.getText(), t34.getText(), t35.getText(), t36.getText(),};
+            
+        for (String D : DIA) {
+            x++;
+            if (D.equals("" + x) & TAD1 > 0) {
+                t6.setBackground(Color.CYAN);
+                if(TAD31 > LIMITE) {
+                    t6.setBackground(Color.MAGENTA);
+               }
+            }
+            if(D.equals("" + x) & TAD2 > 0) {
+              t7.setBackground(Color.CYAN);
+              if(TAD1 > LIMITE) {
+                  t7.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD3 > 0) {
+              t8.setBackground(Color.CYAN);
+              if(TAD2 > LIMITE) {
+                  t8.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD4 > 0) {
+              t9.setBackground(Color.CYAN);
+              if(TAD3 > LIMITE) {
+                  t9.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD5 > 0) {
+              t10.setBackground(Color.CYAN);
+              if(TAD4 > LIMITE) {
+                  t10.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD6 > 0) {
+              t11.setBackground(Color.CYAN);
+              if(TAD5 > LIMITE) {
+                  t11.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD7 > 0) {
+              t12.setBackground(Color.CYAN);
+              if(TAD6 > LIMITE) {
+                  t12.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD8 > 0) {
+              t13.setBackground(Color.CYAN);
+              if(TAD7 > LIMITE) {
+                  t13.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD9 > 0) {
+              t14.setBackground(Color.CYAN);
+              if(TAD8 > LIMITE) {
+                  t14.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD10 > 0) {
+              t15.setBackground(Color.CYAN);
+              if(TAD9 > LIMITE) {
+                  t15.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD11 > 0) {
+              t16.setBackground(Color.CYAN);
+              if(TAD10 > LIMITE) {
+                  t16.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD12 > 0) {
+              t17.setBackground(Color.CYAN);
+              if(TAD11 > LIMITE) {
+                  t17.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD13 > 0) {
+              t18.setBackground(Color.CYAN);
+              if(TAD12 > LIMITE) {
+                  t18.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD14 > 0) {
+              t19.setBackground(Color.CYAN);
+              if(TAD13 > LIMITE) {
+                  t19.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD15 > 0) {
+              t20.setBackground(Color.CYAN);
+              if(TAD14 > LIMITE) {
+                  t20.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD16 > 0) {
+              t21.setBackground(Color.CYAN);
+              if(TAD15 > LIMITE) {
+                  t21.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD17 > 0) {
+              t22.setBackground(Color.CYAN);
+              if(TAD16 > LIMITE) {
+                  t22.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD18 > 0) {
+              t23.setBackground(Color.CYAN);
+              if(TAD17 > LIMITE) {
+                  t23.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD19 > 0) {
+              t24.setBackground(Color.CYAN);
+              if(TAD18 > LIMITE) {
+                  t24.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD20 > 0) {
+              t25.setBackground(Color.CYAN);
+              if(TAD19 > LIMITE) {
+                  t25.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD21 > 0) {
+              t26.setBackground(Color.CYAN);
+              if(TAD20 > LIMITE) {
+                  t26.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD22 > 0) {
+              t27.setBackground(Color.CYAN);
+              if(TAD21 > LIMITE) {
+                  t27.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD23 > 0) {
+              t28.setBackground(Color.CYAN);
+              if(TAD22 > LIMITE) {
+                  t28.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD24 > 0) {
+              t29.setBackground(Color.CYAN);
+              if(TAD23 > LIMITE) {
+                  t29.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD25 > 0) {
+              t30.setBackground(Color.CYAN);
+              if(TAD24 > LIMITE) {
+                  t30.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD26 > 0) {
+              t31.setBackground(Color.CYAN);
+              if(TAD25 > LIMITE) {
+                  t31.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD27 > 0) {
+              t32.setBackground(Color.CYAN);
+              if(TAD26 > LIMITE) {
+                  t32.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD28 > 0) {
+              t33.setBackground(Color.CYAN);
+              if(TAD27 > LIMITE) {
+                  t33.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD29 > 0) {
+              t34.setBackground(Color.CYAN);
+              if(TAD28 > LIMITE) {
+                  t34.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD30 > 0) {
+              t35.setBackground(Color.CYAN);
+              if(TAD29 > LIMITE) {
+                  t35.setBackground(Color.MAGENTA);
+                }
+            }
+              if(D.equals("" + x) & TAD31 > 0) {
+              t36.setBackground(Color.CYAN);
+              if(TAD30 > LIMITE) {
+                  t36.setBackground(Color.MAGENTA);
+              
+                }
+            }      
+        }
+    }
+    
+    public void SEMANA_7() {
+        int x = 0;
+        
+        String[] DIA = {
+            t7.getText(), t8.getText(), t9.getText(), t10.getText(),
+            t11.getText(), t12.getText(), t13.getText(), t14.getText(), t15.getText(),
+            t16.getText(), t17.getText(), t18.getText(), t19.getText(), t20.getText(),
+            t21.getText(), t22.getText(), t23.getText(), t24.getText(), t25.getText(), 
+            t26.getText(), t27.getText(), t28.getText(), t29.getText(), t30.getText(),
+            t31.getText(), t32.getText(), t33.getText(), t34.getText(), t35.getText(), t36.getText(), t37.getText(), };
+            
+        for (String D : DIA) {
+            x++;
+            if (D.equals("" + x) & TAD1 > 0) {
+                t7.setBackground(Color.CYAN);
+                if(TAD31 > LIMITE) {
+                    t7.setBackground(Color.RED);
+               }
+            }
+            if(D.equals("" + x) & TAD2 > 0) {
+              t8.setBackground(Color.CYAN);
+              if(TAD1 > LIMITE) {
+                  t8.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD3 > 0) {
+              t9.setBackground(Color.CYAN);
+              if(TAD2 > LIMITE) {
+                  t9.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD4 > 0) {
+              t10.setBackground(Color.CYAN);
+              if(TAD3 > LIMITE) {
+                  t10.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD5 > 0) {
+              t11.setBackground(Color.CYAN);
+              if(TAD4 > LIMITE) {
+                  t11.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD6 > 0) {
+              t12.setBackground(Color.CYAN);
+              if(TAD5 > LIMITE) {
+                  t12.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD7 > 0) {
+              t13.setBackground(Color.CYAN);
+              if(TAD6 > LIMITE) {
+                  t13.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD8 > 0) {
+              t14.setBackground(Color.CYAN);
+              if(TAD7 > LIMITE) {
+                  t14.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD9 > 0) {
+              t15.setBackground(Color.CYAN);
+              if(TAD8 > LIMITE) {
+                  t15.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD10 > 0) {
+              t16.setBackground(Color.CYAN);
+              if(TAD9 > LIMITE) {
+                  t16.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD11 > 0) {
+              t17.setBackground(Color.CYAN);
+              if(TAD10 > LIMITE) {
+                  t17.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD12 > 0) {
+              t18.setBackground(Color.CYAN);
+              if(TAD11 > LIMITE) {
+                  t18.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD13 > 0) {
+              t19.setBackground(Color.CYAN);
+              if(TAD12 > LIMITE) {
+                  t19.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD14 > 0) {
+              t20.setBackground(Color.CYAN);
+              if(TAD13 > LIMITE) {
+                  t20.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD15 > 0) {
+              t21.setBackground(Color.CYAN);
+              if(TAD14 > LIMITE) {
+                  t21.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD16 > 0) {
+              t22.setBackground(Color.CYAN);
+              if(TAD15 > LIMITE) {
+                  t22.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD17 > 0) {
+              t23.setBackground(Color.CYAN);
+              if(TAD16 > LIMITE) {
+                  t23.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD18 > 0) {
+              t24.setBackground(Color.CYAN);
+              if(TAD17 > LIMITE) {
+                  t24.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD19 > 0) {
+              t25.setBackground(Color.CYAN);
+              if(TAD18 > LIMITE) {
+                  t25.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD20 > 0) {
+              t26.setBackground(Color.CYAN);
+              if(TAD19 > LIMITE) {
+                  t26.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD21 > 0) {
+              t27.setBackground(Color.CYAN);
+              if(TAD20 > LIMITE) {
+                  t27.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD22 > 0) {
+              t28.setBackground(Color.CYAN);
+              if(TAD21 > LIMITE) {
+                  t28.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD23 > 0) {
+              t29.setBackground(Color.CYAN);
+              if(TAD22 > LIMITE) {
+                  t29.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD24 > 0) {
+              t30.setBackground(Color.CYAN);
+              if(TAD23 > LIMITE) {
+                  t30.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD25 > 0) {
+              t31.setBackground(Color.CYAN);
+              if(TAD24 > LIMITE) {
+                  t31.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD26 > 0) {
+              t32.setBackground(Color.CYAN);
+              if(TAD25 > LIMITE) {
+                  t32.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD27 > 0) {
+              t33.setBackground(Color.CYAN);
+              if(TAD26 > LIMITE) {
+                  t33.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD28 > 0) {
+              t34.setBackground(Color.CYAN);
+              if(TAD27 > LIMITE) {
+                  t34.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD29 > 0) {
+              t35.setBackground(Color.CYAN);
+              if(TAD28 > LIMITE) {
+                  t35.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD30 > 0) {
+              t36.setBackground(Color.CYAN);
+              if(TAD29 > LIMITE) {
+                  t36.setBackground(Color.RED);
+                }
+            }
+              if(D.equals("" + x) & TAD31 > 0) {
+              t37.setBackground(Color.CYAN);
+              if(TAD30 > LIMITE) {
+                  t37.setBackground(Color.RED);
+              
+                }
+            }      
+        }
+    }
+    
+    
 }

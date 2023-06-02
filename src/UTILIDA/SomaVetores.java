@@ -11,11 +11,21 @@ package UTILIDA;
  */
 public class SomaVetores {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        new SomaVetores().SomaVetores();
     }
     
+        String[] coluna = {"C1", "C2", "C3"};
+        String[] valor = {"V1", "V2", "V3"};
+        String VALORES = "", VIRGULA = "";
+    
+    public void SomaVetores() {
+        for(int i=0; i<coluna.length; i++) {
+            VALORES = VALORES + VIRGULA + coluna[i] + "'"+valor[i]+"'";
+            if("".equals(VIRGULA)) {
+                VIRGULA = ",";
+            }
+        }
+        System.out.println(VALORES);
+    }    
 }
