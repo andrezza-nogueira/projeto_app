@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 /**
  *
@@ -34,6 +36,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
             TAD17 = 0, TAD18 = 0, TAD19 = 0, TAD20 = 0, TAD21 = 0, TAD22 = 0, TAD23 = 0, TAD24 = 0,
             TAD25 = 0, TAD26 = 0, TAD27 = 0, TAD28 = 0, TAD29 = 0, TAD30 = 0, TAD31 = 0;
     
+    String MS = "Registe ou altere um agendamento";
+    
+    
 
     public PRINCIPAL() {
         initComponents();
@@ -44,6 +49,36 @@ public class PRINCIPAL extends javax.swing.JFrame {
         CALENDARIO_EVT();
         LEGENDA();
         
+        
+        VoltarDataInicial.setToolTipText("Voltar para a data atual");
+        
+        N930.setToolTipText(MS);
+        N1000.setToolTipText(MS);
+        N1030.setToolTipText(MS);
+        N1100.setToolTipText(MS);
+        N1130.setToolTipText(MS);
+        N1200.setToolTipText(MS);
+        N1230.setToolTipText(MS);
+        N1300.setToolTipText(MS);
+        N1330.setToolTipText(MS);
+        N1400.setToolTipText(MS);
+        N1430.setToolTipText(MS);
+        N1500.setToolTipText(MS);
+        N1530.setToolTipText(MS);
+        N1600.setToolTipText(MS);
+        N1630.setToolTipText(MS);
+        N1700.setToolTipText(MS);
+        N1730.setToolTipText(MS);
+        N1800.setToolTipText(MS);
+        N1830.setToolTipText(MS);
+        N1900.setToolTipText(MS);
+        N1930.setToolTipText(MS);
+        N2000.setToolTipText(MS);
+        N2030.setToolTipText(MS);
+        N2100.setToolTipText(MS);
+        
+        
+        
     }
     
 
@@ -51,9 +86,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu11 = new javax.swing.JMenu();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         SelecaoMes = new javax.swing.JComboBox<>();
@@ -263,21 +296,18 @@ public class PRINCIPAL extends javax.swing.JFrame {
         Animacao = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jMenu10 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
+        jMenu9 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenu12 = new javax.swing.JMenu();
-        jMenu9 = new javax.swing.JMenu();
-
-        jMenu1.setText("jMenu1");
-
-        jMenu2.setText("jMenu2");
-
-        jMenu11.setText("jMenu11");
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
+        jRadioButtonMenuItem4 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1698,16 +1728,13 @@ public class PRINCIPAL extends javax.swing.JFrame {
 
         jMenu3.setText("Arquivo");
 
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
-        jMenu3.add(jRadioButtonMenuItem1);
-
         jMenu10.setText("jMenu10");
         jMenu3.add(jMenu10);
 
         jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Editar");
+        jMenu4.setMargin(new java.awt.Insets(0, 5, 0, 5));
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Password");
@@ -1717,18 +1744,62 @@ public class PRINCIPAL extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
+        jMenu9.setText("Resultados");
+        jMenu9.setMargin(new java.awt.Insets(0, 5, 0, 5));
+        jMenuBar1.add(jMenu9);
+
         jMenu7.setText("Exibir");
 
         jMenu8.setText("Editar");
         jMenu7.add(jMenu8);
 
-        jMenu12.setText("jMenu12");
+        jMenu12.setText("Look and Feel");
+        jMenu12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu12ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButtonMenuItem1);
+        jRadioButtonMenuItem1.setText("MetalButton");
+        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jRadioButtonMenuItem1);
+
+        buttonGroup1.add(jRadioButtonMenuItem2);
+        jRadioButtonMenuItem2.setText("MotiButton");
+        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jRadioButtonMenuItem2);
+
+        buttonGroup1.add(jRadioButtonMenuItem3);
+        jRadioButtonMenuItem3.setSelected(true);
+        jRadioButtonMenuItem3.setText("WindowsButton");
+        jRadioButtonMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jRadioButtonMenuItem3);
+
+        buttonGroup1.add(jRadioButtonMenuItem4);
+        jRadioButtonMenuItem4.setText("Nimbus");
+        jRadioButtonMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu12.add(jRadioButtonMenuItem4);
+
         jMenu7.add(jMenu12);
 
         jMenuBar1.add(jMenu7);
-
-        jMenu9.setText("Resultados");
-        jMenuBar1.add(jMenu9);
 
         setJMenuBar(jMenuBar1);
 
@@ -2083,6 +2154,35 @@ public class PRINCIPAL extends javax.swing.JFrame {
         S2100.setToolTipText(S2100.getText());
     }//GEN-LAST:event_S2100MouseEntered
 
+    private void jMenu12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu12ActionPerformed
+//        ModoExibicao = "WindowsButton";
+//        RETIRABORDA();
+    }//GEN-LAST:event_jMenu12ActionPerformed
+
+    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
+//        ModoExibicao = "MetalButton";
+//        RETIRABORDA();
+//        MODOEXIBICAO();
+    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
+
+    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
+//        ModoExibicao = "MotiButton";
+//        MODOEXIBICAO();
+//        RETIRABORDA();
+    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
+
+    private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
+//        ModoExibicao = "WindowsButton";
+//        RETIRABORDA();
+//        MODOEXIBICAO();
+    }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
+
+    private void jRadioButtonMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem4ActionPerformed
+//        ModoExibicao = "NimbusButton";
+//        RETIRABORDA();
+//        MODOEXIBICAO();
+    }//GEN-LAST:event_jRadioButtonMenuItem4ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -2224,6 +2324,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel T2100;
     private javax.swing.JLabel T930;
     private javax.swing.JButton VoltarDataInicial;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
@@ -2250,11 +2351,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
-    private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
@@ -2264,6 +2362,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -2339,6 +2440,29 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel t9;
     // End of variables declaration//GEN-END:variables
 
+//public void MODOEXIBICAO() {
+//    String plaf = "";
+//    if("MetalButton".equals(ModoExibicao)) {
+//        plaf = "javax.swing.plaf.metal.MetalLookAndFeel";
+//    } else if ("MotifButton".equals(ModoExibicao)) {
+//        plaf = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
+//    } else if ("WindowsButton".equals(ModoExibicao)) {
+//        plaf = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
+//    } else if ("MacButton".equals(ModoExibicao)) {
+//        plaf = "com.sun.java.swing.plaf.mac.MacLookAndFeel";
+//    } else if ("Nimbus".equals(ModoExibicao)) {
+//        plaf = "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel";
+//    }
+//    
+//    try {
+//        UIManager.setLookAndFeel (plaf);
+//        SwingUtilities.updateComponentTreeUI(this);
+//    } catch (Exception e) {
+//        
+//    }
+//}    
+    
+    
 //construçao do calendario
 public void INICIACALENDARIO() { //alteração do formato para data
         SimpleDateFormat Ano = new SimpleDateFormat("yyyy");
@@ -4049,7 +4173,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         
   }
 
- public void LEGENDA() {
+public void LEGENDA() {
         N930.setText("");
         S930.setText("");
         N1000.setText("");
@@ -4364,8 +4488,9 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         System.out.println(err);
     }  
  
-}    
-    public void MOSTRA_DADOS_LIMITE() {
+}
+
+public void MOSTRA_DADOS_LIMITE() {
         try {
             CONEXAO.executaSQL("select * from configuracao");
             CONEXAO.resultset.first();
@@ -4376,7 +4501,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
     
     }
     
-    public void INSERE_COR_CALENDARIO() {
+public void INSERE_COR_CALENDARIO() {
             TAD1 = 0; 
             TAD2 = 0; 
             TAD3 = 0; 
@@ -4544,7 +4669,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
             }
     }
     
-    public void SEMANA_0() {
+public void SEMANA_0() {
         t1.setBackground(new java.awt.Color(204, 204, 204));
         t2.setBackground(new java.awt.Color(204, 204, 204));
         t3.setBackground(new java.awt.Color(204, 204, 204));
@@ -4595,7 +4720,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
  
     }
     
-    public void SEMANA_1() {
+public void SEMANA_1() {
         int x = 0;
         
         String[] DIA = {t1.getText(), t2.getText(), t3.getText(), t4.getText(), t5.getText(),
@@ -4798,7 +4923,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         }
     }
     
-   public void SEMANA_2() {
+public void SEMANA_2() {
         int x = 0;
         
         String[] DIA = {t2.getText(), t3.getText(), t4.getText(), t5.getText(),
@@ -5001,7 +5126,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         }
     }
    
-    public void SEMANA_3() {
+public void SEMANA_3() {
         int x = 0;
         
         String[] DIA = {t3.getText(), t4.getText(), t5.getText(),
@@ -5204,7 +5329,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         }
     }
     
-   public void SEMANA_4() {
+public void SEMANA_4() {
         int x = 0;
         
         String[] DIA = {t4.getText(), t5.getText(),
@@ -5407,7 +5532,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         }
     }
    
-    public void SEMANA_5() {
+public void SEMANA_5() {
         int x = 0;
         
         String[] DIA = {t5.getText(),
@@ -5610,7 +5735,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         }
     }
     
-    public void SEMANA_6() {
+public void SEMANA_6() {
         int x = 0;
         
         String[] DIA = {
@@ -5813,7 +5938,7 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         }
     }
     
-    public void SEMANA_7() {
+public void SEMANA_7() {
         int x = 0;
         
         String[] DIA = {
@@ -6016,5 +6141,56 @@ public void CALENDARIO_EVT() { //adiciona evento de passar o rato, sair e clicar
         }
     }
     
-    
+//   public void RETIRABORDA() {
+//        N930.setBorder(null);
+//        S930.setBorder(null);
+//        N1000.setBorder(null);
+//        S1000.setBorder(null);
+//        N1030.setBorder(null);
+//        S1030.setBorder(null);
+//        N1100.setBorder(null);
+//        S1100.setBorder(null);
+//        N1130.setBorder(null);
+//        S1130.setBorder(null);
+//        N1200.setBorder(null);
+//        S1200.setBorder(null);
+//        N1230.setBorder(null);
+//        S1230.setBorder(null);
+//        N1300.setBorder(null);
+//        S1300.setBorder(null);
+//        N1330.setBorder(null);
+//        S1330.setBorder(null);
+//        N1400.setBorder(null);
+//        S1400.setBorder(null);
+//        N1430.setBorder(null);
+//        S1430.setBorder(null);
+//        N1500.setBorder(null);
+//        S1500.setBorder(null);
+//        N1530.setBorder(null);
+//        S1530.setBorder(null);
+//        N1600.setBorder(null);
+//        S1600.setBorder(null);
+//        N1630.setBorder(null);
+//        S1630.setBorder(null);
+//        N1700.setBorder(null);
+//        S1700.setBorder(null);
+//        N1730.setBorder(null);
+//        S1730.setBorder(null);
+//        S1800.setBorder(null);
+//        N1800.setBorder(null);
+//        S1830.setBorder(null);
+//        N1830.setBorder(null);
+//        S1900.setBorder(null);
+//        N1900.setBorder(null);
+//        S1930.setBorder(null);
+//        N1930.setBorder(null);
+//        S2000.setBorder(null);
+//        N2000.setBorder(null);
+//        S2030.setBorder(null);
+//        N2030.setBorder(null);
+//        S2100.setBorder(null);
+//        N2100.setBorder(null);
+//       
+//      }  
+//       
 }

@@ -1,5 +1,6 @@
 package AGENDAMENTO;
 
+import PRINCIPAL.PRINCIPAL;
 import UTILIDA.CONEXAO;
 import UTILIDA.GRA_ALT_EXC;
 import java.awt.Color;
@@ -763,7 +764,24 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private javax.swing.JLabel t9;
     // End of variables declaration//GEN-END:variables
 
-    public void CALENDARIO_V1() {
+    
+private PRINCIPAL ECRAPRIN;
+
+    public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
+    this.ECRAPRIN = MostraAgenda;
+        
+    if(ECRAPRIN.ChamaAgenda == 0) {
+       BOTAOSALVAR.setToolTipText("Salvar agendamento");
+       BOTAOSALVAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
+       TabelaAgendamento.setVisible(false);
+       jScrollPane2.setVisible(false);
+       BotaoExcluir.setVisible(false);
+       java.awt.Dimension.screeSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+       setBounds((screenSize.width - 617) / 2, (screenSize.heigth - 380) / 2, )
+    }
+    }
+    
+public void CALENDARIO_V1() {
         SimpleDateFormat Ano = new SimpleDateFormat("yyyy");
         SimpleDateFormat Mes = new SimpleDateFormat("MM");
         SimpleDateFormat Dia = new SimpleDateFormat("dd");
@@ -2241,7 +2259,7 @@ public void CALENDARIO_V3() {
         });
 }
 
-    public void PreencheData() { //preenche a data conforme solicitado no formulario
+public void PreencheData() { //preenche a data conforme solicitado no formulario
         int MES1 = (SelecaoMes.getSelectedIndex() + 1);
         String MES2 = "";
         if (MES1 < 10) {
@@ -2260,7 +2278,7 @@ public void CALENDARIO_V3() {
         
     }
 
-    public void gravar() throws IOException {
+public void gravar() throws IOException {
         String dia = DATAAGENDAMENTO.getText().substring(0, 2);
         String mes = DATAAGENDAMENTO.getText().substring(3, 5);
         String ano = DATAAGENDAMENTO.getText().substring(6, 10);
@@ -2268,10 +2286,10 @@ public void CALENDARIO_V3() {
         String[] coluna = {"nome", "servico", "dia", "mes", "ano", "hora", "observacao"};
         String[] valor = {nome.getText(), servico.getText(), dia, mes, ano, hora.getText(), observacao.getText()};
         String tabela = "agenda";
-        String Mensagem = "Scheduling done";
+        String Mensagem = "Agendamento concluido";
         GRA_ALT_EXC grava = new GRA_ALT_EXC();
         grava.GRAVA(coluna, valor, tabela, Mensagem);
         
     }
 
- }
+}
