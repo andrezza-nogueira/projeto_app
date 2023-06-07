@@ -6,13 +6,14 @@ import UTILIDA.GRA_ALT_EXC;
 import java.awt.Color;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.table.DefaultTableModel;
+import java.sql.SQLException;
+
 
 /**
  *
@@ -27,6 +28,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     DefaultListModel MODELOSERVICO = new DefaultListModel();
     
     CONEXAO CONEXAO = new CONEXAO();
+    int grava = 0;
 
 
     public AGENDAMENTO(java.awt.Frame parent, boolean modal) {
@@ -114,7 +116,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jSeparator3 = new javax.swing.JSeparator();
         BotaoExcluir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TabelaAgendamento = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         observacao = new javax.swing.JTextArea();
         Lnome = new javax.swing.JLabel();
@@ -525,8 +527,8 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jLayeredPane1.add(BotaoExcluir);
         BotaoExcluir.setBounds(470, 0, 50, 50);
 
-        jTable1.setForeground(new java.awt.Color(153, 153, 153));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TabelaAgendamento.setForeground(new java.awt.Color(153, 153, 153));
+        TabelaAgendamento.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -537,7 +539,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
                 "Nome", "Serviço", "Data ", "Observação"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TabelaAgendamento);
 
         jLayeredPane1.add(jScrollPane1);
         jScrollPane1.setBounds(20, 310, 470, 110);
@@ -673,7 +675,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+                AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true); //CHAMA O AGENDAMENTO
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -701,6 +703,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private javax.swing.JLabel Lservico;
     private javax.swing.JComboBox SelecaoAno;
     private javax.swing.JComboBox<String> SelecaoMes;
+    private javax.swing.JTable TabelaAgendamento;
     private javax.swing.JLabel hora;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -709,7 +712,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel ls1;
     private javax.swing.JLabel ls2;
     private javax.swing.JLabel ls3;
@@ -771,16 +773,39 @@ private PRINCIPAL ECRAPRIN;
     this.ECRAPRIN = MostraAgenda;
         
     if(ECRAPRIN.ChamaAgenda == 0) {
-       BOTAOSALVAR.setToolTipText("Salvar agendamento");
-       BOTAOSALVAR.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
+       BotaoSalvar.setToolTipText("Salvar agendamento");
+       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
        TabelaAgendamento.setVisible(false);
        jScrollPane2.setVisible(false);
        BotaoExcluir.setVisible(false);
-       java.awt.Dimension.screeSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-       setBounds((screenSize.width - 617) / 2, (screenSize.heigth - 380) / 2, )
+       java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+       setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
+       grava = 0;
+       TRAS_DATA_ECRA_PRINCIPAL();
+       setVisible(true);
+    }   else if (ECRAPRIN.ChamaAgenda == 1) {
+       BotaoSalvar.setToolTipText("Salvar alteraçoes no agendamento");
+       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
+       TabelaAgendamento.setVisible(false);
+       jScrollPane2.setVisible(false);
+       java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+       setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
+       grava = 1;
+       TRAS_DADOS_ECRAPRINCIPAL();
+       setVisible(true);
+    } else if (ECRAPRIN.ChamaAgenda == 2) {
+       BotaoSalvar.setToolTipText("Salvar alteraçoes no agendamento");
+       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
+       TabelaAgendamento.setVisible(false);
+       jScrollPane2.setVisible(false);
+       java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+       setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
+       grava = 1;
+       TRAS_DADOS_ECRAPRINCIPAL();
+       PREENCHE_TABELA();
+       setVisible(true);
     }
-    }
-    
+}    
 public void CALENDARIO_V1() {
         SimpleDateFormat Ano = new SimpleDateFormat("yyyy");
         SimpleDateFormat Mes = new SimpleDateFormat("MM");
@@ -2290,6 +2315,77 @@ public void gravar() throws IOException {
         GRA_ALT_EXC grava = new GRA_ALT_EXC();
         grava.GRAVA(coluna, valor, tabela, Mensagem);
         
+    }
+
+public void TRAS_DATA_ECRA_PRINCIPAL() {
+    int x1 = ECRAPRIN.DiaAgendamento;
+    int x2 = ECRAPRIN.MesAgendamento;
+    int x3 = ECRAPRIN.AnoAgendamento;
+    
+    int MES1 = x2;
+    String MES2 = "";
+    if (MES1 < 10) {
+        MES2 = "0" + MES1;
+    } else {
+        MES2 = "" + MES1;
+    }
+    String DIA2 = "";
+    if (x1 < 10) {
+        DIA2 = "0" + x1;
+    } else {
+        DIA2 = "" + x1;
+    }
+    DATAAGENDAMENTO.setText(DIA2 + "/" + MES2 + "/" + x3);
+    hora.setText(ECRAPRIN.HoraAgendamento);
+    
+}
+
+public void TRAS_DADOS_ECRAPRINCIPAL() {
+    TRAS_DATA_ECRA_PRINCIPAL();
+    nome.setText(ECRAPRIN.NomeAgendamento);
+    servico.setText(ECRAPRIN.ServicoAgendamento);
+    observacao.setText(ECRAPRIN.ObservacaoAgendamento);
+    Cod.setText(ECRAPRIN.CodAgendamento);
+}
+
+public void PREENCHE_TABELA() {
+    CONEXAO.executaSQL("select * from agenda where dia = '" + ECRAPRIN.DiaAgendamento
+            + "' and mes = '" + ECRAPRIN.MesAgendamento
+            + "' and ano = '" + ECRAPRIN.AnoAgendamento
+            + "' and hora = '" + ECRAPRIN.HoraAgendamento
+            + "' order by nome");
+    
+    TabelaAgendamento.getColumnModel().getColumn(0).setPreferredWidth(175);
+    TabelaAgendamento.getColumnModel().getColumn(1).setPreferredWidth(250);
+    TabelaAgendamento.getColumnModel().getColumn(2).setPreferredWidth(350);
+    TabelaAgendamento.getColumnModel().getColumn(3).setPreferredWidth(225);
+    
+    DefaultTableModel modelo = (DefaultTableModel) TabelaAgendamento.getModel();
+    modelo.setNumRows(0);
+    
+    try {
+        while (CONEXAO.resultset.next()) {
+            int dia = Integer.parseInt(CONEXAO.resultset.getString("dia"));
+            int mes = Integer.parseInt(CONEXAO.resultset.getString("mes"));
+            int ano = Integer.parseInt(CONEXAO.resultset.getString("ano"));
+            String d = "";
+            String m = "";
+            if (dia < 10) {
+                d = "0";
+            }
+            if (mes < 10) {
+                m = "0";
+            }
+            
+            modelo.addRow(new Object[] {CONEXAO.resultset.getString("nome"),
+                        CONEXAO.resultset.getString("servico"),
+                        CONEXAO.resultset.getString("observacao"),
+                        d + dia + "/" + m + mes + "/" + ano + " " + CONEXAO.resultset.getString("hora")
+                        });
+        }
+    } catch (SQLException erro) {
+        
+        }
     }
 
 }

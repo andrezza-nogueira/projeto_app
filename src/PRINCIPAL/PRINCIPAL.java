@@ -1,5 +1,6 @@
 package PRINCIPAL;
 
+import AGENDAMENTO.AGENDAMENTO;
 import UTILIDA.CONEXAO;
 import java.awt.Color;
 import java.sql.SQLException;
@@ -37,8 +38,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
             TAD25 = 0, TAD26 = 0, TAD27 = 0, TAD28 = 0, TAD29 = 0, TAD30 = 0, TAD31 = 0;
     
     String MS = "Registe ou altere um agendamento";
+    public int ChamaAgenda = 0, ChamaAgendaPMenu = 1;
+    public String HoraAgendamento = "09:30", NomeAgendamento, ServicoAgendamento, ObservacaoAgendamento, CodAgendamento;
+    public int DiaAgendamento = 0, MesAgendamento = 0, AnoAgendamento = 0;
     
-    
+
 
     public PRINCIPAL() {
         initComponents();
@@ -721,6 +725,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1000.setBorder(null);
         N1000.setOpaque(false);
         N1000.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1000MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1000MouseEntered(evt);
             }
@@ -766,6 +773,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N930.setBorder(null);
         N930.setOpaque(false);
         N930.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N930MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N930MouseEntered(evt);
             }
@@ -818,6 +828,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1030.setBorder(null);
         N1030.setOpaque(false);
         N1030.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1030MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1030MouseEntered(evt);
             }
@@ -860,6 +873,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1100.setBorder(null);
         N1100.setOpaque(false);
         N1100.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1100MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1100MouseEntered(evt);
             }
@@ -902,6 +918,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1130.setBorder(null);
         N1130.setOpaque(false);
         N1130.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1130MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1130MouseEntered(evt);
             }
@@ -944,6 +963,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1200.setBorder(null);
         N1200.setOpaque(false);
         N1200.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1200MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1200MouseEntered(evt);
             }
@@ -986,6 +1008,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1230.setBorder(null);
         N1230.setOpaque(false);
         N1230.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1230MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1230MouseEntered(evt);
             }
@@ -1028,6 +1053,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1300.setBorder(null);
         N1300.setOpaque(false);
         N1300.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1300MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1300MouseEntered(evt);
             }
@@ -1070,6 +1098,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1330.setBorder(null);
         N1330.setOpaque(false);
         N1330.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1330MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1330MouseEntered(evt);
             }
@@ -1112,6 +1143,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1400.setBorder(null);
         N1400.setOpaque(false);
         N1400.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1400MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1400MouseEntered(evt);
             }
@@ -1159,6 +1193,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1430.setBorder(null);
         N1430.setOpaque(false);
         N1430.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1430MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1430MouseEntered(evt);
             }
@@ -1174,6 +1211,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N1500.setBorder(null);
         N1500.setOpaque(false);
         N1500.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                N1500MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 N1500MouseEntered(evt);
             }
@@ -2182,6 +2222,246 @@ public class PRINCIPAL extends javax.swing.JFrame {
 //        RETIRABORDA();
 //        MODOEXIBICAO();
     }//GEN-LAST:event_jRadioButtonMenuItem4ActionPerformed
+
+    private void N930MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N930MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L930.getText();
+        NomeAgendamento = N930.getText();
+        ServicoAgendamento = S930.getText();
+        ObservacaoAgendamento = Obs930;
+        CodAgendamento = Cod930;
+        SETADIAAGENDAMENTO();
+        N930.setBackground(Color.LIGHT_GRAY);
+        if (T930.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T930.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N930.setBackground(Color.WHITE);
+    }//GEN-LAST:event_N930MouseClicked
+
+    private void N1000MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1000MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1000.getText();
+        NomeAgendamento = N1000.getText();
+        ServicoAgendamento = S1000.getText();
+        ObservacaoAgendamento = Obs1000;
+        CodAgendamento = Cod1000;
+        SETADIAAGENDAMENTO();
+        N1000.setBackground(Color.LIGHT_GRAY);
+        if (T1000.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1000.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1000.setBackground(Color.WHITE);
+    }//GEN-LAST:event_N1000MouseClicked
+
+    private void N1030MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1030MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1030.getText();
+        NomeAgendamento = N1030.getText();
+        ServicoAgendamento = S1030.getText();
+        ObservacaoAgendamento = Obs1030;
+        CodAgendamento = Cod1030;
+        SETADIAAGENDAMENTO();
+        N1030.setBackground(Color.LIGHT_GRAY);
+        if (T1030.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1030.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1030.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1030MouseClicked
+
+    private void N1100MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1100MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1100.getText();
+        NomeAgendamento = N1100.getText();
+        ServicoAgendamento = S1100.getText();
+        ObservacaoAgendamento = Obs1100;
+        CodAgendamento = Cod1100;
+        SETADIAAGENDAMENTO();
+        N1100.setBackground(Color.LIGHT_GRAY);
+        if (T1100.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1100.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1100.setBackground(Color.WHITE);
+    }//GEN-LAST:event_N1100MouseClicked
+
+    private void N1130MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1130MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1130.getText();
+        NomeAgendamento = N1130.getText();
+        ServicoAgendamento = S1130.getText();
+        ObservacaoAgendamento = Obs1130;
+        CodAgendamento = Cod1130;
+        SETADIAAGENDAMENTO();
+        N1130.setBackground(Color.LIGHT_GRAY);
+        if (T1130.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1130.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1130.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1130MouseClicked
+
+    private void N1200MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1200MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1200.getText();
+        NomeAgendamento = N1200.getText();
+        ServicoAgendamento = S1200.getText();
+        ObservacaoAgendamento = Obs1200;
+        CodAgendamento = Cod1200;
+        SETADIAAGENDAMENTO();
+        N1200.setBackground(Color.LIGHT_GRAY);
+        if (T1200.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1200.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1200.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1200MouseClicked
+
+    private void N1230MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1230MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1230.getText();
+        NomeAgendamento = N1230.getText();
+        ServicoAgendamento = S1230.getText();
+        ObservacaoAgendamento = Obs1230;
+        CodAgendamento = Cod1230;
+        SETADIAAGENDAMENTO();
+        N1230.setBackground(Color.LIGHT_GRAY);
+        if (T1230.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1230.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1230.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1230MouseClicked
+
+    private void N1300MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1300MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1300.getText();
+        NomeAgendamento = N1300.getText();
+        ServicoAgendamento = S1300.getText();
+        ObservacaoAgendamento = Obs1300;
+        CodAgendamento = Cod1300;
+        SETADIAAGENDAMENTO();
+        N1300.setBackground(Color.LIGHT_GRAY);
+        if (T1300.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1300.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1300.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1300MouseClicked
+
+    private void N1330MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1330MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1330.getText();
+        NomeAgendamento = N1330.getText();
+        ServicoAgendamento = S1330.getText();
+        ObservacaoAgendamento = Obs1330;
+        CodAgendamento = Cod1330;
+        SETADIAAGENDAMENTO();
+        N1330.setBackground(Color.LIGHT_GRAY);
+        if (T1330.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1330.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1330.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1330MouseClicked
+
+    private void N1400MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1400MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1400.getText();
+        NomeAgendamento = N1400.getText();
+        ServicoAgendamento = S1400.getText();
+        ObservacaoAgendamento = Obs1400;
+        CodAgendamento = Cod1400;
+        SETADIAAGENDAMENTO();
+        N1400.setBackground(Color.LIGHT_GRAY);
+        if (T1400.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1400.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1400.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1400MouseClicked
+
+    private void N1430MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1430MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1430.getText();
+        NomeAgendamento = N1430.getText();
+        ServicoAgendamento = S1430.getText();
+        ObservacaoAgendamento = Obs1430;
+        CodAgendamento = Cod1430;
+        SETADIAAGENDAMENTO();
+        N1430.setBackground(Color.LIGHT_GRAY);
+        if (T1430.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1430.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1430.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1430MouseClicked
+
+    private void N1500MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N1500MouseClicked
+        AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
+        HoraAgendamento = L1500.getText();
+        NomeAgendamento = N1500.getText();
+        ServicoAgendamento = S1500.getText();
+        ObservacaoAgendamento = Obs1500;
+        CodAgendamento = Cod1500;
+        SETADIAAGENDAMENTO();
+        N1500.setBackground(Color.LIGHT_GRAY);
+        if (T1500.getText().equals("")) {
+            ChamaAgenda = 0; //GRAVA O AGENDAMENTO
+        } else if (T1500.getText().equals("1"))
+            ChamaAgenda = 1; //GRAVA O AGENDAMENTO SIMPLES
+        else {
+            ChamaAgenda = 2; //GRAVA O AGENDAMENTO DE UMA TABELA
+        } 
+        dialog.MostraAgendaGravacao(this);
+        N1500.setBackground(Color.WHITE); 
+    }//GEN-LAST:event_N1500MouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -6140,6 +6420,12 @@ public void SEMANA_7() {
             }      
         }
     }
+
+public void SETADIAAGENDAMENTO() {
+    DiaAgendamento = DiaAltera;
+    MesAgendamento = SelecaoMes.getSelectedIndex() + 1;
+    AnoAgendamento = Integer.parseInt(SelecaoAno.getSelectedItem().toString());
+}
     
 //   public void RETIRABORDA() {
 //        N930.setBorder(null);
@@ -6193,4 +6479,5 @@ public void SEMANA_7() {
 //       
 //      }  
 //       
+
 }
