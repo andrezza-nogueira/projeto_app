@@ -619,6 +619,11 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jSeparator3.setBounds(30, 120, 500, 10);
 
         BotaoExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/deleta.png"))); // NOI18N
+        BotaoExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoExcluirActionPerformed(evt);
+            }
+        });
         jLayeredPane1.add(BotaoExcluir);
         BotaoExcluir.setBounds(470, 0, 50, 50);
 
@@ -673,7 +678,9 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 575, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -683,6 +690,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SelecaoMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecaoMesActionPerformed
@@ -893,6 +901,38 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             System.out.println(err);
         }
     }//GEN-LAST:event_BotaoNovoAgendamentoActionPerformed
+
+    private void BotaoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoExcluirActionPerformed
+       try {
+           int opcao = JOptionPane.showConfirmDialog(null, "Deseja excluir?");
+           if (opcao == JOptionPane.YES_NO_OPTION) {
+               Excluir();
+               PREENCHE_TABELA();
+               INSERE_COR_CALENDARIO();
+               dispose();
+           }
+       } catch (Exception err1) {
+           System.out.println(err1);
+       }
+       
+       try {
+           ECRAPRIN.LEGENDA();
+           ECRAPRIN.INSERE_COR_CALENDARIO();
+       } catch (Exception err1) {
+           System.out.println("Erro na atualização" + err1);
+       }
+       
+//       try {
+//           PESQUISAAGENDA.PESQUISANOME();
+//           PESQUISAAGENDA.ECRAPRIN.LEGENDA();
+//           PESQUISAAGENDA.ECRAPRIN.INSERE_COR_CALENDARIO();
+//           
+//           dispose();
+//       } catch (Exception err1) {
+//           System.out.println("Erro na atualização na pesquisa de agendamento" + err1);
+//       }
+       
+    }//GEN-LAST:event_BotaoExcluirActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -4221,7 +4261,7 @@ public void MOSTRA_DADOS_LIMITE() {
     
     }
 
-public void gravar() throws IOException {
+public void gravar() throws IOException { // VAI UTILIZAR O METODO DO BANCO DE DADOS GRAVAR
         String dia = DATAAGENDAMENTO.getText().substring(0, 2);
         String mes = DATAAGENDAMENTO.getText().substring(3, 5);
         String ano = DATAAGENDAMENTO.getText().substring(6, 10);
@@ -4235,7 +4275,7 @@ public void gravar() throws IOException {
         
     }
 
-public void Alteracao() throws IOException {
+public void Alteracao() throws IOException { // VAI UTILIZAR O METODO DO BANCO DE DADOS ALTERAR
     String dia = DATAAGENDAMENTO.getText().substring(0, 2);
     String mes = DATAAGENDAMENTO.getText().substring(3, 5);
     String ano = DATAAGENDAMENTO.getText().substring(6, 10);
@@ -4249,6 +4289,18 @@ public void Alteracao() throws IOException {
     altera.ALTERA(coluna, valor, tabela, condicao);
     
 }
+
+public void Excluir() throws IOException { // VAI UTILIZAR O METODO DO BANCO DE DADOS EXCLUIR
+        try {
+            int x = Integer.parseInt(Cod.getText());
+            String tabela = "agenda";
+            String condicao = " WHERE cod = " + Cod.getText();
+            GRA_ALT_EXC exclui = new GRA_ALT_EXC();
+            exclui.EXCLUIR(tabela, condicao);
+        } catch (Exception err) {
+            System.out.println(err);
+        }
+    }
 
 public void TRAS_DATA_ECRA_PRINCIPAL() {
     int x1 = ECRAPRIN.DiaAgendamento;
@@ -4515,5 +4567,7 @@ public void MOSTRA_DADOS_TABELA() {
 //        JOptionPane.showMessageDialog(null, "Erro" + erro);
         }
     }
+
+    
         
 }

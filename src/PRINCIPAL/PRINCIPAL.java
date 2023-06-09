@@ -1893,7 +1893,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setBounds(0, 0, 1282, 719);
+        setSize(new java.awt.Dimension(1282, 719));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void VoltarDataInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarDataInicialActionPerformed
@@ -5044,7 +5045,7 @@ public void LEGENDA() {
 
 public void MOSTRA_DADOS_LIMITE() {
         try {
-            CONEXAO.executaSQL("select * from configuracao");
+            CONEXAO.executaSQL("select * from configuracao ");
             CONEXAO.resultset.first();
             LIMITE = Integer.parseInt(CONEXAO.resultset.getString("limiteagendamento")) - 1;
         } catch (SQLException erro) {

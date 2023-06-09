@@ -38,7 +38,7 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
                 + "(" + VALUE + ")";
         CONEXAO_BANCO.statement.executeUpdate(SQL);
         Icon figura = (new ImageIcon(getClass().getResource("/IMAGEM/verifica.png")));
-        JOptionPane.showMessageDialog(null, Mensagem, "Concluded", JOptionPane.PLAIN_MESSAGE, figura);
+        JOptionPane.showMessageDialog(null, Mensagem, "Concluido", JOptionPane.PLAIN_MESSAGE, figura);
         
     } catch (SQLException erro) {
         JOptionPane.showInternalMessageDialog(null, "Recording Error" + erro);
@@ -68,7 +68,7 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
          String SQL = "update " + tabela + " SET " + VALORES + " " + condicao;
          CONEXAO_BANCO.statement.executeUpdate(SQL);
          Icon figura = (new ImageIcon(getClass().getResource("")));
-         JOptionPane.showMessageDialog(null, "Changed", "Concluded", JOptionPane.PLAIN_MESSAGE, figura);
+         JOptionPane.showMessageDialog(null, "Alterado", "Concluido", JOptionPane.PLAIN_MESSAGE, figura);
          
      } catch (SQLException erro) {
          JOptionPane.showMessageDialog(null, "Change error" + erro.toString());
@@ -88,7 +88,7 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
             String SQLDELETA = "delete from " + tabela + " " + condicao + "";
             CONEXAO_BANCO.statement.executeUpdate(SQLDELETA);
             Icon figura = (new ImageIcon(getClass().getResource("")));
-            JOptionPane.showMessageDialog(null, "Excluded", "Concluded", JOptionPane.PLAIN_MESSAGE, figura);
+            JOptionPane.showMessageDialog(null, "Excluido", "Concluido", JOptionPane.PLAIN_MESSAGE, figura);
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error deleting" + ex.toString());
         }
