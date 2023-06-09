@@ -2,6 +2,7 @@ package PRINCIPAL;
 
 import AGENDAMENTO.AGENDAMENTO;
 import UTILIDA.CONEXAO;
+import UTILIDA.FormataDados;
 import UTILIDA.GRA_ALT_EXC;
 import java.io.IOException;
 import javax.swing.table.DefaultTableModel;
@@ -21,6 +22,7 @@ public class CONTACTO extends javax.swing.JDialog {
         int ListaNomeEnter = 0;
         int filtro = 0;
         String CodigoVetor[];
+        FormataDados FORTEL = new FormataDados();
             
             
     public CONTACTO(java.awt.Frame parent, boolean modal) {
@@ -36,8 +38,6 @@ public class CONTACTO extends javax.swing.JDialog {
         BotaoExcluir.setToolTipText("Excluir contacto");
         BotaoExcluir.setVisible(false);
         Cod.setVisible(false);
-        
-
 
         Lfiltro.setVisible(false);
         Filtro.setVisible(false);
@@ -168,7 +168,7 @@ public class CONTACTO extends javax.swing.JDialog {
             }
         });
         Camadas.add(email);
-        email.setBounds(50, 180, 420, 20);
+        email.setBounds(60, 180, 410, 20);
 
         nome.setBorder(null);
         nome.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -186,7 +186,7 @@ public class CONTACTO extends javax.swing.JDialog {
             }
         });
         Camadas.add(morada);
-        morada.setBounds(60, 120, 440, 20);
+        morada.setBounds(70, 120, 430, 20);
 
         PesquisaNome.setBorder(null);
         PesquisaNome.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +209,7 @@ public class CONTACTO extends javax.swing.JDialog {
             }
         });
         Camadas.add(freguesia);
-        freguesia.setBounds(70, 150, 220, 20);
+        freguesia.setBounds(80, 150, 210, 20);
 
         TabelaContacto.setAutoCreateRowSorter(true);
         TabelaContacto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -261,12 +261,17 @@ public class CONTACTO extends javax.swing.JDialog {
 
         Lemail.setText("E-mail:");
         Camadas.add(Lemail);
-        Lemail.setBounds(10, 180, 50, 20);
+        Lemail.setBounds(10, 180, 40, 20);
 
         telefone.setBorder(null);
         telefone.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 telefoneFocusGained(evt);
+            }
+        });
+        telefone.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                telefoneKeyReleased(evt);
             }
         });
         Camadas.add(telefone);
@@ -332,8 +337,13 @@ public class CONTACTO extends javax.swing.JDialog {
                 codigo_postalFocusGained(evt);
             }
         });
+        codigo_postal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                codigo_postalKeyReleased(evt);
+            }
+        });
         Camadas.add(codigo_postal);
-        codigo_postal.setBounds(390, 150, 110, 20);
+        codigo_postal.setBounds(400, 150, 100, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -552,6 +562,29 @@ public class CONTACTO extends javax.swing.JDialog {
         Lista.setVisible(false);
     }//GEN-LAST:event_telefoneFocusGained
 
+    private void codigo_postalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_codigo_postalKeyReleased
+        FORTEL.FCodigo(codigo_postal.getText());
+        codigo_postal.setText(FORTEL.CODIGO);
+        
+        String cp = codigo_postal.getText();
+        cp = cp.replaceAll("\\D*", ""); //nao utiliza outro caractere alem de numeros
+        int cont = cp.length();
+//        if (cont == 7) {
+//            try {
+//                correio();
+//            } catch (Error e) {
+//                JOptionPane.showMessageDialog(null, e);
+//            }
+//        }
+        
+        
+    }//GEN-LAST:event_codigo_postalKeyReleased
+
+    private void telefoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefoneKeyReleased
+        FORTEL.FTelefone(telefone.getText());
+        telefone.setText(FORTEL.FONE);
+    }//GEN-LAST:event_telefoneKeyReleased
+
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -635,7 +668,7 @@ public class CONTACTO extends javax.swing.JDialog {
  
 private PRINCIPAL ECRAPRIN;
 
-public void Mostracontacto(PRINCIPAL MostraContacto) {
+public void MostraContacto(PRINCIPAL MostraContacto) {
     this.ECRAPRIN = MostraContacto;
     setVisible(true);
 }
@@ -662,15 +695,21 @@ public void gravar() throws IOException {
     }
 
 public void Alteracao() throws IOException {
-        String[] coluna = {"nome", "morada", "freguesia", "codigo_postal", "telefone", "email", "adicionais"};
-        String[] valor = {nome.getText(), morada.getText(), freguesia.getText(), codigo_postal.getText(), telefone.getText(), email.getText(),
-       adicionais.getText()};
-        
-        String tabela = "contacto";
-        String condicao = " WHERE cod = " + Cod.getText();
-        GRA_ALT_EXC altera = new GRA_ALT_EXC();
-        altera.ALTERA(coluna, valor, tabela, condicao);
-        PREENCHE_TABELA();
+        try {
+            int x = Integer.parseInt(Cod.getText());
+            String[] coluna = {"nome", "morada", "freguesia", "codigo_postal", "telefone", "email", "adicionais"};
+            String[] valor = {nome.getText(), morada.getText(), freguesia.getText(), codigo_postal.getText(), telefone.getText(), email.getText(),
+           adicionais.getText()};
+
+            String tabela = "contacto";
+            String condicao = " WHERE cod = " + Cod.getText();
+            GRA_ALT_EXC altera = new GRA_ALT_EXC();
+            altera.ALTERA(coluna, valor, tabela, condicao);
+            PREENCHE_TABELA();
+
+        } catch (Exception err) {
+                System.out.println(err);
+        }
 }
 
 public void Excluir() throws IOException {
@@ -699,8 +738,8 @@ public void Limpar() {
 public void PREENCHE_TABELA() {
     CONEXAO.executaSQL("select * from contacto where nome like'" + Filtro.getText() + "%' order by nome");
     TabelaContacto.getColumnModel().getColumn(0).setPreferredWidth(400);
-//    TabelaContacto.getColumnModel().getColumn(1).setPreferredWidth(200);
-//    TabelaContacto.getColumnModel().getColumn(2).setPreferredWidth(200);
+    TabelaContacto.getColumnModel().getColumn(1).setPreferredWidth(200);
+    TabelaContacto.getColumnModel().getColumn(2).setPreferredWidth(200);
     
     DefaultTableModel modelo = (DefaultTableModel) TabelaContacto.getModel();
     modelo.setNumRows(0);

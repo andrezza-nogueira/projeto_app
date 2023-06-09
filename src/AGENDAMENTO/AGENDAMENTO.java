@@ -1,6 +1,8 @@
 package AGENDAMENTO;
 
+import PRINCIPAL.CONTACTO;
 import PRINCIPAL.PRINCIPAL;
+import PRINCIPAL.SERVICO;
 import UTILIDA.CONEXAO;
 import UTILIDA.GRA_ALT_EXC;
 import java.awt.Color;
@@ -36,6 +38,8 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     int grava = 0;
     int LIMITE = 1;
     
+    int ListaNomeEnter = 0, ListaServicoEnter = 0;
+    
     int TAD1 = 0, TAD2 = 0, TAD3 = 0, TAD4 = 0, TAD5 = 0, TAD6 = 0, TAD7 = 0, TAD8 = 0, 
             TAD9 = 0, TAD10 = 0, TAD11 = 0, TAD12 = 0, TAD13 = 0, TAD14 = 0, TAD15 = 0, TAD16 = 0,
             TAD17 = 0, TAD18 = 0, TAD19 = 0, TAD20 = 0, TAD21 = 0, TAD22 = 0, TAD23 = 0, TAD24 = 0,
@@ -58,7 +62,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         
         //colicar imagens deposi
 //        BotaoNovoServico.setToolTipText("Registar novo serviço");
-//        BotaoNovoContacto.setToolTipText("Registar novo contacto");
+        BotaoNovoContacto.setToolTipText("Registar novo contacto");
         BotaoNovoAgendamento.setToolTipText("Novo agendamento");
         BotaoSalvar.setToolTipText("Salvar agendamento");
         BotaoExcluir.setToolTipText("Excluir agendamento");
@@ -78,7 +82,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private void initComponents() {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        DATAAGENDAMENTO = new javax.swing.JLabel();
         CamadaCalendario = new javax.swing.JLayeredPane();
         SelecaoMes = new javax.swing.JComboBox<>();
         SelecaoAno = new javax.swing.JComboBox();
@@ -131,14 +134,13 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         t22 = new javax.swing.JLabel();
         t29 = new javax.swing.JLabel();
         t36 = new javax.swing.JLabel();
+        DATAAGENDAMENTO = new javax.swing.JLabel();
+        ListaSERVICO = new javax.swing.JList<>();
+        ListaNOME = new javax.swing.JList<>();
         jScrollPane4 = new javax.swing.JScrollPane();
         ListaHORA = new javax.swing.JList<>();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        ListaSERVICO = new javax.swing.JList<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelaAgendamento = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        ListaNOME = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         observacao = new javax.swing.JTextArea();
         BotaoNovoAgendamento = new javax.swing.JButton();
@@ -156,25 +158,13 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         Lobs = new javax.swing.JLabel();
         hora = new javax.swing.JLabel();
         Cod = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        BotaoNovoContacto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane1.setOpaque(true);
-
-        DATAAGENDAMENTO.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                DATAAGENDAMENTOMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                DATAAGENDAMENTOMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                DATAAGENDAMENTOMouseExited(evt);
-            }
-        });
-        jLayeredPane1.add(DATAAGENDAMENTO);
-        DATAAGENDAMENTO.setBounds(70, 130, 80, 20);
 
         CamadaCalendario.setBackground(new java.awt.Color(255, 255, 255));
         CamadaCalendario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -517,6 +507,38 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jLayeredPane1.add(CamadaCalendario);
         CamadaCalendario.setBounds(60, 150, 220, 150);
 
+        DATAAGENDAMENTO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DATAAGENDAMENTOMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DATAAGENDAMENTOMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                DATAAGENDAMENTOMouseExited(evt);
+            }
+        });
+        jLayeredPane1.add(DATAAGENDAMENTO);
+        DATAAGENDAMENTO.setBounds(70, 130, 80, 20);
+
+        ListaSERVICO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLayeredPane1.add(ListaSERVICO);
+        ListaSERVICO.setBounds(300, 150, 160, 130);
+
+        ListaNOME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ListaNOME.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                ListaNOMEFocusGained(evt);
+            }
+        });
+        ListaNOME.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaNOMEMouseClicked(evt);
+            }
+        });
+        jLayeredPane1.add(ListaNOME);
+        ListaNOME.setBounds(70, 90, 410, 10);
+
         ListaHORA.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 ListaHORAMouseMoved(evt);
@@ -531,11 +553,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
 
         jLayeredPane1.add(jScrollPane4);
         jScrollPane4.setBounds(470, 150, 90, 150);
-
-        jScrollPane3.setViewportView(ListaSERVICO);
-
-        jLayeredPane1.add(jScrollPane3);
-        jScrollPane3.setBounds(300, 120, 110, 100);
 
         TabelaAgendamento.setAutoCreateRowSorter(true);
         TabelaAgendamento.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -560,11 +577,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
 
         jLayeredPane1.add(jScrollPane1);
         jScrollPane1.setBounds(20, 310, 500, 140);
-
-        jScrollPane5.setViewportView(ListaNOME);
-
-        jLayeredPane1.add(jScrollPane5);
-        jScrollPane5.setBounds(200, 90, 80, 110);
 
         observacao.setColumns(20);
         observacao.setRows(5);
@@ -614,7 +626,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jLayeredPane1.add(jSeparator1);
         jSeparator1.setBounds(30, 150, 500, 10);
         jLayeredPane1.add(jSeparator2);
-        jSeparator2.setBounds(30, 92, 500, 10);
+        jSeparator2.setBounds(30, 92, 500, 2);
         jLayeredPane1.add(jSeparator3);
         jSeparator3.setBounds(30, 120, 500, 10);
 
@@ -644,12 +656,27 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         Lhora.setBounds(440, 130, 40, 20);
 
         nome.setBorder(null);
+        nome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeActionPerformed(evt);
+            }
+        });
+        nome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                nomeKeyReleased(evt);
+            }
+        });
         jLayeredPane1.add(nome);
-        nome.setBounds(70, 70, 460, 20);
+        nome.setBounds(70, 70, 410, 20);
 
         servico.setBorder(null);
+        servico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                servicoActionPerformed(evt);
+            }
+        });
         jLayeredPane1.add(servico);
-        servico.setBounds(80, 100, 440, 20);
+        servico.setBounds(80, 100, 410, 20);
 
         Lobs.setText("Observação:");
         jLayeredPane1.add(Lobs);
@@ -673,6 +700,24 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         Cod.setText("Cod");
         jLayeredPane1.add(Cod);
         Cod.setBounds(240, 30, 19, 14);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/pedido.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(jButton1);
+        jButton1.setBounds(500, 100, 30, 23);
+
+        BotaoNovoContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/perfil.png"))); // NOI18N
+        BotaoNovoContacto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotaoNovoContactoActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(BotaoNovoContacto);
+        BotaoNovoContacto.setBounds(500, 70, 30, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -934,6 +979,63 @@ public class AGENDAMENTO extends javax.swing.JDialog {
        
     }//GEN-LAST:event_BotaoExcluirActionPerformed
 
+    private void BotaoNovoContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoContactoActionPerformed
+        CONTACTO dialog = new CONTACTO(new javax.swing.JFrame(), true);
+        dialog.MostraContacto(this);
+    }//GEN-LAST:event_BotaoNovoContactoActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        SERVICO dialog = new SERVICO(new javax.swing.JFrame(), true);
+        dialog.MostraServico(this);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void nomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeKeyReleased
+        int cont = nome.getText().length();
+        if (cont > 0 & ListaNomeEnter == 0){
+            PesquisaNome();
+            nome.setForeground(Color.red);
+        } else {
+//            DATAAGENDAMENTO.setVisible(false);
+            ListaNOME.setVisible(false);
+            ListaNomeEnter = 0;
+        }
+    }//GEN-LAST:event_nomeKeyReleased
+
+    private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
+        try {
+            ListaNomeEnter = 1;
+            nome.setText((String) MODELONOME.getElementAt(0));
+            if (nome.getText().equals(MODELONOME.getElementAt(0))) {
+                nome.setForeground(Color.GREEN);
+        } else {
+                nome.setForeground(Color.red);
+                }
+        } catch (Exception err){
+            System.out.println(err);
+        }    
+    }//GEN-LAST:event_nomeActionPerformed
+
+    private void ListaNOMEFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ListaNOMEFocusGained
+        CamadaCalendario.setVisible(false);
+//        JScrollPane4.setVisible(false);
+        ListaHORA.setVisible(false);
+        MODELONOME.removeAllElements();
+    }//GEN-LAST:event_ListaNOMEFocusGained
+
+    private void ListaNOMEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaNOMEMouseClicked
+        try {
+            nome.setText(ListaNOME.getSelectedValue().toString());
+            nome.setForeground(Color.GREEN);
+            ListaNOME.setVisible(false);
+        } catch(Exception err) {
+            System.out.println(err);
+        }
+    }//GEN-LAST:event_ListaNOMEMouseClicked
+
+    private void servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_servicoActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -976,6 +1078,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotaoExcluir;
     private javax.swing.JButton BotaoNovoAgendamento;
+    private javax.swing.JButton BotaoNovoContacto;
     private javax.swing.JButton BotaoSalvar;
     private javax.swing.JLayeredPane CamadaCalendario;
     private javax.swing.JLabel Cod;
@@ -992,12 +1095,11 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> SelecaoMes;
     private javax.swing.JTable TabelaAgendamento;
     private javax.swing.JLabel hora;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -4514,7 +4616,7 @@ public void INSERE_COR_NA_LISTA() {
         
     }
     
-    public void MENSAGEM_PASSAR_RATO() {
+public void MENSAGEM_PASSAR_RATO() {
         try {
         int dia = Integer.parseInt(DATAAGENDAMENTO.getText().substring(0, 2));
         int mes = Integer.parseInt(DATAAGENDAMENTO.getText().substring(3, 5));
@@ -4568,6 +4670,29 @@ public void MOSTRA_DADOS_TABELA() {
         }
     }
 
-    
-        
+public void PesquisaNome(){
+    try {
+            CONEXAO.executaSQL("select * from contacto where nome like'" + nome.getText() + " %' order by nome ");
+            MODELONOME.removeAllElements();
+            int x = 0;
+           
+            while (CONEXAO.resultset.next() && x < 4) {
+                MODELONOME.addElement(CONEXAO.resultset.getString("nome"));
+                x++;
+            }
+            if (x > 0) {
+                ListaNOME.setVisible(true);
+            } else {
+                ListaNOME.setVisible(false);
+            }
+            
+            CONEXAO.resultset.first();
+        } catch (SQLException erro) {
+            
+        } catch (Exception err) {
+            System.out.println(err);
+        }
+    }
 }
+
+        
