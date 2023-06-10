@@ -106,7 +106,7 @@ public class SERVICO extends javax.swing.JDialog {
             }
         });
         Camadas.add(BotaoExcluir);
-        BotaoExcluir.setBounds(300, 10, 50, 50);
+        BotaoExcluir.setBounds(360, 10, 50, 50);
 
         nomeservico.setBorder(null);
         nomeservico.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -164,21 +164,17 @@ public class SERVICO extends javax.swing.JDialog {
 
         Cod.setText("Cod");
         Camadas.add(Cod);
-        Cod.setBounds(150, 20, 30, 14);
+        Cod.setBounds(190, 30, 30, 14);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Camadas, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2))
+            .addComponent(Camadas, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Camadas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 29, Short.MAX_VALUE))
+            .addComponent(Camadas, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

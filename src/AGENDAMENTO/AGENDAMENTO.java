@@ -39,6 +39,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     int LIMITE = 1;
     
     int ListaNomeEnter = 0, ListaServicoEnter = 0;
+    double ValorDoServico = 0;
     
     int TAD1 = 0, TAD2 = 0, TAD3 = 0, TAD4 = 0, TAD5 = 0, TAD6 = 0, TAD7 = 0, TAD8 = 0, 
             TAD9 = 0, TAD10 = 0, TAD11 = 0, TAD12 = 0, TAD13 = 0, TAD14 = 0, TAD15 = 0, TAD16 = 0,
@@ -61,7 +62,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         ListaSERVICO.setModel(MODELOSERVICO);
         
         //colicar imagens deposi
-//        BotaoNovoServico.setToolTipText("Registar novo serviço");
+        BotaoNovoServico.setToolTipText("Registar novo serviço");
         BotaoNovoContacto.setToolTipText("Registar novo contacto");
         BotaoNovoAgendamento.setToolTipText("Novo agendamento");
         BotaoSalvar.setToolTipText("Salvar agendamento");
@@ -158,7 +159,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         Lobs = new javax.swing.JLabel();
         hora = new javax.swing.JLabel();
         Cod = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        BotaoNovoServico = new javax.swing.JButton();
         BotaoNovoContacto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -522,8 +523,13 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         DATAAGENDAMENTO.setBounds(70, 130, 80, 20);
 
         ListaSERVICO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ListaSERVICO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaSERVICOMouseClicked(evt);
+            }
+        });
         jLayeredPane1.add(ListaSERVICO);
-        ListaSERVICO.setBounds(300, 150, 160, 130);
+        ListaSERVICO.setBounds(70, 120, 410, 70);
 
         ListaNOME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         ListaNOME.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -537,7 +543,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             }
         });
         jLayeredPane1.add(ListaNOME);
-        ListaNOME.setBounds(70, 90, 410, 10);
+        ListaNOME.setBounds(70, 90, 410, 90);
 
         ListaHORA.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -576,7 +582,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jScrollPane1.setViewportView(TabelaAgendamento);
 
         jLayeredPane1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 310, 500, 140);
+        jScrollPane1.setBounds(20, 310, 500, 90);
 
         observacao.setColumns(20);
         observacao.setRows(5);
@@ -670,9 +676,19 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         nome.setBounds(70, 70, 410, 20);
 
         servico.setBorder(null);
+        servico.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                servicoFocusGained(evt);
+            }
+        });
         servico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 servicoActionPerformed(evt);
+            }
+        });
+        servico.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                servicoKeyReleased(evt);
             }
         });
         jLayeredPane1.add(servico);
@@ -701,14 +717,14 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jLayeredPane1.add(Cod);
         Cod.setBounds(240, 30, 19, 14);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/pedido.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BotaoNovoServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/pedido.png"))); // NOI18N
+        BotaoNovoServico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotaoNovoServicoActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(jButton1);
-        jButton1.setBounds(500, 100, 30, 23);
+        jLayeredPane1.add(BotaoNovoServico);
+        BotaoNovoServico.setBounds(500, 100, 30, 23);
 
         BotaoNovoContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/perfil.png"))); // NOI18N
         BotaoNovoContacto.addActionListener(new java.awt.event.ActionListener() {
@@ -723,15 +739,11 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 494, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
         );
 
         pack();
@@ -901,11 +913,11 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     }//GEN-LAST:event_DATAAGENDAMENTOMouseClicked
 
     private void DATAAGENDAMENTOMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DATAAGENDAMENTOMouseEntered
-        DATAAGENDAMENTO.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        
     }//GEN-LAST:event_DATAAGENDAMENTOMouseEntered
 
     private void DATAAGENDAMENTOMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DATAAGENDAMENTOMouseExited
-        DATAAGENDAMENTO.setBorder(null);
+        
     }//GEN-LAST:event_DATAAGENDAMENTOMouseExited
 
     private void observacaoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_observacaoFocusGained
@@ -984,18 +996,17 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         dialog.MostraContacto(this);
     }//GEN-LAST:event_BotaoNovoContactoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotaoNovoServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoServicoActionPerformed
         SERVICO dialog = new SERVICO(new javax.swing.JFrame(), true);
         dialog.MostraServico(this);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotaoNovoServicoActionPerformed
 
     private void nomeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nomeKeyReleased
         int cont = nome.getText().length();
         if (cont > 0 & ListaNomeEnter == 0){
-            PesquisaNome();
+            PESQUISANOME();
             nome.setForeground(Color.red);
-        } else {
-//            DATAAGENDAMENTO.setVisible(false);
+        } else {      
             ListaNOME.setVisible(false);
             ListaNomeEnter = 0;
         }
@@ -1004,7 +1015,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private void nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeActionPerformed
         try {
             ListaNomeEnter = 1;
-            nome.setText((String) MODELONOME.getElementAt(0));
+            nome.setText(MODELONOME.getElementAt(0).toString());
             if (nome.getText().equals(MODELONOME.getElementAt(0))) {
                 nome.setForeground(Color.GREEN);
         } else {
@@ -1024,7 +1035,9 @@ public class AGENDAMENTO extends javax.swing.JDialog {
 
     private void ListaNOMEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaNOMEMouseClicked
         try {
-            nome.setText(ListaNOME.getSelectedValue().toString());
+            Object selectedValue = jList.getSelectedValue();
+if (selectedValue != null) {
+    String stringValue = selectedValue.toString();
             nome.setForeground(Color.GREEN);
             ListaNOME.setVisible(false);
         } catch(Exception err) {
@@ -1033,8 +1046,49 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     }//GEN-LAST:event_ListaNOMEMouseClicked
 
     private void servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicoActionPerformed
-        // TODO add your handling code here:
+        try {
+            ListaServicoEnter = 1;
+            servico.setText(MODELOSERVICO.getElementAt(0).toString());
+            if (servico.getText().equals(MODELOSERVICO.getElementAt(0))){
+                servico.setForeground(Color.GREEN);
+                MostraValorServicoLinhazero();
+            } else {
+                servico.setForeground(Color.red);
+                ValorDoServico = 0;
+            }
+        } catch (Exception err) {
+            System.out.println(err);
+        }
     }//GEN-LAST:event_servicoActionPerformed
+
+    private void servicoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_servicoFocusGained
+        CamadaCalendario.setVisible(false);
+        jScrollPane4.setVisible(false);
+        ListaHORA.setVisible(false);
+        MODELOSERVICO.removeAllElements();
+    }//GEN-LAST:event_servicoFocusGained
+
+    private void servicoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_servicoKeyReleased
+        int cont = servico.getText().length();
+        if (cont > 0 & ListaServicoEnter == 0) {
+            PESQUISASERVICO();
+            servico.setForeground(Color.GREEN);
+            ValorDoServico = 0;
+        } else {
+            ListaSERVICO.setVisible(false);
+            ListaServicoEnter = 0;
+        }
+    }//GEN-LAST:event_servicoKeyReleased
+
+    private void ListaSERVICOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaSERVICOMouseClicked
+        try {
+            servico.setText(ListaSERVICO.getSelectedValue().toString());          
+            servico.setForeground(Color.GREEN);
+            ListaSERVICO.setVisible(false);
+        } catch(Exception err) {
+            System.out.println(err);
+        }
+    }//GEN-LAST:event_ListaSERVICOMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1079,6 +1133,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private javax.swing.JButton BotaoExcluir;
     private javax.swing.JButton BotaoNovoAgendamento;
     private javax.swing.JButton BotaoNovoContacto;
+    private javax.swing.JButton BotaoNovoServico;
     private javax.swing.JButton BotaoSalvar;
     private javax.swing.JLayeredPane CamadaCalendario;
     private javax.swing.JLabel Cod;
@@ -1095,7 +1150,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> SelecaoMes;
     private javax.swing.JTable TabelaAgendamento;
     private javax.swing.JLabel hora;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -4670,9 +4724,9 @@ public void MOSTRA_DADOS_TABELA() {
         }
     }
 
-public void PesquisaNome(){
+public void PESQUISANOME(){
     try {
-            CONEXAO.executaSQL("select * from contacto where nome like'" + nome.getText() + " %' order by nome ");
+            CONEXAO.executaSQL("select * from contacto where nome like'" + nome.getText() + "%' order by nome");
             MODELONOME.removeAllElements();
             int x = 0;
            
@@ -4693,6 +4747,63 @@ public void PesquisaNome(){
             System.out.println(err);
         }
     }
+
+public void MostraValorServicoLinhazero() {
+        try {
+            CONEXAO.executaSQL("select * from servico where nomeservico like'" + servico.getText() + "%' order by nomeservico");
+            CONEXAO.resultset.first();
+            ValorDoServico = Double.parseDouble(CONEXAO.resultset.getString("valor"));
+        } catch (SQLException ex) {
+            Logger.getLogger(AGENDAMENTO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+public void PESQUISASERVICO() {
+        try {
+            CONEXAO.executaSQL("select * from servico where nomeservico like'" + servico.getText() + "%' order by nomeservico");
+            MODELOSERVICO.removeAllElements();
+            int x = 0;
+            while (CONEXAO.resultset.next() && x < 4) {
+                MODELOSERVICO.addElement(CONEXAO.resultset.getString("nomeservico"));
+                x++;
+            }
+            if (x > 0) {
+                MostraValorServicoLinhazero();
+                ListaSERVICO.setVisible(true);
+            } else {
+                ListaSERVICO.setVisible(false);
+                ValorDoServico = 0;
+            } 
+            CONEXAO.resultset.first();
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao localizar dados");
+        } catch (Exception err) {
+            System.out.println(err);
+        }
+    }
+
+//public void MOSTRA_DADOS_P_PESQUISAR_SERVICO() {
+//        try {
+//            int Linha = ListaSERVICO.getSelectedIndex();
+//            CONEXAO.executaSQL("select * from servico where nomeservico like'" + servico.getText() + "%' order by nomeservico LIMIT " + Linha + " , 1 ");
+//            CONEXAO.resultset.first();
+//            servico.setText(CONEXAO.resultset.getString("nomeservico"));
+//            ValorDoServico = Double.parseDouble(CONEXAO.resultset.getString("valor"));
+//        } catch (SQLException erro) {
+//            JOptionPane.showMessageDialog(null, "Erro ao localizar dados" + erro);
+//        }
+//    }
+
+//public void MOSTRA_NOME() {
+//    try {
+//        String Linha1 = String.valueOf(ListaNOME.getSelectedIndex());
+//        CONEXAO.executaSQL("select * from contacto where nome like'" + nome.getText() + "%' order by nome LIMIT " + Linha1 + " , 1 ");
+//        CONEXAO.resultset.first();
+//        nome.setText(CONEXAO.resultset.getString("nome"));
+//    } catch (SQLException erro) {
+//        JOptionPane.showMessageDialog(null, "Erro ao localizar dados" + erro);
+//    }
+//}
+
 }
 
         

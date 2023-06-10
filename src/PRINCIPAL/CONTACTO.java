@@ -89,8 +89,10 @@ public class CONTACTO extends javax.swing.JDialog {
         codigo_postal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         Camadas.setBackground(new java.awt.Color(255, 255, 255));
+        Camadas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         Camadas.setAlignmentX(0.1F);
         Camadas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Camadas.setOpaque(true);
@@ -233,7 +235,7 @@ public class CONTACTO extends javax.swing.JDialog {
         jScrollPaneTabela.setViewportView(TabelaContacto);
 
         Camadas.add(jScrollPaneTabela);
-        jScrollPaneTabela.setBounds(10, 420, 500, 100);
+        jScrollPaneTabela.setBounds(10, 420, 500, 90);
 
         adicionais.setColumns(20);
         adicionais.setRows(5);
@@ -323,13 +325,14 @@ public class CONTACTO extends javax.swing.JDialog {
         Camadas.add(Cod);
         Cod.setBounds(479, 180, 30, 14);
 
+        BotaoMaisouMenos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/tabela.png"))); // NOI18N
         BotaoMaisouMenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotaoMaisouMenosActionPerformed(evt);
             }
         });
         Camadas.add(BotaoMaisouMenos);
-        BotaoMaisouMenos.setBounds(470, 233, 40, 30);
+        BotaoMaisouMenos.setBounds(470, 240, 40, 30);
 
         codigo_postal.setBorder(null);
         codigo_postal.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -349,14 +352,12 @@ public class CONTACTO extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Camadas, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
-                .addGap(2, 2, 2))
+            .addComponent(Camadas, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(Camadas, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(Camadas, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -682,7 +683,7 @@ public void MostraContacto(AGENDAMENTO MostraContacto) {
     
 public void gravar() throws IOException {
         String[] coluna = {"nome", "morada", "freguesia", "codigo_postal", "telefone", "email", "adicionais"};
-        String[] valor = {nome.getText(), morada.getText(), freguesia.getText(), codigo_postal.getText(), PesquisaNome.getText(), email.getText(),
+        String[] valor = {nome.getText(), morada.getText(), freguesia.getText(), codigo_postal.getText(), telefone.getText(), email.getText(),
        adicionais.getText()};
         
         String tabela = "contacto";
@@ -730,7 +731,7 @@ public void Limpar() {
         morada.setText(""); 
         freguesia.setText("");
         codigo_postal.setText(""); 
-        PesquisaNome.setText(""); 
+        telefone.setText(""); 
         email.setText("");
         adicionais.setText("");
     }
@@ -777,7 +778,7 @@ public void ResultadoPesquisa() {
         morada.setText(CONEXAO.resultset.getString("morada"));
         freguesia.setText(CONEXAO.resultset.getString("freguesia"));
         codigo_postal.setText(CONEXAO.resultset.getString("codigo_postal"));
-        PesquisaNome.setText(CONEXAO.resultset.getString("telefone"));
+        telefone.setText(CONEXAO.resultset.getString("telefone"));
         email.setText(CONEXAO.resultset.getString("email"));
         adicionais.setText(CONEXAO.resultset.getString("adicionais"));
         BotaoExcluir.setVisible(true);
