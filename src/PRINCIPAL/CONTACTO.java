@@ -753,7 +753,7 @@ public void PREENCHE_TABELA() {
                         });
         }
     } catch (SQLException erro) {
-        
+        JOptionPane.showMessageDialog(null, "Erro");
     }
 }
 
@@ -784,7 +784,7 @@ public void ResultadoPesquisa() {
         BotaoExcluir.setVisible(true);
         
     } catch (SQLException erro) {
-        
+        JOptionPane.showMessageDialog(null, "Erro");
     } catch (Exception err) {
         System.out.println(err);
     }
@@ -810,7 +810,7 @@ public void Pesquisa() {
             
             CONEXAO.resultset.first();
         } catch (SQLException erro) {
-            
+            JOptionPane.showMessageDialog(null, "Erro");
         } catch (Exception err) {
             System.out.println(err);
         }

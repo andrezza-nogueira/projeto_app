@@ -1,6 +1,7 @@
 package PRINCIPAL;
 
 import AGENDAMENTO.AGENDAMENTO;
+import AGENDAMENTO.LocalizaAgendamento;
 import UTILIDA.CONEXAO;
 import java.awt.Color;
 import java.sql.SQLException;
@@ -309,8 +310,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem10 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenu12 = new javax.swing.JMenu();
@@ -1809,6 +1808,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
         Animacao.setBounds(0, 0, 1260, 660);
 
         jMenu3.setText("Arquivo");
+        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu3ActionPerformed(evt);
+            }
+        });
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/agend.png"))); // NOI18N
@@ -1865,6 +1869,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jMenu4.setMargin(new java.awt.Insets(0, 5, 0, 5));
 
         jMenuItem7.setText("Alterar limite de agendamento");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem7);
 
         jMenuItem8.setText("Localizar agendamento");
@@ -1891,14 +1900,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jMenu5.add(jMenuItem6);
 
         jMenuBar1.add(jMenu5);
-
-        jMenu9.setText("Resultados");
-        jMenu9.setMargin(new java.awt.Insets(0, 5, 0, 5));
-
-        jMenuItem10.setText("Resultados");
-        jMenu9.add(jMenuItem10);
-
-        jMenuBar1.add(jMenu9);
 
         jMenu7.setText("Exibir");
 
@@ -2840,12 +2841,22 @@ public class PRINCIPAL extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        // TODO add your handling code here:
+        LocalizaAgendamento dialog = new LocalizaAgendamento(new javax.swing.JFrame(), true);
+        dialog.MostraPesquisaAgenda(this);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        LIMITE dialog = new LIMITE(new javax.swing.JFrame(), true);
+        dialog.MostraLimite(this);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -3021,10 +3032,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
@@ -6872,4 +6881,21 @@ public void SETADIAAGENDAMENTO() {
 //      }  
 //       
 
+//public void Impressao(){
+//        try{
+//            MesAltera = MesAltera + 1;
+//            String Dat = " dia = '" + DiaAltera + "' and mes = '" + MesAltera + "' and ano = '" + AnoAltera + " ' order by hora"
+//            MesAltera = MesAltera - 1;
+//            CONEXAO.executaSQL("select * from agenda where " + Dat);
+//            
+//            JRResultSetDataSource jrRS = new JRResultSetDataSource(CONEXAO.resultset);
+//            String Endereco = "/IMPRESSAO/Agenda.jasper";
+//            InputStream Caminho = getClass().getResourceAsStream(Endereco);
+//            JasperPrint jasperPrint = JasperFillManager.fillReport(Caminho, new HashMap(), jrRS);
+//            
+//            JasperViewer.viwReport(jasperPrint, false);
+//        } catch (Exception erro) {
+//            JOptionPane.showMessageDialog(null, "Erro" + erro);
+//        }
+//    }
 }

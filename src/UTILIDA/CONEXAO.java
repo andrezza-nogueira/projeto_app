@@ -47,10 +47,12 @@ public class CONEXAO {
 
         public void executaSQL(String sql) {
             try {
+                System.out.println(sql); // Adicione esta linha para imprimir a consulta SQL
                 statement = conexao.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 resultset = statement.executeQuery(sql);
             } catch (SQLException sqlex) {
-                JOptionPane.showMessageDialog(null, "Error: It was not possible to execute the SQL command" + "" + sqlex + "The command entered was: " + sql);
+                JOptionPane.showMessageDialog(null, "Erro: Não foi possível executar o comando SQL" + sqlex + "Comando executado: " + sql);
             }
         }
+
     }

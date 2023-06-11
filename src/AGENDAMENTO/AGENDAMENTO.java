@@ -846,12 +846,16 @@ public class AGENDAMENTO extends javax.swing.JDialog {
                 ListaHORA.setVisible(true);
                 CamadaCalendario.setVisible(false);
             }
+        try {
             if (ECRAPRIN.ChamaAgendaPMenu == 0) {
                 PREENCHE_LISTA();
                 jScrollPane4.setVisible(true);
                 ListaHORA.setVisible(true);
                 CamadaCalendario.setVisible(false);
             }
+        } catch (Exception erro) {
+            System.out.println(erro);
+        }    
             if (grava == 2) {
                 PREENCHE_LISTA();
                 jScrollPane4.setVisible(true);
@@ -892,11 +896,15 @@ public class AGENDAMENTO extends javax.swing.JDialog {
                 SelecaoAno.setSelectedItem(ano);
                 SelecaoMes.setSelectedIndex(mes - 1);
             }
+        try {
             if (ECRAPRIN.ChamaAgendaPMenu == 0) {
                 CamadaCalendario.setVisible(true);
                 SelecaoAno.setSelectedItem(ano);
                 SelecaoMes.setSelectedIndex(mes - 1);
             }
+        } catch (Exception erro) {
+            System.out.println(erro);
+        } 
             if (grava == 2) {
                 PREENCHE_LISTA();
                 CamadaCalendario.setVisible(true);
@@ -1035,9 +1043,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
 
     private void ListaNOMEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaNOMEMouseClicked
         try {
-            Object selectedValue = jList.getSelectedValue();
-if (selectedValue != null) {
-    String stringValue = selectedValue.toString();
+            nome.setText(ListaNOME.getSelectedValue().toString());
             nome.setForeground(Color.GREEN);
             ListaNOME.setVisible(false);
         } catch(Exception err) {
@@ -1219,7 +1225,7 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
         
     if(ECRAPRIN.ChamaAgenda == 0) {
        BotaoSalvar.setToolTipText("Salvar agendamento");
-//       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
+       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
        TabelaAgendamento.setVisible(false);
        jScrollPane1.setVisible(false);
        BotaoExcluir.setVisible(false);
@@ -1230,7 +1236,7 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
        setVisible(true);
     }   else if (ECRAPRIN.ChamaAgenda == 1) {
        BotaoSalvar.setToolTipText("Salvar alteraçoes no agendamento");
-//       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
+       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
        TabelaAgendamento.setVisible(false);
        jScrollPane1.setVisible(false);
        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1240,7 +1246,7 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
        setVisible(true);
     } else if (ECRAPRIN.ChamaAgenda == 2) {
        BotaoSalvar.setToolTipText("Salvar alteraçoes no agendamento");
-//       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
+       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
        grava = 1;
        TRAS_DADOS_ECRAPRINCIPAL();
        PREENCHE_TABELA();
@@ -1248,26 +1254,26 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
     }
 }    
 
-//private LocalizaAgendamento PESQUISAAGENDA;
-//
-//    public void MostraAgendaPesquisa(LocalizaAgendamento MostraAgendaPesquisa) {
-//        this.PESQUISAAGENDA = MostraAgendaPesquisa;
-//        BotaoSalvar.setToolTipText("Salvar alterações no agendamento");
-////        BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource(""))); COLOCAR IMAGEM
-//        TabelaAgendamento.setVisible(false);
-////        jScrollPane2.setVisible(false);
-//        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-//        setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
-//        grava = 2;
-//        Cod.setText(PESQUISAAGENDA.CODPES);
-//        nome.setText(PESQUISAAGENDA.NOMEPES);
-//        servico.setText(PESQUISAAGENDA.SERVPES);
-//        observacao.setText(PESQUISAAGENDA.OBSPES);
-//        DATAAGENDAMENTO.setText(PESQUISAAGENDA.DIAPES + "/" + PESQUISAAGENDA.MESPES + "/" + PESQUISAAGENDA.ANOPES);
-//        hora.setText(PESQUISAAGENDA.HORAPES);
-//        setVisible(true);
-//        
-//    }
+private LocalizaAgendamento PESQUISAAGENDA;
+
+    public void MostraAgendaPesquisa(LocalizaAgendamento MostraAgendaPesquisa) {
+        this.PESQUISAAGENDA = MostraAgendaPesquisa;
+        BotaoSalvar.setToolTipText("Salvar alterações no agendamento");
+//        BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource(""))); COLOCAR IMAGEM
+        TabelaAgendamento.setVisible(false);
+//        jScrollPane2.setVisible(false);
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
+        grava = 2;
+        Cod.setText(PESQUISAAGENDA.CODPES);
+        nome.setText(PESQUISAAGENDA.NOMEPES);
+        servico.setText(PESQUISAAGENDA.SERVPES);
+        observacao.setText(PESQUISAAGENDA.OBSPES);
+        DATAAGENDAMENTO.setText(PESQUISAAGENDA.DIAPES + "/" + PESQUISAAGENDA.MESPES + "/" + PESQUISAAGENDA.ANOPES);
+        hora.setText(PESQUISAAGENDA.HORAPES);
+        setVisible(true);
+        
+    }
 
 public void CALENDARIO_V1() {
         SimpleDateFormat Ano = new SimpleDateFormat("yyyy");
