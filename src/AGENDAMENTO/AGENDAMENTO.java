@@ -7,6 +7,8 @@ import UTILIDA.CONEXAO;
 import UTILIDA.GRA_ALT_EXC;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -75,6 +77,13 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         ListaNOME.setVisible(false);
         ListaSERVICO.setVisible(false); 
         
+        setIconImage(getIconImage());
+        }
+        
+        
+        public final Image getIconImage() {
+        Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
+        return ICONE;     
     }
 
 

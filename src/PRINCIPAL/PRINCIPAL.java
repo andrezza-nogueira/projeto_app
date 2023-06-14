@@ -2,13 +2,17 @@ package PRINCIPAL;
 
 import AGENDAMENTO.AGENDAMENTO;
 import AGENDAMENTO.LocalizaAgendamento;
+import LOGIN.CONFIGURACAO;
+import LOGIN.PASS;
 import UTILIDA.CONEXAO;
 import java.awt.Color;
-import java.sql.SQLException;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import java.sql.*;
 
 /**
  *
@@ -80,8 +84,13 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N2030.setToolTipText(MS);
         N2100.setToolTipText(MS);
         
+        setIconImage(getIconImage());
+    }
         
         
+    public final Image getIconImage() {
+    Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
+    return ICONE;     
     }
     
 
@@ -310,13 +319,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu7 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenu12 = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jRadioButtonMenuItem2 = new javax.swing.JRadioButtonMenuItem();
-        jRadioButtonMenuItem3 = new javax.swing.JRadioButtonMenuItem();
-        jRadioButtonMenuItem4 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1897,62 +1899,14 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jMenu5.setText("Password");
 
         jMenuItem6.setText("Alterar password");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem6);
 
         jMenuBar1.add(jMenu5);
-
-        jMenu7.setText("Exibir");
-
-        jMenu8.setText("Editar");
-        jMenu7.add(jMenu8);
-
-        jMenu12.setText("Look and Feel");
-        jMenu12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenu12ActionPerformed(evt);
-            }
-        });
-
-        buttonGroup1.add(jRadioButtonMenuItem1);
-        jRadioButtonMenuItem1.setText("MetalButton");
-        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jRadioButtonMenuItem1);
-
-        buttonGroup1.add(jRadioButtonMenuItem2);
-        jRadioButtonMenuItem2.setText("MotiButton");
-        jRadioButtonMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jRadioButtonMenuItem2);
-
-        buttonGroup1.add(jRadioButtonMenuItem3);
-        jRadioButtonMenuItem3.setSelected(true);
-        jRadioButtonMenuItem3.setText("WindowsButton");
-        jRadioButtonMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem3ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jRadioButtonMenuItem3);
-
-        buttonGroup1.add(jRadioButtonMenuItem4);
-        jRadioButtonMenuItem4.setText("Nimbus");
-        jRadioButtonMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem4ActionPerformed(evt);
-            }
-        });
-        jMenu12.add(jRadioButtonMenuItem4);
-
-        jMenu7.add(jMenu12);
-
-        jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
 
@@ -2307,35 +2261,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private void S2100MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_S2100MouseEntered
         S2100.setToolTipText(S2100.getText());
     }//GEN-LAST:event_S2100MouseEntered
-
-    private void jMenu12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu12ActionPerformed
-//        ModoExibicao = "WindowsButton";
-//        RETIRABORDA();
-    }//GEN-LAST:event_jMenu12ActionPerformed
-
-    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
-//        ModoExibicao = "MetalButton";
-//        RETIRABORDA();
-//        MODOEXIBICAO();
-    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
-
-    private void jRadioButtonMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem2ActionPerformed
-//        ModoExibicao = "MotiButton";
-//        MODOEXIBICAO();
-//        RETIRABORDA();
-    }//GEN-LAST:event_jRadioButtonMenuItem2ActionPerformed
-
-    private void jRadioButtonMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem3ActionPerformed
-//        ModoExibicao = "WindowsButton";
-//        RETIRABORDA();
-//        MODOEXIBICAO();
-    }//GEN-LAST:event_jRadioButtonMenuItem3ActionPerformed
-
-    private void jRadioButtonMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem4ActionPerformed
-//        ModoExibicao = "NimbusButton";
-//        RETIRABORDA();
-//        MODOEXIBICAO();
-    }//GEN-LAST:event_jRadioButtonMenuItem4ActionPerformed
 
     private void N930MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_N930MouseClicked
         AGENDAMENTO dialog = new AGENDAMENTO(new javax.swing.JFrame(), true);
@@ -2846,7 +2771,12 @@ public class PRINCIPAL extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-        // TODO add your handling code here:
+        int opcao = JOptionPane.showConfirmDialog(null, "Para realizar uma nova conexao, a atual sera encerra.\n" + "Continuar?");
+        if(opcao == JOptionPane.YES_NO_OPTION){
+            dispose();
+            CONFIGURACAO dialog = new CONFIGURACAO(new javax.swing.JFrame(), true);
+            dialog.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem9ActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
@@ -2857,6 +2787,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
         LIMITE dialog = new LIMITE(new javax.swing.JFrame(), true);
         dialog.MostraLimite(this);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        PASS dialog = new PASS(new javax.swing.JFrame(), true);
+        dialog.MostraAlteraPass(this);
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -3026,12 +2961,9 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLayeredPane jLayeredPane2;
-    private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -3042,10 +2974,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem2;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem3;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
