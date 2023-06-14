@@ -85,6 +85,17 @@ public void CliBanco() throws SQLException{
             ERRO = 1;
         }
         try{
+            STATEMENT.executeUpdate("CREATE TABLE IF NOT EXISTS `agendamento`.`servico` ("
+                                    + " `cod` INT ( 11 ) NOT NULL AUTO_INCREMENT , "
+                                    + " `nomeservico` VARCHAR(200) NOT NULL , "
+                                    + " `valor` DOUBLE( 10,2 ) NOT NULL , "
+                                    + " PRIMARY KEY ( `cod` ) "
+                                    + " ) ENGINE = MYISAM ; ");     
+        } catch(SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "Erro");
+            ERRO = 1;
+        }
+        try{
             STATEMENT.executeUpdate("CREATE TABLE IF NOT EXISTS `agendamento`.`configuracao` ("
                                     + " `cod` INT ( 11 ) NOT NULL AUTO_INCREMENT , "
                                     + " `limiteagendamento` int ( 11 ) NOT NULL , "
@@ -135,7 +146,7 @@ public void CliBanco() throws SQLException{
                 STATEMENT.executeUpdate(
                      " INSERT INTO `agendamento`.`login` ( "   
                     + " `login`, "
-                    + " `pass`  "
+                    + " `pass`,  "
                     + " ) "       
                     + " VALUES ( "       
                     + " 'SMART', '' "      
@@ -156,7 +167,7 @@ public void CliBanco() throws SQLException{
             if(TOTALCODIGO.equals("0")){
                 STATEMENT.executeUpdate(
                      " INSERT INTO `agendamento`.`configuracao` ( "   
-                    + " `limiteagendamento` "                    
+                    + " `limiteagendamento`, "                    
                     + " ) "       
                     + " VALUES ( "       
                     + " '10' "                    

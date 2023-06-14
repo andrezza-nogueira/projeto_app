@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package UTILIDA;
 
 
@@ -20,12 +15,7 @@ import java.sql.*;
  */
 public class CONEXAO {
     
-        String SERVIDOR = "";
-        String PORTA_CONEXAO = "";
-        String UTIL = "";
-        String PASS = "";
-        String ARQUIVOLIDO;
-        int VERIFICALINHA=0;
+        
     
 //        final private String utili = "root";
 //        final private String pass = "";    
@@ -42,6 +32,7 @@ public class CONEXAO {
             MostraArquivoLido();
             try {
                 Class.forName(driver);
+//                JOptionPane.showMessageDialog(null, "Driver not found"+"jdbc:mysql://"+SERVIDOR+":"+PORTA_CONEXAO+"/agendamento"+""+UTIL +" "+PASS);
 
             CONEXAO = DriverManager.getConnection("jdbc:mysql://"+SERVIDOR+":"+PORTA_CONEXAO+"/agendamento",UTIL,PASS);
             
@@ -63,7 +54,7 @@ public class CONEXAO {
 
         public void executaSQL(String sql) {
             try {
-                System.out.println(sql); // Adicione esta linha para imprimir a consulta SQL
+                System.out.println(sql); 
                 statement = CONEXAO.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 resultset = statement.executeQuery(sql);
             } catch (SQLException sqlex) {
@@ -71,38 +62,45 @@ public class CONEXAO {
             }
         }
         
+        
+        String SERVIDOR = "";
+        String PORTA_CONEXAO = "";
+        String UTIL = "";
+        String PASS = "";
+        String ARQUIVOLIDO;
+        int VERIFICALINHA=0;
 
         
 public void MostraArquivoLido(){
     try{
         String ArqSERV = "PergAminho.ini";
         
-        int v = 0;
+        int v = 0; /// ConfPergAminho.ini
         while(v < 4){
             if(v==0){
                 VERIFICALINHA = 1;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
                 LeArqSalvo(Local);
                 SERVIDOR = ARQUIVOLIDO;
                 
             }
             if(v==1){
                 VERIFICALINHA = 2;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
                 LeArqSalvo(Local);
                 PORTA_CONEXAO = ARQUIVOLIDO;
                 
             }
             if(v==2){
                 VERIFICALINHA = 3;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
                 LeArqSalvo(Local);
                 UTIL = ARQUIVOLIDO;
                 
             }
             if(v==3){
                 VERIFICALINHA = 4;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
                 LeArqSalvo(Local);
                 PASS = ARQUIVOLIDO;
             
@@ -138,11 +136,9 @@ public void MostraArquivoLido(){
             } catch(Exception erro){  
                 erro.printStackTrace();
             }
-        }else{
-            JOptionPane.showMessageDialog(null, "Arquivo nao localizado");
-        }
+//        }else{
+//            JOptionPane.showMessageDialog(null, "Arquivo nao localizado");
+//        }
     }
-   
+  }  
 }
-
-

@@ -6,8 +6,6 @@ import LOGIN.CONFIGURACAO;
 import LOGIN.PASS;
 import UTILIDA.CONEXAO;
 import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -84,13 +82,13 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N2030.setToolTipText(MS);
         N2100.setToolTipText(MS);
         
-        setIconImage(getIconImage());
-    }
-        
-        
-    public final Image getIconImage() {
-    Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
-    return ICONE;     
+//        setIconImage(getIconImage());
+//    }
+//        
+//        
+//    public final Image getIconImage() {
+//    Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
+//    return ICONE;     
     }
     
 
@@ -1924,7 +1922,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        setSize(new java.awt.Dimension(1282, 719));
+        pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

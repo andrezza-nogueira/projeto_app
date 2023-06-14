@@ -77,13 +77,13 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         ListaNOME.setVisible(false);
         ListaSERVICO.setVisible(false); 
         
-        setIconImage(getIconImage());
-        }
-        
-        
-        public final Image getIconImage() {
-        Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
-        return ICONE;     
+//        setIconImage(getIconImage());
+//        }
+//        
+//        
+//        public final Image getIconImage() {
+//        Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
+//        return ICONE;     
     }
 
 
@@ -1234,7 +1234,6 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
         
     if(ECRAPRIN.ChamaAgenda == 0) {
        BotaoSalvar.setToolTipText("Salvar agendamento");
-       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
        TabelaAgendamento.setVisible(false);
        jScrollPane1.setVisible(false);
        BotaoExcluir.setVisible(false);
@@ -1245,7 +1244,6 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
        setVisible(true);
     }   else if (ECRAPRIN.ChamaAgenda == 1) {
        BotaoSalvar.setToolTipText("Salvar alteraçoes no agendamento");
-       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
        TabelaAgendamento.setVisible(false);
        jScrollPane1.setVisible(false);
        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
@@ -1255,7 +1253,6 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
        setVisible(true);
     } else if (ECRAPRIN.ChamaAgenda == 2) {
        BotaoSalvar.setToolTipText("Salvar alteraçoes no agendamento");
-       BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("colocar imagem aqui")));
        grava = 1;
        TRAS_DADOS_ECRAPRINCIPAL();
        PREENCHE_TABELA();

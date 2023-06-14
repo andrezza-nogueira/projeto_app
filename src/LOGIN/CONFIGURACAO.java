@@ -22,8 +22,8 @@ public class CONFIGURACAO extends javax.swing.JDialog {
     String ARQUIVOLIDO;
     int VERIFICALINHA=0;
     
-    final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    final String URL = "jdbc:mysql://";
+    String DRIVER = "com.mysql.cj.jdbc.Driver";
+    String URL = "jdbc:mysql://";
     Connection CONEXAO;
     Statement STATEMENT;
     int CONFIG = 0;
@@ -259,11 +259,13 @@ public class CONFIGURACAO extends javax.swing.JDialog {
         dispose();
         
         CLIBANCO criabanco = new CLIBANCO();
+        
         try {
             criabanco.CliBanco();
         } catch (SQLException ex) {
             Logger.getLogger(CONFIGURACAO.class.getName()).log(Level.SEVERE, null, ex);
         }
+       
 
 
     }//GEN-LAST:event_BotaoSalvarActionPerformed
@@ -349,13 +351,13 @@ public void SalvaConfiguracao(){
     
 public void GravaArquivo(){
     try{
-            File diretorio = new File("C:/Pasta/PergAminho");
+            File diretorio = new File("C:/ProgramData/PergAminho");
             if (!diretorio.exists()) {
                 diretorio.mkdirs();
             } else {  
             }
             
-            FileWriter arq1 = new FileWriter("C:/Pasta/PergAminho/Conf/PergAminho.ini");
+            FileWriter arq1 = new FileWriter("C:/ProgramData/PergAminho/PergAminho.ini");
             PrintWriter gravaArq1 = new PrintWriter(arq1);
             gravaArq1.println(SERVIDOR);
             gravaArq1.println(PORTA_CONEXAO);
@@ -405,6 +407,7 @@ public void MostraArquivoLido(){
                 CLICPTGRAFABANCO Clip = new CLICPTGRAFABANCO();
                 Clip.IniciaCliptografia(PASS);
                 PASS = Clip.PassCriptografada;
+                Pass.setText(PASS);
                 }
             v++;
         }
