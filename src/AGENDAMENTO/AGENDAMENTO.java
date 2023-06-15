@@ -63,6 +63,8 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         ListaNOME.setModel(MODELONOME);
         ListaSERVICO.setModel(MODELOSERVICO);
         
+        ListaNOME.setEnabled(true);
+        
         //colicar imagens deposi
         BotaoNovoServico.setToolTipText("Registar novo serviço");
         BotaoNovoContacto.setToolTipText("Registar novo contacto");
@@ -172,6 +174,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         BotaoNovoContacto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane1.setOpaque(true);
@@ -567,7 +570,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jScrollPane4.setViewportView(ListaHORA);
 
         jLayeredPane1.add(jScrollPane4);
-        jScrollPane4.setBounds(470, 150, 90, 150);
+        jScrollPane4.setBounds(470, 150, 60, 150);
 
         TabelaAgendamento.setAutoCreateRowSorter(true);
         TabelaAgendamento.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
@@ -591,7 +594,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jScrollPane1.setViewportView(TabelaAgendamento);
 
         jLayeredPane1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 310, 500, 90);
+        jScrollPane1.setBounds(20, 310, 510, 90);
 
         observacao.setColumns(20);
         observacao.setRows(5);
@@ -603,7 +606,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jScrollPane2.setViewportView(observacao);
 
         jLayeredPane1.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 210, 460, 80);
+        jScrollPane2.setBounds(20, 210, 510, 80);
 
         BotaoNovoAgendamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/livro.png"))); // NOI18N
         BotaoNovoAgendamento.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -652,7 +655,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             }
         });
         jLayeredPane1.add(BotaoExcluir);
-        BotaoExcluir.setBounds(470, 0, 50, 50);
+        BotaoExcluir.setBounds(480, 0, 50, 50);
 
         Lnome.setText("Nome:");
         jLayeredPane1.add(Lnome);
@@ -4750,7 +4753,7 @@ public void PESQUISANOME(){
             
             CONEXAO.resultset.first();
         } catch (SQLException erro) {
-            
+            JOptionPane.showMessageDialog(null, "ErrO");
         } catch (Exception err) {
             System.out.println(err);
         }
@@ -4802,16 +4805,16 @@ public void PESQUISASERVICO() {
 //        }
 //    }
 
-//public void MOSTRA_NOME() {
-//    try {
-//        String Linha1 = String.valueOf(ListaNOME.getSelectedIndex());
-//        CONEXAO.executaSQL("select * from contacto where nome like'" + nome.getText() + "%' order by nome LIMIT " + Linha1 + " , 1 ");
-//        CONEXAO.resultset.first();
-//        nome.setText(CONEXAO.resultset.getString("nome"));
-//    } catch (SQLException erro) {
-//        JOptionPane.showMessageDialog(null, "Erro ao localizar dados" + erro);
-//    }
-//}
+public void MOSTRA_NOME() {
+    try {
+        String Linha1 = String.valueOf(ListaNOME.getSelectedIndex());
+        CONEXAO.executaSQL("select * from contacto where nome like'" + nome.getText() + "%' order by nome LIMIT " + Linha1 + " , 1 ");
+        CONEXAO.resultset.first();
+        nome.setText(CONEXAO.resultset.getString("nome"));
+    } catch (SQLException erro) {
+        JOptionPane.showMessageDialog(null, "Erro ao localizar dados" + erro);
+    }
+}
 
 }
 

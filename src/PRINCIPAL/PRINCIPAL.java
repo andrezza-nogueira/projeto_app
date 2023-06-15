@@ -96,7 +96,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         SelecaoMes = new javax.swing.JComboBox();
@@ -2932,7 +2931,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel T2100;
     private javax.swing.JLabel T930;
     private javax.swing.JButton VoltarDataInicial;
-    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;

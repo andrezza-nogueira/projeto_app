@@ -136,9 +136,8 @@ public void MostraArquivoLido(){
             } catch(Exception erro){  
                 erro.printStackTrace();
             }
-//        }else{
-//            JOptionPane.showMessageDialog(null, "Arquivo nao localizado");
-//        }
+        }else{
+            JOptionPane.showMessageDialog(null, "Arquivo nao localizado");
+        }
     }
   }  
-}
