@@ -112,7 +112,7 @@ public void CliBanco() throws SQLException{
                                     + " `morada` VARCHAR( 200 ) NOT NULL , "
                                     + " `freguesia` VARCHAR( 20 ) NOT NULL , "       
                                     + " `codigo_postal` VARCHAR( 8 ) NOT NULL , "
-                                    + " `telefone` VARCHAR( 9 ) NOT NULL , "
+                                    + " `telefone` VARCHAR( 12 ) NOT NULL , "
                                     + " `email` VARCHAR( 20 ) NOT NULL , "
                                     + " `adicionais` TEXT NOT NULL , "
                                     + " PRIMARY KEY ( `cod` ) "

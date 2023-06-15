@@ -99,7 +99,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jLayeredPane2 = new javax.swing.JLayeredPane();
-        SelecaoMes = new javax.swing.JComboBox<>();
+        SelecaoMes = new javax.swing.JComboBox();
         SelecaoAno = new javax.swing.JComboBox();
         ls1 = new javax.swing.JLabel();
         ls2 = new javax.swing.JLabel();
@@ -325,7 +325,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jLayeredPane2.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        SelecaoMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
+        SelecaoMes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro" }));
         SelecaoMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SelecaoMesActionPerformed(evt);
@@ -684,7 +684,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         AnoPagina2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         AnoPagina2.setText("2023");
         jLayeredPane1.add(AnoPagina2);
-        AnoPagina2.setBounds(900, 20, 52, 29);
+        AnoPagina2.setBounds(940, 50, 52, 29);
 
         SemanaPagina2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         SemanaPagina2.setText("Sexta-Feira");
@@ -706,7 +706,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         SemanaPagina1.setText("Sexta-Feira");
         SemanaPagina1.setAlignmentY(0.0F);
         jLayeredPane1.add(SemanaPagina1);
-        SemanaPagina1.setBounds(500, 20, 100, 17);
+        SemanaPagina1.setBounds(500, 20, 100, 20);
 
         DiaPagina1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         DiaPagina1.setText("10");
@@ -766,7 +766,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
         AnoPagina1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         AnoPagina1.setText("2023");
         jLayeredPane1.add(AnoPagina1);
-        AnoPagina1.setBounds(340, 20, 52, 29);
+        AnoPagina1.setBounds(280, 60, 52, 29);
 
         L930.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         L930.setText("09:30");
@@ -1934,11 +1934,11 @@ public class PRINCIPAL extends javax.swing.JFrame {
     }//GEN-LAST:event_VoltarDataInicialActionPerformed
 
     private void VoltarDataInicialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VoltarDataInicialMouseExited
-        VoltarDataInicial.setBorder(null);
+
     }//GEN-LAST:event_VoltarDataInicialMouseExited
 
     private void VoltarDataInicialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VoltarDataInicialMouseEntered
-        VoltarDataInicial.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)); //fazer uma borda com relevo quando passar o mouse
+
     }//GEN-LAST:event_VoltarDataInicialMouseEntered
 
     private void SelecaoAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SelecaoAnoActionPerformed
@@ -2904,7 +2904,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JTextField S2100;
     private javax.swing.JTextField S930;
     private javax.swing.JComboBox SelecaoAno;
-    private javax.swing.JComboBox<String> SelecaoMes;
+    private javax.swing.JComboBox SelecaoMes;
     private javax.swing.JLabel SemanaPagina1;
     private javax.swing.JLabel SemanaPagina2;
     private javax.swing.JLabel T1000;
@@ -3118,6 +3118,15 @@ public void INICIACALENDARIO() { //alteração do formato para data
         
 public void CALENDARIO() {
         t1.setText("");
+        t2.setText("");
+        t3.setText("");
+        t4.setText("");
+        t5.setText("");
+        t6.setText("");
+        t7.setText("");
+        t8.setText("");
+        t9.setText("");
+        
         t10.setText("");
         t11.setText("");
         t12.setText("");
@@ -3128,7 +3137,7 @@ public void CALENDARIO() {
         t17.setText("");
         t18.setText("");
         t19.setText("");
-        t2.setText("");
+        
         t20.setText("");
         t21.setText("");
         t22.setText("");
@@ -3139,7 +3148,7 @@ public void CALENDARIO() {
         t27.setText("");
         t28.setText("");
         t29.setText("");
-        t3.setText("");
+        
         t30.setText("");
         t31.setText("");
         t32.setText("");
@@ -3150,15 +3159,11 @@ public void CALENDARIO() {
         t37.setText("");
         t38.setText("");
         t39.setText("");
-        t4.setText("");
+        
         t40.setText("");
         t41.setText("");
         t42.setText("");
-        t5.setText("");
-        t6.setText("");
-        t7.setText("");
-        t8.setText("");
-        t9.setText("");
+        
         
         DiaAltera = DiaFIXO;
         MesAltera = SelecaoMes.getSelectedIndex(); //é utilizado para obter o índice do item selecionado nes que caso, o mes
@@ -3202,19 +3207,19 @@ public void CALENDARIO() {
 
         int Semana = calendar.get(Calendar.DAY_OF_WEEK); //escolhi dias da semana para apresentar no formulario
         if (Semana == Calendar.SUNDAY) {
-            SetaDia = 1; //Dom
+            SetaDia = 1; 
         } else if (Semana == Calendar.MONDAY) {
-            SetaDia = 2; //Seg
+            SetaDia = 2; 
         } else if (Semana == Calendar.TUESDAY) {
-            SetaDia = 3; //Ter
+            SetaDia = 3;
         } else if (Semana == Calendar.WEDNESDAY) {
-            SetaDia = 4; //Qua
+            SetaDia = 4;
         } else if (Semana == Calendar.THURSDAY) {
-            SetaDia = 4; //Qui
+            SetaDia = 5; 
         } else if (Semana == Calendar.FRIDAY) {
-            SetaDia = 5; //Sex
+            SetaDia = 6; 
         } else if (Semana == Calendar.SATURDAY) {
-            SetaDia = 6; //Sab
+            SetaDia = 7; 
         }
         
         for(int i=1; i<=TotalDiaMes; i++) {// Laço de repetiçao para preenche os dias do mes vigente
@@ -3323,6 +3328,11 @@ public void CALENDARIO() {
                 break;
             case 15:
                 t15.setText("" + i);
+                if (i == DiaFIXO & MesAltera == MesFIXO - 1 & AnoAltera == AnoFIXO) {
+                    t15.setForeground(Color.red);
+                } else {
+                    t15.setForeground(Color.black);
+                }
                 break;
             case 16:
                 t16.setText("" + i);
@@ -3424,10 +3434,9 @@ public void CALENDARIO() {
                 } 
                 break;
             case 29:
-                t29.setText("" + i);
+                t29.setText("" + i); 
                 break;
             case 30:
-                t30.setText("" + i);
                 t30.setText("" + i);
                 if (i == DiaFIXO & MesAltera == MesFIXO - 1 & AnoAltera == AnoFIXO) {
                     t30.setForeground(Color.red);
@@ -3476,7 +3485,7 @@ public void CALENDARIO() {
                 }
                 break;
             case 36:
-                t36.setText("" + i);
+                t36.setText("" + i); 
                 break;
             case 37:
                 t37.setText("" + i);
@@ -5184,8 +5193,7 @@ public void INSERE_COR_CALENDARIO() {
                       TAD11++;
                   }
                   if("12".equals(CONEXAO.resultset.getString("dia"))) {
-                      TAD12++;
-                      
+                      TAD12++; 
                   }
                   if("13".equals(CONEXAO.resultset.getString("dia"))) {
                       TAD13++;
@@ -5557,13 +5565,13 @@ public void SEMANA_2() {
             }
               if(D.equals("" + x) & TAD3 > 0) {
               t4.setBackground(Color.CYAN);
-              if(TAD3 > LIMITE) {
+                if(TAD3 > LIMITE) {
                   t4.setBackground(Color.MAGENTA);
                 }
             }
-              if(D.equals("" + x) & TAD4 > 0) {
+            if(D.equals("" + x) & TAD4 > 0) {
               t5.setBackground(Color.CYAN);
-              if(TAD4 > LIMITE) {
+                if(TAD4 > LIMITE) {
                   t5.setBackground(Color.MAGENTA);
                 }
             }
@@ -5732,7 +5740,7 @@ public void SEMANA_2() {
             }
         }
     }
-   
+        
 public void SEMANA_3() {
         int x = 0;
         
@@ -5951,187 +5959,187 @@ public void SEMANA_4() {
             x++;
             if (D.equals("" + x) & TAD1 > 0) {
                 t4.setBackground(Color.CYAN);
-                if(TAD31 > LIMITE) {
+                if(TAD1 > LIMITE) {
                     t4.setBackground(Color.MAGENTA);
                }
             }
             if(D.equals("" + x) & TAD2 > 0) {
               t5.setBackground(Color.CYAN);
-              if(TAD1 > LIMITE) {
+              if(TAD2 > LIMITE) {
                   t5.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD3 > 0) {
               t6.setBackground(Color.CYAN);
-              if(TAD2 > LIMITE) {
+              if(TAD3 > LIMITE) {
                   t6.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD4 > 0) {
               t7.setBackground(Color.CYAN);
-              if(TAD3 > LIMITE) {
+              if(TAD4 > LIMITE) {
                   t7.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD5 > 0) {
               t8.setBackground(Color.CYAN);
-              if(TAD4 > LIMITE) {
+              if(TAD5 > LIMITE) {
                   t8.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD6 > 0) {
               t9.setBackground(Color.CYAN);
-              if(TAD5 > LIMITE) {
+              if(TAD6 > LIMITE) {
                   t9.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD7 > 0) {
               t10.setBackground(Color.CYAN);
-              if(TAD6 > LIMITE) {
+              if(TAD7 > LIMITE) {
                   t10.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD8 > 0) {
               t11.setBackground(Color.CYAN);
-              if(TAD7 > LIMITE) {
+              if(TAD8 > LIMITE) {
                   t11.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD9 > 0) {
               t12.setBackground(Color.CYAN);
-              if(TAD8 > LIMITE) {
+              if(TAD9 > LIMITE) {
                   t12.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD10 > 0) {
               t13.setBackground(Color.CYAN);
-              if(TAD9 > LIMITE) {
+              if(TAD10 > LIMITE) {
                   t13.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD11 > 0) {
               t14.setBackground(Color.CYAN);
-              if(TAD10 > LIMITE) {
+              if(TAD11 > LIMITE) {
                   t14.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD12 > 0) {
               t15.setBackground(Color.CYAN);
-              if(TAD11 > LIMITE) {
+              if(TAD12 > LIMITE) {
                   t15.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD13 > 0) {
               t16.setBackground(Color.CYAN);
-              if(TAD12 > LIMITE) {
+              if(TAD13 > LIMITE) {
                   t16.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD14 > 0) {
               t17.setBackground(Color.CYAN);
-              if(TAD13 > LIMITE) {
+              if(TAD14 > LIMITE) {
                   t17.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD15 > 0) {
               t18.setBackground(Color.CYAN);
-              if(TAD14 > LIMITE) {
+              if(TAD15 > LIMITE) {
                   t18.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD16 > 0) {
               t19.setBackground(Color.CYAN);
-              if(TAD15 > LIMITE) {
+              if(TAD16 > LIMITE) {
                   t19.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD17 > 0) {
               t20.setBackground(Color.CYAN);
-              if(TAD16 > LIMITE) {
+              if(TAD17 > LIMITE) {
                   t20.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD18 > 0) {
               t21.setBackground(Color.CYAN);
-              if(TAD17 > LIMITE) {
+              if(TAD18 > LIMITE) {
                   t21.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD19 > 0) {
               t22.setBackground(Color.CYAN);
-              if(TAD18 > LIMITE) {
+              if(TAD19 > LIMITE) {
                   t22.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD20 > 0) {
               t23.setBackground(Color.CYAN);
-              if(TAD19 > LIMITE) {
+              if(TAD20 > LIMITE) {
                   t23.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD21 > 0) {
               t24.setBackground(Color.CYAN);
-              if(TAD20 > LIMITE) {
+              if(TAD21 > LIMITE) {
                   t24.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD22 > 0) {
               t25.setBackground(Color.CYAN);
-              if(TAD21 > LIMITE) {
+              if(TAD22 > LIMITE) {
                   t25.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD23 > 0) {
               t26.setBackground(Color.CYAN);
-              if(TAD22 > LIMITE) {
+              if(TAD23 > LIMITE) {
                   t26.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD24 > 0) {
               t27.setBackground(Color.CYAN);
-              if(TAD23 > LIMITE) {
+              if(TAD4 > LIMITE) {
                   t27.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD25 > 0) {
               t28.setBackground(Color.CYAN);
-              if(TAD24 > LIMITE) {
+              if(TAD25 > LIMITE) {
                   t28.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD26 > 0) {
               t29.setBackground(Color.CYAN);
-              if(TAD25 > LIMITE) {
+              if(TAD26 > LIMITE) {
                   t29.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD27 > 0) {
               t30.setBackground(Color.CYAN);
-              if(TAD26 > LIMITE) {
+              if(TAD27 > LIMITE) {
                   t30.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD28 > 0) {
               t31.setBackground(Color.CYAN);
-              if(TAD27 > LIMITE) {
+              if(TAD28 > LIMITE) {
                   t31.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD29 > 0) {
               t32.setBackground(Color.CYAN);
-              if(TAD28 > LIMITE) {
+              if(TAD29 > LIMITE) {
                   t32.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD30 > 0) {
               t33.setBackground(Color.CYAN);
-              if(TAD29 > LIMITE) {
+              if(TAD30 > LIMITE) {
                   t33.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD31 > 0) {
               t34.setBackground(Color.CYAN);
-              if(TAD30 > LIMITE) {
+              if(TAD31 > LIMITE) {
                   t34.setBackground(Color.MAGENTA);
               
                 }
@@ -6154,187 +6162,187 @@ public void SEMANA_5() {
             x++;
             if (D.equals("" + x) & TAD1 > 0) {
                 t5.setBackground(Color.CYAN);
-                if(TAD31 > LIMITE) {
+                if(TAD1 > LIMITE) {
                     t5.setBackground(Color.MAGENTA);
                }
             }
             if(D.equals("" + x) & TAD2 > 0) {
               t6.setBackground(Color.CYAN);
-              if(TAD1 > LIMITE) {
+              if(TAD2 > LIMITE) {
                   t6.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD3 > 0) {
               t7.setBackground(Color.CYAN);
-              if(TAD2 > LIMITE) {
+              if(TAD3 > LIMITE) {
                   t7.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD4 > 0) {
               t8.setBackground(Color.CYAN);
-              if(TAD3 > LIMITE) {
+              if(TAD4 > LIMITE) {
                   t8.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD5 > 0) {
               t9.setBackground(Color.CYAN);
-              if(TAD4 > LIMITE) {
+              if(TAD5 > LIMITE) {
                   t9.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD6 > 0) {
               t10.setBackground(Color.CYAN);
-              if(TAD5 > LIMITE) {
+              if(TAD6 > LIMITE) {
                   t10.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD7 > 0) {
               t11.setBackground(Color.CYAN);
-              if(TAD6 > LIMITE) {
+              if(TAD7 > LIMITE) {
                   t11.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD8 > 0) {
               t12.setBackground(Color.CYAN);
-              if(TAD7 > LIMITE) {
+              if(TAD8 > LIMITE) {
                   t12.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD9 > 0) {
               t13.setBackground(Color.CYAN);
-              if(TAD8 > LIMITE) {
+              if(TAD9 > LIMITE) {
                   t13.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD10 > 0) {
               t14.setBackground(Color.CYAN);
-              if(TAD9 > LIMITE) {
+              if(TAD10 > LIMITE) {
                   t14.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD11 > 0) {
               t15.setBackground(Color.CYAN);
-              if(TAD10 > LIMITE) {
+              if(TAD11 > LIMITE) {
                   t15.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD12 > 0) {
               t16.setBackground(Color.CYAN);
-              if(TAD11 > LIMITE) {
+              if(TAD12 > LIMITE) {
                   t16.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD13 > 0) {
               t17.setBackground(Color.CYAN);
-              if(TAD12 > LIMITE) {
+              if(TAD13 > LIMITE) {
                   t17.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD14 > 0) {
               t18.setBackground(Color.CYAN);
-              if(TAD13 > LIMITE) {
+              if(TAD14 > LIMITE) {
                   t18.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD15 > 0) {
               t19.setBackground(Color.CYAN);
-              if(TAD14 > LIMITE) {
+              if(TAD15 > LIMITE) {
                   t19.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD16 > 0) {
               t20.setBackground(Color.CYAN);
-              if(TAD15 > LIMITE) {
+              if(TAD16 > LIMITE) {
                   t20.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD17 > 0) {
               t21.setBackground(Color.CYAN);
-              if(TAD16 > LIMITE) {
+              if(TAD17 > LIMITE) {
                   t21.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD18 > 0) {
               t22.setBackground(Color.CYAN);
-              if(TAD17 > LIMITE) {
+              if(TAD18 > LIMITE) {
                   t22.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD19 > 0) {
               t23.setBackground(Color.CYAN);
-              if(TAD18 > LIMITE) {
+              if(TAD19 > LIMITE) {
                   t23.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD20 > 0) {
               t24.setBackground(Color.CYAN);
-              if(TAD19 > LIMITE) {
+              if(TAD20 > LIMITE) {
                   t24.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD21 > 0) {
               t25.setBackground(Color.CYAN);
-              if(TAD20 > LIMITE) {
+              if(TAD21 > LIMITE) {
                   t25.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD22 > 0) {
               t26.setBackground(Color.CYAN);
-              if(TAD21 > LIMITE) {
+              if(TAD22 > LIMITE) {
                   t26.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD23 > 0) {
               t27.setBackground(Color.CYAN);
-              if(TAD22 > LIMITE) {
+              if(TAD23 > LIMITE) {
                   t27.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD24 > 0) {
               t28.setBackground(Color.CYAN);
-              if(TAD23 > LIMITE) {
+              if(TAD24 > LIMITE) {
                   t28.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD25 > 0) {
               t29.setBackground(Color.CYAN);
-              if(TAD24 > LIMITE) {
+              if(TAD25 > LIMITE) {
                   t29.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD26 > 0) {
               t30.setBackground(Color.CYAN);
-              if(TAD25 > LIMITE) {
+              if(TAD26 > LIMITE) {
                   t30.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD27 > 0) {
               t31.setBackground(Color.CYAN);
-              if(TAD26 > LIMITE) {
+              if(TAD27 > LIMITE) {
                   t31.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD28 > 0) {
               t32.setBackground(Color.CYAN);
-              if(TAD27 > LIMITE) {
+              if(TAD28 > LIMITE) {
                   t32.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD29 > 0) {
               t33.setBackground(Color.CYAN);
-              if(TAD28 > LIMITE) {
+              if(TAD29 > LIMITE) {
                   t33.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD30 > 0) {
               t34.setBackground(Color.CYAN);
-              if(TAD29 > LIMITE) {
+              if(TAD30 > LIMITE) {
                   t34.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD31 > 0) {
               t35.setBackground(Color.CYAN);
-              if(TAD30 > LIMITE) {
+              if(TAD31 > LIMITE) {
                   t35.setBackground(Color.MAGENTA);
               
                 }
@@ -6357,187 +6365,187 @@ public void SEMANA_6() {
             x++;
             if (D.equals("" + x) & TAD1 > 0) {
                 t6.setBackground(Color.CYAN);
-                if(TAD31 > LIMITE) {
+                if(TAD1 > LIMITE) {
                     t6.setBackground(Color.MAGENTA);
                }
             }
             if(D.equals("" + x) & TAD2 > 0) {
               t7.setBackground(Color.CYAN);
-              if(TAD1 > LIMITE) {
+              if(TAD2 > LIMITE) {
                   t7.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD3 > 0) {
               t8.setBackground(Color.CYAN);
-              if(TAD2 > LIMITE) {
+              if(TAD3 > LIMITE) {
                   t8.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD4 > 0) {
               t9.setBackground(Color.CYAN);
-              if(TAD3 > LIMITE) {
+              if(TAD4 > LIMITE) {
                   t9.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD5 > 0) {
               t10.setBackground(Color.CYAN);
-              if(TAD4 > LIMITE) {
+              if(TAD5 > LIMITE) {
                   t10.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD6 > 0) {
               t11.setBackground(Color.CYAN);
-              if(TAD5 > LIMITE) {
+              if(TAD6 > LIMITE) {
                   t11.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD7 > 0) {
               t12.setBackground(Color.CYAN);
-              if(TAD6 > LIMITE) {
+              if(TAD7 > LIMITE) {
                   t12.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD8 > 0) {
               t13.setBackground(Color.CYAN);
-              if(TAD7 > LIMITE) {
+              if(TAD8 > LIMITE) {
                   t13.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD9 > 0) {
               t14.setBackground(Color.CYAN);
-              if(TAD8 > LIMITE) {
+              if(TAD9 > LIMITE) {
                   t14.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD10 > 0) {
               t15.setBackground(Color.CYAN);
-              if(TAD9 > LIMITE) {
+              if(TAD10 > LIMITE) {
                   t15.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD11 > 0) {
               t16.setBackground(Color.CYAN);
-              if(TAD10 > LIMITE) {
+              if(TAD11 > LIMITE) {
                   t16.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD12 > 0) {
               t17.setBackground(Color.CYAN);
-              if(TAD11 > LIMITE) {
+              if(TAD12 > LIMITE) {
                   t17.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD13 > 0) {
               t18.setBackground(Color.CYAN);
-              if(TAD12 > LIMITE) {
+              if(TAD13 > LIMITE) {
                   t18.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD14 > 0) {
               t19.setBackground(Color.CYAN);
-              if(TAD13 > LIMITE) {
+              if(TAD14 > LIMITE) {
                   t19.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD15 > 0) {
               t20.setBackground(Color.CYAN);
-              if(TAD14 > LIMITE) {
+              if(TAD15 > LIMITE) {
                   t20.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD16 > 0) {
               t21.setBackground(Color.CYAN);
-              if(TAD15 > LIMITE) {
+              if(TAD16 > LIMITE) {
                   t21.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD17 > 0) {
               t22.setBackground(Color.CYAN);
-              if(TAD16 > LIMITE) {
+              if(TAD17 > LIMITE) {
                   t22.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD18 > 0) {
               t23.setBackground(Color.CYAN);
-              if(TAD17 > LIMITE) {
+              if(TAD18 > LIMITE) {
                   t23.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD19 > 0) {
               t24.setBackground(Color.CYAN);
-              if(TAD18 > LIMITE) {
+              if(TAD19 > LIMITE) {
                   t24.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD20 > 0) {
               t25.setBackground(Color.CYAN);
-              if(TAD19 > LIMITE) {
+              if(TAD20 > LIMITE) {
                   t25.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD21 > 0) {
               t26.setBackground(Color.CYAN);
-              if(TAD20 > LIMITE) {
+              if(TAD21 > LIMITE) {
                   t26.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD22 > 0) {
               t27.setBackground(Color.CYAN);
-              if(TAD21 > LIMITE) {
+              if(TAD22 > LIMITE) {
                   t27.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD23 > 0) {
               t28.setBackground(Color.CYAN);
-              if(TAD22 > LIMITE) {
+              if(TAD23 > LIMITE) {
                   t28.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD24 > 0) {
               t29.setBackground(Color.CYAN);
-              if(TAD23 > LIMITE) {
+              if(TAD24 > LIMITE) {
                   t29.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD25 > 0) {
               t30.setBackground(Color.CYAN);
-              if(TAD24 > LIMITE) {
+              if(TAD25 > LIMITE) {
                   t30.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD26 > 0) {
               t31.setBackground(Color.CYAN);
-              if(TAD25 > LIMITE) {
+              if(TAD26 > LIMITE) {
                   t31.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD27 > 0) {
               t32.setBackground(Color.CYAN);
-              if(TAD26 > LIMITE) {
+              if(TAD27 > LIMITE) {
                   t32.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD28 > 0) {
               t33.setBackground(Color.CYAN);
-              if(TAD27 > LIMITE) {
+              if(TAD28 > LIMITE) {
                   t33.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD29 > 0) {
               t34.setBackground(Color.CYAN);
-              if(TAD28 > LIMITE) {
+              if(TAD29 > LIMITE) {
                   t34.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD30 > 0) {
               t35.setBackground(Color.CYAN);
-              if(TAD29 > LIMITE) {
+              if(TAD30 > LIMITE) {
                   t35.setBackground(Color.MAGENTA);
                 }
             }
               if(D.equals("" + x) & TAD31 > 0) {
               t36.setBackground(Color.CYAN);
-              if(TAD30 > LIMITE) {
+              if(TAD31 > LIMITE) {
                   t36.setBackground(Color.MAGENTA);
               
                 }
@@ -6560,187 +6568,187 @@ public void SEMANA_7() {
             x++;
             if (D.equals("" + x) & TAD1 > 0) {
                 t7.setBackground(Color.CYAN);
-                if(TAD31 > LIMITE) {
+                if(TAD1 > LIMITE) {
                     t7.setBackground(Color.RED);
                }
             }
             if(D.equals("" + x) & TAD2 > 0) {
               t8.setBackground(Color.CYAN);
-              if(TAD1 > LIMITE) {
+              if(TAD2 > LIMITE) {
                   t8.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD3 > 0) {
               t9.setBackground(Color.CYAN);
-              if(TAD2 > LIMITE) {
+              if(TAD3 > LIMITE) {
                   t9.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD4 > 0) {
               t10.setBackground(Color.CYAN);
-              if(TAD3 > LIMITE) {
+              if(TAD4 > LIMITE) {
                   t10.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD5 > 0) {
               t11.setBackground(Color.CYAN);
-              if(TAD4 > LIMITE) {
+              if(TAD5 > LIMITE) {
                   t11.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD6 > 0) {
               t12.setBackground(Color.CYAN);
-              if(TAD5 > LIMITE) {
+              if(TAD6 > LIMITE) {
                   t12.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD7 > 0) {
               t13.setBackground(Color.CYAN);
-              if(TAD6 > LIMITE) {
+              if(TAD7 > LIMITE) {
                   t13.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD8 > 0) {
               t14.setBackground(Color.CYAN);
-              if(TAD7 > LIMITE) {
+              if(TAD8 > LIMITE) {
                   t14.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD9 > 0) {
               t15.setBackground(Color.CYAN);
-              if(TAD8 > LIMITE) {
+              if(TAD9 > LIMITE) {
                   t15.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD10 > 0) {
               t16.setBackground(Color.CYAN);
-              if(TAD9 > LIMITE) {
+              if(TAD10 > LIMITE) {
                   t16.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD11 > 0) {
               t17.setBackground(Color.CYAN);
-              if(TAD10 > LIMITE) {
+              if(TAD11 > LIMITE) {
                   t17.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD12 > 0) {
               t18.setBackground(Color.CYAN);
-              if(TAD11 > LIMITE) {
+              if(TAD12 > LIMITE) {
                   t18.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD13 > 0) {
               t19.setBackground(Color.CYAN);
-              if(TAD12 > LIMITE) {
+              if(TAD13 > LIMITE) {
                   t19.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD14 > 0) {
               t20.setBackground(Color.CYAN);
-              if(TAD13 > LIMITE) {
+              if(TAD14 > LIMITE) {
                   t20.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD15 > 0) {
               t21.setBackground(Color.CYAN);
-              if(TAD14 > LIMITE) {
+              if(TAD15 > LIMITE) {
                   t21.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD16 > 0) {
               t22.setBackground(Color.CYAN);
-              if(TAD15 > LIMITE) {
+              if(TAD16 > LIMITE) {
                   t22.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD17 > 0) {
               t23.setBackground(Color.CYAN);
-              if(TAD16 > LIMITE) {
+              if(TAD17 > LIMITE) {
                   t23.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD18 > 0) {
               t24.setBackground(Color.CYAN);
-              if(TAD17 > LIMITE) {
+              if(TAD18 > LIMITE) {
                   t24.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD19 > 0) {
               t25.setBackground(Color.CYAN);
-              if(TAD18 > LIMITE) {
+              if(TAD19 > LIMITE) {
                   t25.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD20 > 0) {
               t26.setBackground(Color.CYAN);
-              if(TAD19 > LIMITE) {
+              if(TAD20 > LIMITE) {
                   t26.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD21 > 0) {
               t27.setBackground(Color.CYAN);
-              if(TAD20 > LIMITE) {
+              if(TAD21 > LIMITE) {
                   t27.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD22 > 0) {
               t28.setBackground(Color.CYAN);
-              if(TAD21 > LIMITE) {
+              if(TAD22 > LIMITE) {
                   t28.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD23 > 0) {
               t29.setBackground(Color.CYAN);
-              if(TAD22 > LIMITE) {
+              if(TAD23 > LIMITE) {
                   t29.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD24 > 0) {
               t30.setBackground(Color.CYAN);
-              if(TAD23 > LIMITE) {
+              if(TAD24 > LIMITE) {
                   t30.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD25 > 0) {
               t31.setBackground(Color.CYAN);
-              if(TAD24 > LIMITE) {
+              if(TAD25 > LIMITE) {
                   t31.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD26 > 0) {
               t32.setBackground(Color.CYAN);
-              if(TAD25 > LIMITE) {
+              if(TAD26 > LIMITE) {
                   t32.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD27 > 0) {
               t33.setBackground(Color.CYAN);
-              if(TAD26 > LIMITE) {
+              if(TAD27 > LIMITE) {
                   t33.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD28 > 0) {
               t34.setBackground(Color.CYAN);
-              if(TAD27 > LIMITE) {
+              if(TAD28 > LIMITE) {
                   t34.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD29 > 0) {
               t35.setBackground(Color.CYAN);
-              if(TAD28 > LIMITE) {
+              if(TAD29 > LIMITE) {
                   t35.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD30 > 0) {
               t36.setBackground(Color.CYAN);
-              if(TAD29 > LIMITE) {
+              if(TAD30 > LIMITE) {
                   t36.setBackground(Color.RED);
                 }
             }
               if(D.equals("" + x) & TAD31 > 0) {
               t37.setBackground(Color.CYAN);
-              if(TAD30 > LIMITE) {
+              if(TAD31 > LIMITE) {
                   t37.setBackground(Color.RED);
               
                 }

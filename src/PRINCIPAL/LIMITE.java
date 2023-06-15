@@ -44,33 +44,29 @@ public class LIMITE extends javax.swing.JDialog {
 
         jLayeredPane1 = new javax.swing.JLayeredPane();
         Cod = new javax.swing.JLabel();
-        Cor = new javax.swing.JLabel();
         Limite = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         SpinLIMITE = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(Color.WHITE);
         setResizable(false);
 
+        jLayeredPane1.setBackground(new java.awt.Color(255, 255, 255));
         jLayeredPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLayeredPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLayeredPane1.setOpaque(true);
 
         Cod.setText("Cod");
         jLayeredPane1.add(Cod);
-        Cod.setBounds(350, 10, 40, 20);
-
-        Cor.setBackground(new java.awt.Color(255, 0, 102));
-        Cor.setOpaque(true);
-        jLayeredPane1.add(Cor);
-        Cor.setBounds(360, 110, 30, 20);
+        Cod.setBounds(290, 90, 40, 20);
         jLayeredPane1.add(Limite);
-        Limite.setBounds(60, 20, 190, 30);
+        Limite.setBounds(50, 20, 190, 30);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setText("Limite:");
         jLayeredPane1.add(jLabel1);
         jLabel1.setBounds(10, 20, 40, 30);
@@ -81,7 +77,7 @@ public class LIMITE extends javax.swing.JDialog {
             }
         });
         jLayeredPane1.add(SpinLIMITE);
-        SpinLIMITE.setBounds(250, 20, 20, 30);
+        SpinLIMITE.setBounds(240, 20, 20, 30);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/verificar.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -90,29 +86,25 @@ public class LIMITE extends javax.swing.JDialog {
             }
         });
         jLayeredPane1.add(jButton1);
-        jButton1.setBounds(290, 20, 30, 30);
+        jButton1.setBounds(280, 20, 30, 30);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Quando a quantidade exceder ao limite de agendamento, \no dia no calendário será destacado na cor \"MAGENTA\".");
-        jScrollPane1.setViewportView(jTextArea1);
+        jLabel3.setText("Quando a quantidade exceder ao limite de agendamento,");
+        jLayeredPane1.add(jLabel3);
+        jLabel3.setBounds(10, 60, 330, 20);
 
-        jLayeredPane1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 56, 310, 80);
-
-        jLabel2.setText("Cor:");
-        jLayeredPane1.add(jLabel2);
-        jLabel2.setBounds(330, 110, 30, 20);
+        jLabel4.setText("o dia no calendário será destacado na cor \"MAGENTA\".");
+        jLayeredPane1.add(jLabel4);
+        jLabel4.setBounds(10, 80, 320, 14);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -193,15 +185,13 @@ public class LIMITE extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cod;
-    private javax.swing.JLabel Cor;
     private javax.swing.JTextField Limite;
     private javax.swing.JSpinner SpinLIMITE;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 
 

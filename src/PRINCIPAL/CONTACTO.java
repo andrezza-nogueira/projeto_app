@@ -109,7 +109,7 @@ public class CONTACTO extends javax.swing.JDialog {
             }
         });
         Camadas.add(Lista);
-        Lista.setBounds(210, 40, 150, 100);
+        Lista.setBounds(210, 40, 150, 70);
 
         BotaoNovoContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/livro.png"))); // NOI18N
         BotaoNovoContacto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -235,7 +235,7 @@ public class CONTACTO extends javax.swing.JDialog {
         jScrollPaneTabela.setViewportView(TabelaContacto);
 
         Camadas.add(jScrollPaneTabela);
-        jScrollPaneTabela.setBounds(10, 420, 500, 90);
+        jScrollPaneTabela.setBounds(10, 430, 500, 90);
 
         adicionais.setColumns(20);
         adicionais.setRows(5);
@@ -247,7 +247,7 @@ public class CONTACTO extends javax.swing.JDialog {
         jScrollPaneinformacoesadicionais.setViewportView(adicionais);
 
         Camadas.add(jScrollPaneinformacoesadicionais);
-        jScrollPaneinformacoesadicionais.setBounds(10, 280, 500, 76);
+        jScrollPaneinformacoesadicionais.setBounds(10, 290, 500, 76);
 
         Lnome.setText("Nome:");
         Camadas.add(Lnome);
@@ -441,15 +441,15 @@ public class CONTACTO extends javax.swing.JDialog {
         } 
         
  
-        //       try {
-            //           PESQUISAAGENDA.PESQUISANOME();
-            //           PESQUISAAGENDA.ECRAPRIN.LEGENDA();
-            //           PESQUISAAGENDA.ECRAPRIN.INSERE_COR_CALENDARIO();
-            //
-            //           dispose();
-            //       } catch (Exception err1) {
-            //           System.out.println("Erro na atualização na pesquisa de agendamento" + err1);
-            //       }
+//               try {
+//                       PESQUISAAGENDA.PESQUISANOME();
+//                       PESQUISAAGENDA.ECRAPRIN.LEGENDA();
+//                       PESQUISAAGENDA.ECRAPRIN.INSERE_COR_CALENDARIO();
+//            
+//                       dispose();
+//                   } catch (Exception err1) {
+//                       System.out.println("Erro na atualização na pesquisa de agendamento" + err1);
+//                   }
 
     }//GEN-LAST:event_BotaoExcluirActionPerformed
 
@@ -494,7 +494,7 @@ public class CONTACTO extends javax.swing.JDialog {
             grava = 1;
             PesquisaNome.setText(Lista.getSelectedValue());
             BotaoSalvar.setToolTipText("Salvar alterações");
-            BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/salvar.png")));
+//            BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/salvar.png")));
         } catch (Exception err) {
             System.out.println(err);
         }
@@ -792,7 +792,7 @@ public void ResultadoPesquisa() {
 
 public void Pesquisa() {
         try {
-            CONEXAO.executaSQL("select * from contacto where nome like'" + PesquisaNome.getText() + " %' order by nome ");
+            CONEXAO.executaSQL("select * from contacto where nome like '" + PesquisaNome.getText() + "%' order by nome");
             int x = 0;
             MODELO.removeAllElements();
             CodigoVetor = new String[4];

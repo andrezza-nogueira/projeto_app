@@ -55,6 +55,7 @@ public class SERVICO extends javax.swing.JDialog {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         Cod = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -164,7 +165,11 @@ public class SERVICO extends javax.swing.JDialog {
 
         Cod.setText("Cod");
         Camadas.add(Cod);
-        Cod.setBounds(190, 30, 30, 14);
+        Cod.setBounds(380, 140, 30, 14);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/logo.png"))); // NOI18N
+        Camadas.add(jLabel1);
+        jLabel1.setBounds(160, 10, 110, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -317,6 +322,7 @@ public class SERVICO extends javax.swing.JDialog {
     private javax.swing.JLabel Lservico;
     private javax.swing.JLabel Lvalor;
     private javax.swing.JTable TabelaServico;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPaneTabela;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
