@@ -10,7 +10,6 @@ import UTILIDA.GRA_ALT_EXC;
 import java.awt.Color;
 import java.io.IOException;
 import java.sql.SQLException;
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 /**
@@ -62,7 +61,7 @@ public class LIMITE extends javax.swing.JDialog {
 
         Cod.setText("Cod");
         jLayeredPane1.add(Cod);
-        Cod.setBounds(290, 90, 40, 20);
+        Cod.setBounds(270, 90, 40, 20);
         jLayeredPane1.add(Limite);
         Limite.setBounds(50, 20, 190, 30);
 

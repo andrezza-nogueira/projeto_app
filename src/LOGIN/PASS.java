@@ -9,7 +9,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
-
 /**
  *
  * @author Andrezza
@@ -20,10 +19,13 @@ public class PASS extends javax.swing.JDialog {
     
     /**
      * Creates new form PASS
+     * @param parent
+     * @param modal
      */
     public PASS(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        CONEXAO.conecta();
     }
 
     /**
@@ -230,13 +232,13 @@ public void MostraAlteraPass(PRINCIPAL MostraAlteraPas){
 
 public void ComparacaoEntrePass() throws SQLException{
        if(NOVAPASS.equals(CONFIRMAPASS)){
-           verificaPassBanco();
+           VerificaPassBanco();
         } else {
            JOptionPane.showMessageDialog(null, "Palavra-passe incompatível");
        }   
     }
  
-public void verificaPassBanco() throws SQLException{
+public void VerificaPassBanco() throws SQLException{
         try{
             CONEXAO.executaSQL("select * from login where login = '" + LOGIN + "' and pass = '" + PASSANTIGA + "'");
             CONEXAO.resultset.first();
@@ -247,7 +249,8 @@ public void verificaPassBanco() throws SQLException{
               JOptionPane.showMessageDialog(null, "Não foi possível alterar a palavra-passe"); 
               }
         } catch (SQLException erro){
-              JOptionPane.showMessageDialog(null, "Não foi possível alterar a palavra-passe");        
+//              JOptionPane.showMessageDialog(null, "Não foi possível alterar a palavra-passe............");
+              erro.printStackTrace();
                 }
          }
 public void AlteraPass(){
@@ -260,7 +263,8 @@ public void AlteraPass(){
             PassAntiga.setText("");
             ConfirmaPass.setText("");
         } catch (SQLException erro){
-              JOptionPane.showMessageDialog(null, "Não foi possível alterar a palavra-passe");        
+              JOptionPane.showMessageDialog(null, "Não foi possível alterar a palavra-passe");  
+              erro.printStackTrace();
                 }
     }        
     

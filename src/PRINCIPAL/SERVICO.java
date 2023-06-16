@@ -417,7 +417,7 @@ public void MOSTRA_DADOS_TABELA() {
             valor.setText(CONEXAO.resultset.getString("valor"));
             
         } catch (SQLException erro) {
-//        JOptionPane.showMessageDialog(null, "Erro" + erro);
+        JOptionPane.showMessageDialog(null, "Erro" + erro);
         }
     }
 

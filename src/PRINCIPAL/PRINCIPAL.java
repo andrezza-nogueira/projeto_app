@@ -6,6 +6,8 @@ import LOGIN.CONFIGURACAO;
 import LOGIN.PASS;
 import UTILIDA.CONEXAO;
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -82,14 +84,13 @@ public class PRINCIPAL extends javax.swing.JFrame {
         N2030.setToolTipText(MS);
         N2100.setToolTipText(MS);
         
-//        setIconImage(getIconImage());
-//    }
-//        
-//        
-//    public final Image getIconImage() {
-//    Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
-//    return ICONE;     
+        setIconImage(getIconImage());
     }
+    
+       public final Image getIconImage() {
+        Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGEM/logoprog.png"));
+        return icon;
+}
     
 
     @SuppressWarnings("unchecked")
@@ -308,7 +309,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
@@ -1843,16 +1843,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem3);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/imprim.png"))); // NOI18N
-        jMenuItem4.setText("Imprimir");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem4);
-
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/deslig.png"))); // NOI18N
         jMenuItem5.setText("Sair");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -2740,10 +2730,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
         dialog.MostraServico(this);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-//       Imprimir();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
-
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
@@ -2786,8 +2772,8 @@ public class PRINCIPAL extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-        PASS dialog = new PASS(new javax.swing.JFrame(), true);
-        dialog.MostraAlteraPass(this);
+//        PASS dialog = new PASS(new javax.swing.JFrame(), true);
+//        dialog.MostraAlteraPass(this);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     public static void main(String args[]) {
@@ -2964,7 +2950,6 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
@@ -3045,30 +3030,7 @@ public class PRINCIPAL extends javax.swing.JFrame {
     private javax.swing.JLabel t9;
     // End of variables declaration//GEN-END:variables
 
-//public void MODOEXIBICAO() {
-//    String plaf = "";
-//    if("MetalButton".equals(ModoExibicao)) {
-//        plaf = "javax.swing.plaf.metal.MetalLookAndFeel";
-//    } else if ("MotifButton".equals(ModoExibicao)) {
-//        plaf = "com.sun.java.swing.plaf.motif.MotifLookAndFeel";
-//    } else if ("WindowsButton".equals(ModoExibicao)) {
-//        plaf = "com.sun.java.swing.plaf.windows.WindowsLookAndFeel";
-//    } else if ("MacButton".equals(ModoExibicao)) {
-//        plaf = "com.sun.java.swing.plaf.mac.MacLookAndFeel";
-//    } else if ("Nimbus".equals(ModoExibicao)) {
-//        plaf = "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel";
-//    }
-//    
-//    try {
-//        UIManager.setLookAndFeel (plaf);
-//        SwingUtilities.updateComponentTreeUI(this);
-//    } catch (Exception e) {
-//        
-//    }
-//}    
-    
-    
-//construçao do calendario
+
 public void INICIACALENDARIO() { //alteração do formato para data
         SimpleDateFormat Ano = new SimpleDateFormat("yyyy");
         SimpleDateFormat Mes = new SimpleDateFormat("MM");
@@ -3758,24 +3720,14 @@ public void CALENDARIO() {
 public void VERIFICASEMANA() { //faz a verificação do dias da semana na pagina
    
     try {
-        
-//        if (MesAltera != MesFIXO - 1 & DiaClick != 0) {
-//            DiaAltera = 1;
-//        }
-//        if (AnoAltera != MesFIXO - 1 & DiaClick != 0) {
-//            DiaAltera = 1;
-//        }
-//        DiaClick = 1;
-        
-        if (DiaAltera == DiaFIXO & MesAltera + 1 == MesFIXO & AnoAltera == AnoFIXO) { //se tiver no dia atual fica vermelho
+    if (DiaAltera == DiaFIXO & MesAltera + 1 == MesFIXO & AnoAltera == AnoFIXO) { //se tiver no dia atual fica vermelho
             DiaPagina2.setForeground(Color.RED);
             DiaPagina1.setForeground(Color.RED);
         } else {
             DiaPagina2.setForeground(Color.BLACK);
             DiaPagina1.setForeground(Color.BLACK);
         }
-        
-        
+
         MesAltera = SelecaoMes.getSelectedIndex();
         AnoAltera = Integer.parseInt(SelecaoAno.getSelectedItem().toString());
 
@@ -6760,74 +6712,4 @@ public void SETADIAAGENDAMENTO() {
     AnoAgendamento = Integer.parseInt(SelecaoAno.getSelectedItem().toString());
 }
     
-//   public void RETIRABORDA() {
-//        N930.setBorder(null);
-//        S930.setBorder(null);
-//        N1000.setBorder(null);
-//        S1000.setBorder(null);
-//        N1030.setBorder(null);
-//        S1030.setBorder(null);
-//        N1100.setBorder(null);
-//        S1100.setBorder(null);
-//        N1130.setBorder(null);
-//        S1130.setBorder(null);
-//        N1200.setBorder(null);
-//        S1200.setBorder(null);
-//        N1230.setBorder(null);
-//        S1230.setBorder(null);
-//        N1300.setBorder(null);
-//        S1300.setBorder(null);
-//        N1330.setBorder(null);
-//        S1330.setBorder(null);
-//        N1400.setBorder(null);
-//        S1400.setBorder(null);
-//        N1430.setBorder(null);
-//        S1430.setBorder(null);
-//        N1500.setBorder(null);
-//        S1500.setBorder(null);
-//        N1530.setBorder(null);
-//        S1530.setBorder(null);
-//        N1600.setBorder(null);
-//        S1600.setBorder(null);
-//        N1630.setBorder(null);
-//        S1630.setBorder(null);
-//        N1700.setBorder(null);
-//        S1700.setBorder(null);
-//        N1730.setBorder(null);
-//        S1730.setBorder(null);
-//        S1800.setBorder(null);
-//        N1800.setBorder(null);
-//        S1830.setBorder(null);
-//        N1830.setBorder(null);
-//        S1900.setBorder(null);
-//        N1900.setBorder(null);
-//        S1930.setBorder(null);
-//        N1930.setBorder(null);
-//        S2000.setBorder(null);
-//        N2000.setBorder(null);
-//        S2030.setBorder(null);
-//        N2030.setBorder(null);
-//        S2100.setBorder(null);
-//        N2100.setBorder(null);
-//       
-//      }  
-//       
-
-//public void Impressao(){
-//        try{
-//            MesAltera = MesAltera + 1;
-//            String Dat = " dia = '" + DiaAltera + "' and mes = '" + MesAltera + "' and ano = '" + AnoAltera + " ' order by hora"
-//            MesAltera = MesAltera - 1;
-//            CONEXAO.executaSQL("select * from agenda where " + Dat);
-//            
-//            JRResultSetDataSource jrRS = new JRResultSetDataSource(CONEXAO.resultset);
-//            String Endereco = "/IMPRESSAO/Agenda.jasper";
-//            InputStream Caminho = getClass().getResourceAsStream(Endereco);
-//            JasperPrint jasperPrint = JasperFillManager.fillReport(Caminho, new HashMap(), jrRS);
-//            
-//            JasperViewer.viwReport(jasperPrint, false);
-//        } catch (Exception erro) {
-//            JOptionPane.showMessageDialog(null, "Erro" + erro);
-//        }
-//    }
 }

@@ -4,6 +4,8 @@ import PRINCIPAL.PRINCIPAL;
 import UTILIDA.CLIBANCO;
 import UTILIDA.CLICPTOGRAFIA;
 import UTILIDA.CONEXAO;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
@@ -24,8 +26,15 @@ public class LOGIN extends javax.swing.JFrame {
      */
     public LOGIN() {
         initComponents();
-        ConLogin = new CONEXAO();
+//        ConLogin = new CONEXAO();
+        
+        setIconImage(getIconImage());
     }
+    
+   public final Image getIconImage() {
+    Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/IMAGEM/logoprog.png"));
+    return icon;
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -123,11 +132,11 @@ public class LOGIN extends javax.swing.JFrame {
     }//GEN-LAST:event_TLoginActionPerformed
 
     private void TPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TPassActionPerformed
-        CLICPTOGRAFIA criptogr = new CLICPTOGRAFIA();
-        String pass = String.valueOf(TPass.getPassword());
-        criptogr.InicialCliptografia(pass);
-        CRIPTOGRAFADO = (criptogr.TEXTOCLIPTOGRAFADO);
             try {
+                CLICPTOGRAFIA criptogr = new CLICPTOGRAFIA();
+                String pass = String.valueOf(TPass.getPassword());
+                criptogr.InicialCliptografia(pass);
+                CRIPTOGRAFADO = (criptogr.TEXTOCLIPTOGRAFADO);
                 Login();
             } catch (IOException ex) {
                 Logger.getLogger(LOGIN.class.getName()).log(Level.SEVERE, null, ex);
@@ -206,6 +215,7 @@ public void Login() throws IOException {
             String sql = "select * from login Where login = '" + login + "'" + " and pass = '" + pass + "'";
             ConLogin.executaSQL(sql);
             ConLogin.resultset.first();
+            
 
             if (pass.equals(ConLogin.resultset.getString("pass"))
                     && login.equals(ConLogin.resultset.getString("login"))) {
@@ -217,8 +227,11 @@ public void Login() throws IOException {
             }
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "NAO PERMITIDO", "ERRO", (0));
+            erro.printStackTrace();
         }
         ConLogin.desconecta();
     }
+
+
 }
 

@@ -94,24 +94,5 @@ public class GRA_ALT_EXC { //declarar em forma de vetor os valores do banco de d
         }
         CONEXAO_BANCO.desconecta();
 }
-          
-       
     
-    
-//    String COLUNA = "", VIRGUL = "";
-//    
-//    public static void main(String[] args) {
-//        new GRA_ALT_EXC().listacoluna();
-//    }
-//    public void listacoluna() {
-//        String coluna[] = {"c1", "c2", "c3"};
-//        for(String C : coluna) {
-//            COLUNA = COLUNA + VIRGUL + C;
-//            if(VIRGUL.equals("")) {
-//                VIRGUL = ",";
-//            }
-//        }
-//        
-//       
-
 }

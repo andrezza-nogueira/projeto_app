@@ -8,8 +8,6 @@ import java.io.IOException;
 import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
 import javax.swing.DefaultListModel;
-import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 /**
  *
@@ -109,7 +107,7 @@ public class CONTACTO extends javax.swing.JDialog {
             }
         });
         Camadas.add(Lista);
-        Lista.setBounds(210, 40, 150, 70);
+        Lista.setBounds(210, 40, 150, 130);
 
         BotaoNovoContacto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/livro.png"))); // NOI18N
         BotaoNovoContacto.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -378,11 +376,7 @@ public class CONTACTO extends javax.swing.JDialog {
     }//GEN-LAST:event_TabelaContactoMouseClicked
 
     private void adicionaisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_adicionaisFocusGained
-//        CamadaCalendario.setVisible(false);
-//        jScrollTabela.setVisible(false);
-//        ListaHORA.setVisible(false);
-//        ListaNOME.setVisible(false);
-//        Lista.setVisible(false);
+
     }//GEN-LAST:event_adicionaisFocusGained
 
     private void BotaoNovoContactoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoContactoMouseEntered
@@ -439,18 +433,6 @@ public class CONTACTO extends javax.swing.JDialog {
         } catch (Exception err) {
             System.out.println(err);
         } 
-        
- 
-//               try {
-//                       PESQUISAAGENDA.PESQUISANOME();
-//                       PESQUISAAGENDA.ECRAPRIN.LEGENDA();
-//                       PESQUISAAGENDA.ECRAPRIN.INSERE_COR_CALENDARIO();
-//            
-//                       dispose();
-//                   } catch (Exception err1) {
-//                       System.out.println("Erro na atualização na pesquisa de agendamento" + err1);
-//                   }
-
     }//GEN-LAST:event_BotaoExcluirActionPerformed
 
     private void PesquisaNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PesquisaNomeActionPerformed
@@ -494,7 +476,6 @@ public class CONTACTO extends javax.swing.JDialog {
             grava = 1;
             PesquisaNome.setText(Lista.getSelectedValue());
             BotaoSalvar.setToolTipText("Salvar alterações");
-//            BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/salvar.png")));
         } catch (Exception err) {
             System.out.println(err);
         }
@@ -504,22 +485,12 @@ public class CONTACTO extends javax.swing.JDialog {
         try {
             if (filtro == 0) {
                 filtro = 1;
-//                Lfiltro.setBounds(88, 525, 40, 25);
-//                Filtro.setBounds(130, 525, 500, 25);
-//                jScrollPaneTabela.setBounds(60, 550, 570, 100);
-//                jScrollPaneinformacoesadicionais.setBounds(60, 410, 570, 110);
-                
                 Lfiltro.setVisible(true);
                 Filtro.setVisible(true);
                 jScrollPaneTabela.setVisible(true);
                 PREENCHE_TABELA();
             } else {
                 filtro = 0;
-//                Lfiltro.setBounds(88, 610, 40, 25);
-//                Filtro.setBounds(130, 610, 500, 25);
-//                jScrollPaneTabela.setBounds(60, 640, 570, 100);
-//                jScrollPaneinformacoesadicionais.setBounds(60, 410, 570, 210);
-                
                 Lfiltro.setVisible(false);
                 Filtro.setVisible(false);
                 jScrollPaneTabela.setVisible(false);
@@ -570,15 +541,6 @@ public class CONTACTO extends javax.swing.JDialog {
         String cp = codigo_postal.getText();
         cp = cp.replaceAll("\\D*", ""); //nao utiliza outro caractere alem de numeros
         int cont = cp.length();
-//        if (cont == 7) {
-//            try {
-//                correio();
-//            } catch (Error e) {
-//                JOptionPane.showMessageDialog(null, e);
-//            }
-//        }
-        
-        
     }//GEN-LAST:event_codigo_postalKeyReleased
 
     private void telefoneKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_telefoneKeyReleased

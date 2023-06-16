@@ -41,7 +41,7 @@ public void CliBanco() throws SQLException{
             
             Class.forName(DRIVER);
             CONEXAO = DriverManager.getConnection(URL + SERVIDOR + ":" + PORTA_CONEXAO, UTIL, PASS);
-
+      
         } catch(SQLException ex) {
             ERRO = 1;
             CONFIGURACAO dialog = new CONFIGURACAO(new javax.swing.JFrame(),true);
@@ -65,7 +65,7 @@ public void CliBanco() throws SQLException{
             
             STATEMENT.executeUpdate("CREATE DATABASE IF NOT EXISTS agendamento");
         } catch(SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Erro no comando SQL");
+            JOptionPane.showMessageDialog(null, "Erro no comando SQL");
             ERRO = 1;
         }
         try{
@@ -81,7 +81,7 @@ public void CliBanco() throws SQLException{
                                     + " PRIMARY KEY ( `cod` ) "
                                     + " ) ENGINE = MYISAM ; ");     
         } catch(SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Erro");
+            JOptionPane.showMessageDialog(null, "Erro");
             ERRO = 1;
         }
         try{
@@ -92,7 +92,7 @@ public void CliBanco() throws SQLException{
                                     + " PRIMARY KEY ( `cod` ) "
                                     + " ) ENGINE = MYISAM ; ");     
         } catch(SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Erro");
+            JOptionPane.showMessageDialog(null, "Erro");
             ERRO = 1;
         }
         try{
@@ -102,7 +102,7 @@ public void CliBanco() throws SQLException{
                                     + " PRIMARY KEY ( `cod` ) "
                                     + " ) ENGINE = MYISAM ; ");     
         } catch(SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Erro");
+            JOptionPane.showMessageDialog(null, "Erro");
             ERRO = 1;
         }
         try{
@@ -118,7 +118,7 @@ public void CliBanco() throws SQLException{
                                     + " PRIMARY KEY ( `cod` ) "
                                     + " ) ENGINE = MYISAM ; ");     
         } catch(SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Erro");
+            JOptionPane.showMessageDialog(null, "Erro");
             ERRO = 1;
         }
         try{
@@ -131,7 +131,7 @@ public void CliBanco() throws SQLException{
                                     + " ) ENGINE = MYISAM ; ");     
         } catch(SQLException ex) {
             ex.printStackTrace();
-//            JOptionPane.showMessageDialog(null, "Erro");
+            JOptionPane.showMessageDialog(null, "Erro");
             ERRO = 1;
         }
         
@@ -144,17 +144,18 @@ public void CliBanco() throws SQLException{
             
             if(TOTALLOGIN.equals("0")){
                 STATEMENT.executeUpdate(
-                     " INSERT INTO `agendamento`.`login` ( "   
+                    " INSERT INTO `agendamento`.`login` ( "   
                     + " `login`, "
-                    + " `pass`,  "
+                    + " `pass`  "
                     + " ) "       
                     + " VALUES ( "       
-                    + " 'SMART', '' "      
+                    + " 'SMART' "      
                     + " );");
+
                 } 
             } catch(SQLException ex) {
                 ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Erro");
+                JOptionPane.showMessageDialog(null, "Erro..........");
                 ERRO = 1;
             }    
             try{
@@ -167,7 +168,7 @@ public void CliBanco() throws SQLException{
             if(TOTALCODIGO.equals("0")){
                 STATEMENT.executeUpdate(
                      " INSERT INTO `agendamento`.`configuracao` ( "   
-                    + " `limiteagendamento`, "                    
+                    + " `limiteagendamento` "                    
                     + " ) "       
                     + " VALUES ( "       
                     + " '10' "                    
@@ -178,7 +179,7 @@ public void CliBanco() throws SQLException{
                 
                 }   catch(SQLException ex) {
                     ex.printStackTrace();
-//                JOptionPane.showMessageDialog(null, "Erro");
+                JOptionPane.showMessageDialog(null, "Erro");
                 ERRO = 1;          
             } 
 
@@ -206,7 +207,7 @@ public void Desconecta(){
               CONEXAO.close();
 //              JOptionPane.showMessageDialog(null, "CONEXAO FECHADA");
             } catch(SQLException fech){
-//                JOptionPane.showMessageDialog(null, "ERRO" + fech);
+                JOptionPane.showMessageDialog(null, "ERRO" + fech);
             }
     }
     
@@ -218,27 +219,25 @@ public void MostraArquivoLido(){
         while(v < 4){
             if(v==0){
                 VERIFICALINHA = 1;
-                //C:\Pasta\PergAminho\Conf
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 SERVIDOR = ARQUIVOLIDO;
-                
             }
             if(v==1){
                 VERIFICALINHA = 2;
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 PORTA_CONEXAO = ARQUIVOLIDO;
             }
             if(v==2){
                 VERIFICALINHA = 3;
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 UTIL = ARQUIVOLIDO ;
             }
             if(v==3){
                 VERIFICALINHA = 4;
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 PASS = ARQUIVOLIDO;
             
@@ -249,7 +248,7 @@ public void MostraArquivoLido(){
             v++;
         }
     } catch(Exception erro){
-//        System.out.println(erro);
+        System.out.println(erro);
         }
    } 
 public void LeArqSalvo(String nomeArq){
@@ -274,7 +273,7 @@ public void LeArqSalvo(String nomeArq){
                 erro.printStackTrace();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "Arquivo nao localizado");
+            JOptionPane.showMessageDialog(null, "Arquivo nao localizado aqui");
         }
     }
 }

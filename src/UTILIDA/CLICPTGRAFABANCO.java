@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -297,7 +298,7 @@ public void IniciaCliptografia(String passnormal) {
   
             }    
         } catch (Exception erro) {
-//                    JOptionPane.showMessageDialog(null, erro, "Erro", 0);
+                    JOptionPane.showMessageDialog(null, erro, "Erro", 0);
         }
     }
 private void gerareferencia() {
@@ -351,13 +352,13 @@ private void BotaoGeraReferencia() {
 private void SalvaArquivoReferencia() {
     String Referenc = (Referencia);
     try {
-        File diretorio = new File("C:/Pasta/PergAminho/Conf");
+        File diretorio = new File("C:/ProgramData/PergAminho/Conf");
         if (!diretorio.exists()) {
             diretorio.mkdirs();
         } else {   
         }
         
-        FileWriter arq1 = new FileWriter("C:/Pasta/PergAminho/Conf/PergAminho.REF");
+        FileWriter arq1 = new FileWriter("C:/ProgramData/PergAminho/Conf/PergAminho.REF");
         PrintWriter gravaArq1 = new PrintWriter(arq1);
         gravaArq1.println(Referenc);
         arq1.close();
@@ -367,7 +368,7 @@ private void SalvaArquivoReferencia() {
 }
 
 private void LerArquivoReferenciaSalvo(){
-        String nomeArq = "C:/Pasta/PergAminho/Conf/PergAminho.REF";
+        String nomeArq = "C:/ProgramData/PergAminho/Conf/PergAminho.REF";
         String linha = "";
         File arq = new File(nomeArq);
         if(arq.exists()){

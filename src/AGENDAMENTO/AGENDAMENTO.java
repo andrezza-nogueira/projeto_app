@@ -7,8 +7,6 @@ import UTILIDA.CONEXAO;
 import UTILIDA.GRA_ALT_EXC;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -78,14 +76,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         Cod.setVisible(false);
         ListaNOME.setVisible(false);
         ListaSERVICO.setVisible(false); 
-        
-//        setIconImage(getIconImage());
-//        }
-//        
-//        
-//        public final Image getIconImage() {
-//        Image ICONE = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("IMAGE/logoprog"));
-//        return ICONE;     
+            
     }
 
 
@@ -146,9 +137,9 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         t22 = new javax.swing.JLabel();
         t29 = new javax.swing.JLabel();
         t36 = new javax.swing.JLabel();
-        DATAAGENDAMENTO = new javax.swing.JLabel();
         ListaSERVICO = new javax.swing.JList<>();
         ListaNOME = new javax.swing.JList<>();
+        DATAAGENDAMENTO = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         ListaHORA = new javax.swing.JList<>();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -520,6 +511,24 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jLayeredPane1.add(CamadaCalendario);
         CamadaCalendario.setBounds(60, 150, 220, 150);
 
+        ListaSERVICO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ListaSERVICO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaSERVICOMouseClicked(evt);
+            }
+        });
+        jLayeredPane1.add(ListaSERVICO);
+        ListaSERVICO.setBounds(70, 120, 370, 70);
+
+        ListaNOME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        ListaNOME.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaNOMEMouseClicked(evt);
+            }
+        });
+        jLayeredPane1.add(ListaNOME);
+        ListaNOME.setBounds(70, 90, 370, 60);
+
         DATAAGENDAMENTO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DATAAGENDAMENTOMouseClicked(evt);
@@ -533,29 +542,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         });
         jLayeredPane1.add(DATAAGENDAMENTO);
         DATAAGENDAMENTO.setBounds(70, 130, 80, 20);
-
-        ListaSERVICO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ListaSERVICO.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ListaSERVICOMouseClicked(evt);
-            }
-        });
-        jLayeredPane1.add(ListaSERVICO);
-        ListaSERVICO.setBounds(70, 120, 410, 70);
-
-        ListaNOME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ListaNOME.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                ListaNOMEFocusGained(evt);
-            }
-        });
-        ListaNOME.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ListaNOMEMouseClicked(evt);
-            }
-        });
-        jLayeredPane1.add(ListaNOME);
-        ListaNOME.setBounds(70, 90, 410, 90);
 
         ListaHORA.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -594,7 +580,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jScrollPane1.setViewportView(TabelaAgendamento);
 
         jLayeredPane1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 310, 510, 90);
+        jScrollPane1.setBounds(30, 310, 490, 90);
 
         observacao.setColumns(20);
         observacao.setRows(5);
@@ -606,7 +592,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         jScrollPane2.setViewportView(observacao);
 
         jLayeredPane1.add(jScrollPane2);
-        jScrollPane2.setBounds(20, 210, 510, 80);
+        jScrollPane2.setBounds(30, 210, 500, 80);
 
         BotaoNovoAgendamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/livro.png"))); // NOI18N
         BotaoNovoAgendamento.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -623,7 +609,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             }
         });
         jLayeredPane1.add(BotaoNovoAgendamento);
-        BotaoNovoAgendamento.setBounds(10, 0, 50, 50);
+        BotaoNovoAgendamento.setBounds(30, 0, 50, 50);
 
         BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/salvar.png"))); // NOI18N
         BotaoSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -640,7 +626,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             }
         });
         jLayeredPane1.add(BotaoSalvar);
-        BotaoSalvar.setBounds(80, 0, 50, 50);
+        BotaoSalvar.setBounds(100, 0, 50, 50);
         jLayeredPane1.add(jSeparator1);
         jSeparator1.setBounds(30, 150, 500, 10);
         jLayeredPane1.add(jSeparator2);
@@ -708,7 +694,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
 
         Lobs.setText("Observação:");
         jLayeredPane1.add(Lobs);
-        Lobs.setBounds(20, 190, 70, 20);
+        Lobs.setBounds(30, 190, 110, 20);
 
         hora.setText("09:30");
         hora.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -751,11 +737,13 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 566, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -785,22 +773,23 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     }//GEN-LAST:event_SelecaoAnoActionPerformed
 
     private void BotaoNovoAgendamentoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoAgendamentoMouseEntered
-        BotaoNovoAgendamento.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+       
     }//GEN-LAST:event_BotaoNovoAgendamentoMouseEntered
 
     private void BotaoNovoAgendamentoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoAgendamentoMouseExited
-        BotaoNovoAgendamento.setBorder(null);
+
     }//GEN-LAST:event_BotaoNovoAgendamentoMouseExited
 
     private void BotaoSalvarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoSalvarMouseEntered
-        BotaoSalvar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
     }//GEN-LAST:event_BotaoSalvarMouseEntered
 
     private void BotaoSalvarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoSalvarMouseExited
-        BotaoSalvar.setBorder(null);
+
     }//GEN-LAST:event_BotaoSalvarMouseExited
 
     private void BotaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoSalvarActionPerformed
+        BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/salvar.png")));
         try {
             if(grava == 0) {
                 int cont = nome.getText().length();
@@ -822,9 +811,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             }
             if (grava == 2) {
                 Alteracao();
-//                PESQUISAAGENDA.PESQUISANOME();
-//                PESQUISAAGENDA.ECRAPRIN.LEGENDA();
-//                PESQUISAAGENDA.ECRAPRIN.INSERE_COR_CALENDARIO();
                 dispose();
             }
             if(grava == 3) {
@@ -886,11 +872,11 @@ public class AGENDAMENTO extends javax.swing.JDialog {
     }//GEN-LAST:event_horaMouseClicked
 
     private void horaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_horaMouseEntered
-        hora.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
     }//GEN-LAST:event_horaMouseEntered
 
     private void horaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_horaMouseExited
-        hora.setBorder(null);
+
     }//GEN-LAST:event_horaMouseExited
 
     private void ListaHORAMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaHORAMouseMoved
@@ -901,21 +887,21 @@ public class AGENDAMENTO extends javax.swing.JDialog {
 
     private void DATAAGENDAMENTOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DATAAGENDAMENTOMouseClicked
         
-    int dia = Integer.parseInt(DATAAGENDAMENTO.getText().substring(0, 2));
-        int mes = Integer.parseInt(DATAAGENDAMENTO.getText().substring(3, 5));
-        int ano = Integer.parseInt(DATAAGENDAMENTO.getText().substring(6, 10));
+        int dia = Integer.parseInt(DATAAGENDAMENTO.getText().substring(0, 2));
+            int mes = Integer.parseInt(DATAAGENDAMENTO.getText().substring(3, 5));
+            int ano = Integer.parseInt(DATAAGENDAMENTO.getText().substring(6, 10));
             if (grava == 1) {
                 CamadaCalendario.setVisible(true);
                 SelecaoAno.setSelectedItem(ano);
                 SelecaoMes.setSelectedIndex(mes - 1);
             }
+            
             if (ECRAPRIN.ChamaAgendaPMenu == 0) {
                 CamadaCalendario.setVisible(true);
                 SelecaoAno.setSelectedItem(ano);
                 SelecaoMes.setSelectedIndex(mes - 1);
-            } 
+            }   
             if (grava == 2) {
-//                PREENCHE_LISTA();
                 CamadaCalendario.setVisible(true);
                 SelecaoAno.setSelectedItem(ano);
                 SelecaoMes.setSelectedIndex(mes - 1);
@@ -951,7 +937,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             CamadaCalendario.setVisible(false);
             jScrollPane4.setVisible(false);
             ListaHORA.setVisible(false);
-            ListaNOME.setVisible(false);
             nome.setForeground(Color.BLACK);
             BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/salvar.png")));
             grava = 1;
@@ -996,16 +981,6 @@ public class AGENDAMENTO extends javax.swing.JDialog {
            System.out.println("Erro na atualização" + err1);
        }
        
-//       try {
-//           PESQUISAAGENDA.PESQUISANOME();
-//           PESQUISAAGENDA.ECRAPRIN.LEGENDA();
-//           PESQUISAAGENDA.ECRAPRIN.INSERE_COR_CALENDARIO();
-//           
-//           dispose();
-//       } catch (Exception err1) {
-//           System.out.println("Erro na atualização na pesquisa de agendamento" + err1);
-//       }
-       
     }//GEN-LAST:event_BotaoExcluirActionPerformed
 
     private void BotaoNovoContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoContactoActionPerformed
@@ -1022,7 +997,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         int cont = nome.getText().length();
         if (cont > 0 & ListaNomeEnter == 0){
             PESQUISANOME();
-            nome.setForeground(Color.red);
+            nome.setForeground(Color.green);
         } else {      
             ListaNOME.setVisible(false);
             ListaNomeEnter = 0;
@@ -1034,7 +1009,7 @@ public class AGENDAMENTO extends javax.swing.JDialog {
             ListaNomeEnter = 1;
             nome.setText(MODELONOME.getElementAt(0).toString());
             if (nome.getText().equals(MODELONOME.getElementAt(0))) {
-                nome.setForeground(Color.GREEN);
+                nome.setForeground(Color.green);
         } else {
                 nome.setForeground(Color.red);
                 }
@@ -1043,29 +1018,12 @@ public class AGENDAMENTO extends javax.swing.JDialog {
         }    
     }//GEN-LAST:event_nomeActionPerformed
 
-    private void ListaNOMEFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ListaNOMEFocusGained
-        CamadaCalendario.setVisible(false);
-//        JScrollPane4.setVisible(false);
-        ListaHORA.setVisible(false);
-        MODELONOME.removeAllElements();
-    }//GEN-LAST:event_ListaNOMEFocusGained
-
-    private void ListaNOMEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaNOMEMouseClicked
-        try {
-            nome.setText(ListaNOME.getSelectedValue().toString());
-            nome.setForeground(Color.GREEN);
-            ListaNOME.setVisible(false);
-        } catch(Exception err) {
-            System.out.println(err);
-        }
-    }//GEN-LAST:event_ListaNOMEMouseClicked
-
     private void servicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_servicoActionPerformed
         try {
             ListaServicoEnter = 1;
             servico.setText(MODELOSERVICO.getElementAt(0).toString());
             if (servico.getText().equals(MODELOSERVICO.getElementAt(0))){
-                servico.setForeground(Color.GREEN);
+                servico.setForeground(Color.green);
                 MostraValorServicoLinhazero();
             } else {
                 servico.setForeground(Color.red);
@@ -1097,13 +1055,23 @@ public class AGENDAMENTO extends javax.swing.JDialog {
 
     private void ListaSERVICOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaSERVICOMouseClicked
         try {
-            servico.setText(ListaSERVICO.getSelectedValue().toString());          
+            servico.setText(ListaSERVICO.getSelectedValue().toString());
             servico.setForeground(Color.GREEN);
             ListaSERVICO.setVisible(false);
         } catch(Exception err) {
             System.out.println(err);
         }
     }//GEN-LAST:event_ListaSERVICOMouseClicked
+
+    private void ListaNOMEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaNOMEMouseClicked
+        try {
+            nome.setText(ListaNOME.getSelectedValue().toString());
+            nome.setForeground(Color.GREEN);
+            ListaNOME.setVisible(false);
+        } catch(Exception err) {
+            System.out.println(err);
+        }
+    }//GEN-LAST:event_ListaNOMEMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -1237,8 +1205,6 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
        TabelaAgendamento.setVisible(false);
        jScrollPane1.setVisible(false);
        BotaoExcluir.setVisible(false);
-       java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-       setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
        grava = 0;
        TRAS_DATA_ECRA_PRINCIPAL();
        setVisible(true);
@@ -1246,8 +1212,6 @@ public void MostraAgendaGravacao(PRINCIPAL MostraAgenda) {
        BotaoSalvar.setToolTipText("Salvar alteraçoes no agendamento");
        TabelaAgendamento.setVisible(false);
        jScrollPane1.setVisible(false);
-       java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-       setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
        grava = 1;
        TRAS_DADOS_ECRAPRINCIPAL();
        setVisible(true);
@@ -1265,11 +1229,9 @@ private LocalizaAgendamento PESQUISAAGENDA;
     public void MostraAgendaPesquisa(LocalizaAgendamento MostraAgendaPesquisa) {
         this.PESQUISAAGENDA = MostraAgendaPesquisa;
         BotaoSalvar.setToolTipText("Salvar alterações no agendamento");
-//        BotaoSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource(""))); COLOCAR IMAGEM
+
         TabelaAgendamento.setVisible(false);
-//        jScrollPane2.setVisible(false);
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width - 617) / 2, (screenSize.height - 380) / 2, 617, 380);
+
         grava = 2;
         Cod.setText(PESQUISAAGENDA.CODPES);
         nome.setText(PESQUISAAGENDA.NOMEPES);
@@ -4792,30 +4754,6 @@ public void PESQUISASERVICO() {
             System.out.println(err);
         }
     }
-
-//public void MOSTRA_DADOS_P_PESQUISAR_SERVICO() {
-//        try {
-//            int Linha = ListaSERVICO.getSelectedIndex();
-//            CONEXAO.executaSQL("select * from servico where nomeservico like'" + servico.getText() + "%' order by nomeservico LIMIT " + Linha + " , 1 ");
-//            CONEXAO.resultset.first();
-//            servico.setText(CONEXAO.resultset.getString("nomeservico"));
-//            ValorDoServico = Double.parseDouble(CONEXAO.resultset.getString("valor"));
-//        } catch (SQLException erro) {
-//            JOptionPane.showMessageDialog(null, "Erro ao localizar dados" + erro);
-//        }
-//    }
-
-public void MOSTRA_NOME() {
-    try {
-        String Linha1 = String.valueOf(ListaNOME.getSelectedIndex());
-        CONEXAO.executaSQL("select * from contacto where nome like'" + nome.getText() + "%' order by nome LIMIT " + Linha1 + " , 1 ");
-        CONEXAO.resultset.first();
-        nome.setText(CONEXAO.resultset.getString("nome"));
-    } catch (SQLException erro) {
-        JOptionPane.showMessageDialog(null, "Erro ao localizar dados" + erro);
-    }
-}
-
 }
 
         

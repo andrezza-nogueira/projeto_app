@@ -46,7 +46,6 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelaAgendamento = new javax.swing.JTable();
-        BotaoNovoAgendamento = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
@@ -56,7 +55,7 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
         nome = new javax.swing.JTextField();
         Ano = new javax.swing.JTextField();
         Mes = new javax.swing.JTextField();
-        Cod = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -73,7 +72,7 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "Nome", "Serviço", "Data ", "Observação"
+                "Nome", "Serviço", "Observação", "Data "
             }
         ));
         TabelaAgendamento.setFocusable(false);
@@ -86,26 +85,9 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
         jScrollPane1.setViewportView(TabelaAgendamento);
 
         jLayeredPane1.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 110, 470, 230);
-
-        BotaoNovoAgendamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/livro.png"))); // NOI18N
-        BotaoNovoAgendamento.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BotaoNovoAgendamentoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BotaoNovoAgendamentoMouseExited(evt);
-            }
-        });
-        BotaoNovoAgendamento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotaoNovoAgendamentoActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(BotaoNovoAgendamento);
-        BotaoNovoAgendamento.setBounds(430, 10, 50, 50);
+        jScrollPane1.setBounds(10, 110, 440, 170);
         jLayeredPane1.add(jSeparator2);
-        jSeparator2.setBounds(10, 60, 390, 10);
+        jSeparator2.setBounds(10, 60, 300, 10);
         jLayeredPane1.add(jSeparator3);
         jSeparator3.setBounds(220, 90, 90, 10);
         jLayeredPane1.add(jSeparator4);
@@ -135,7 +117,7 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
             }
         });
         jLayeredPane1.add(nome);
-        nome.setBounds(50, 40, 340, 20);
+        nome.setBounds(50, 40, 260, 20);
 
         Ano.setBorder(null);
         Ano.addActionListener(new java.awt.event.ActionListener() {
@@ -155,19 +137,19 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
         jLayeredPane1.add(Mes);
         Mes.setBounds(40, 70, 60, 20);
 
-        Cod.setText("Cod");
-        jLayeredPane1.add(Cod);
-        Cod.setBounds(420, 80, 30, 14);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGEM/logo.png"))); // NOI18N
+        jLayeredPane1.add(jLabel1);
+        jLabel1.setBounds(340, 10, 110, 90);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
         );
 
         pack();
@@ -245,18 +227,6 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_AnoActionPerformed
 
-    private void BotaoNovoAgendamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoNovoAgendamentoActionPerformed
-
-    }//GEN-LAST:event_BotaoNovoAgendamentoActionPerformed
-
-    private void BotaoNovoAgendamentoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoAgendamentoMouseExited
-        BotaoNovoAgendamento.setBorder(null);
-    }//GEN-LAST:event_BotaoNovoAgendamentoMouseExited
-
-    private void BotaoNovoAgendamentoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotaoNovoAgendamentoMouseEntered
-        BotaoNovoAgendamento.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-    }//GEN-LAST:event_BotaoNovoAgendamentoMouseEntered
-
     /**
      * @param args the command line arguments
      */
@@ -301,13 +271,12 @@ public class LocalizaAgendamento extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Ano;
-    private javax.swing.JButton BotaoNovoAgendamento;
-    private javax.swing.JLabel Cod;
     private javax.swing.JLabel Lano;
     private javax.swing.JLabel Lmes;
     private javax.swing.JLabel Lnome;
     private javax.swing.JTextField Mes;
     private javax.swing.JTable TabelaAgendamento;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator2;

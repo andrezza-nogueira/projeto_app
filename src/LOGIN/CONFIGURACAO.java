@@ -34,7 +34,7 @@ public class CONFIGURACAO extends javax.swing.JDialog {
     public CONFIGURACAO(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+        MostraArquivoLido();
         BotaoSalvar.setEnabled(false);
 //        setIconImage(getIconImage());
         }
@@ -153,16 +153,6 @@ public class CONFIGURACAO extends javax.swing.JDialog {
                         .addGap(0, 0, 0)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PainelUtilizadorLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(Util, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PainelUtilizadorLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(Pass, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PainelUtilizadorLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
@@ -178,7 +168,16 @@ public class CONFIGURACAO extends javax.swing.JDialog {
                             .addComponent(BotaoTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotaoSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Progresso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Progresso, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(PainelUtilizadorLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(PainelUtilizadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PainelUtilizadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Util, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+                            .addComponent(Pass))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         PainelUtilizadorLayout.setVerticalGroup(
@@ -379,28 +378,28 @@ public void MostraArquivoLido(){
         while(v < 4){
             if(v==0){
                 VERIFICALINHA = 1;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 SERVIDOR = ARQUIVOLIDO;
                 Servidor.setText(SERVIDOR);
             }
             if(v==1){
                 VERIFICALINHA = 2;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 PORTA_CONEXAO = ARQUIVOLIDO;
                 PortaConexao.setText(PORTA_CONEXAO);
             }
             if(v==2){
                 VERIFICALINHA = 3;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 UTIL = ARQUIVOLIDO;
                 Util.setText(UTIL);
             }
             if(v==3){
                 VERIFICALINHA = 4;
-                String Local = "C:/Pasta/PergAminho/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 PASS = ARQUIVOLIDO;
             

@@ -15,14 +15,9 @@ import java.sql.*;
  */
 public class CONEXAO {
     
-        
-    
-//        final private String utili = "root";
-//        final private String pass = "";    
-//        final private String url = "jdbc:mysql://localhost:3306/agendamento"; //servidor de utilizaçao
         final private String driver = "com.mysql.cj.jdbc.Driver";
 
-        private Connection CONEXAO;
+        public Connection CONEXAO;
         public Statement statement;
         public ResultSet resultset;
         
@@ -32,7 +27,6 @@ public class CONEXAO {
             MostraArquivoLido();
             try {
                 Class.forName(driver);
-//                JOptionPane.showMessageDialog(null, "Driver not found"+"jdbc:mysql://"+SERVIDOR+":"+PORTA_CONEXAO+"/agendamento"+""+UTIL +" "+PASS);
 
             CONEXAO = DriverManager.getConnection("jdbc:mysql://"+SERVIDOR+":"+PORTA_CONEXAO+"/agendamento",UTIL,PASS);
             
@@ -70,37 +64,38 @@ public class CONEXAO {
         String ARQUIVOLIDO;
         int VERIFICALINHA=0;
 
+
         
 public void MostraArquivoLido(){
     try{
         String ArqSERV = "PergAminho.ini";
         
-        int v = 0; /// ConfPergAminho.ini
+        int v = 0; 
         while(v < 4){
             if(v==0){
                 VERIFICALINHA = 1;
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 SERVIDOR = ARQUIVOLIDO;
                 
             }
             if(v==1){
                 VERIFICALINHA = 2;
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 PORTA_CONEXAO = ARQUIVOLIDO;
                 
             }
             if(v==2){
                 VERIFICALINHA = 3;
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 UTIL = ARQUIVOLIDO;
                 
             }
             if(v==3){
                 VERIFICALINHA = 4;
-                String Local = "C:/Pasta/PergAminho/Conf/" + ArqSERV;
+                String Local = "C:/ProgramData/PergAminho/" + ArqSERV;
                 LeArqSalvo(Local);
                 PASS = ARQUIVOLIDO;
             
